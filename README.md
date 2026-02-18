@@ -1,2 +1,2 @@
-# m3-brandname
+# mb-brandname
 .
