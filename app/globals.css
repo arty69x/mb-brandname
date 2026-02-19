@@ -43,13 +43,3 @@ body {
 
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-thumb { background: #c5ab7d; border-radius: 9999px; }
-
-.marquee {
-  width: max-content;
-  animation: marquee 26s linear infinite;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
