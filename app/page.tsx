@@ -139,7 +139,7 @@ export default function Home() {
 
       <section className="relative min-h-[84vh] overflow-hidden">
         <motion.div initial={{ scale: 1.08, opacity: 0.45 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1.8 }} className="absolute inset-0">
-          <Image src="/hero/main.svg" alt="luxury hero" fill className="object-cover" priority />
+          <Image src="/hero/main.svg" alt="luxury hero" fill className="object-cover" priority unoptimized />
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/50 to-black/60" />
         </motion.div>
         <div className="relative mx-auto flex min-h-[84vh] max-w-7xl flex-col items-start justify-center px-6 text-ivory lg:px-10">
@@ -173,7 +173,7 @@ export default function Home() {
           {products.map((product) => (
             <article key={product.name} className="group overflow-hidden rounded-3xl border border-charcoal/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-luxe">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <Image src={product.image} alt={product.name} fill className="object-cover transition duration-700 group-hover:scale-105" />
+                <Image src={product.image} alt={product.name} fill className="object-cover transition duration-700 group-hover:scale-105" unoptimized />
               </div>
               <div className="p-5">
                 <p className="text-xs tracking-[0.22em] text-charcoal/60">{product.brand}</p>
@@ -193,7 +193,7 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
         <div className="grid gap-8 rounded-3xl bg-white p-8 shadow-luxe lg:grid-cols-2 lg:p-12">
           <div className="relative aspect-[5/4] overflow-hidden rounded-2xl">
-            <Image src={activeProduct.image} alt={activeProduct.name} fill className="object-cover" />
+            <Image src={activeProduct.image} alt={activeProduct.name} fill className="object-cover" unoptimized />
           </div>
           <div className="flex flex-col justify-center">
             <p className="text-xs tracking-[0.2em] text-gold">AUTHENTICATION DETAILS</p>
@@ -211,7 +211,7 @@ export default function Home() {
       </section>
 
       <section id="story" className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2 lg:px-10">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-luxe"><Image src="/story/main.svg" alt="story" fill className="object-cover" /></div>
+        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-luxe"><Image src="/story/main.svg" alt="story" fill className="object-cover" unoptimized /></div>
         <div className="flex flex-col justify-center">
           <p className="text-xs tracking-[0.2em] text-gold">EDITORIAL STORY</p>
           <h3 className="mt-4 font-serif text-5xl">Each piece tells a story.</h3>
@@ -225,7 +225,7 @@ export default function Home() {
         <div className="grid gap-7 md:grid-cols-3">
           {categoryShowcase.map(([name, image]) => (
             <article key={name} className="group relative aspect-[4/5] overflow-hidden rounded-2xl">
-              <Image src={image} alt={name} fill className="object-cover transition duration-700 group-hover:scale-105" />
+              <Image src={image} alt={name} fill className="object-cover transition duration-700 group-hover:scale-105" unoptimized />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <h4 className="absolute bottom-8 left-7 font-serif text-4xl text-ivory">{name}</h4>
             </article>
@@ -243,7 +243,7 @@ export default function Home() {
       </section>
 
       <section className="relative min-h-[58vh] overflow-hidden">
-        <Image src="/featured/main.svg" alt="featured" fill className="object-cover" />
+        <Image src="/featured/main.svg" alt="featured" fill className="object-cover" unoptimized />
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative mx-auto flex min-h-[58vh] max-w-7xl items-center px-6 lg:px-10">
           <div>
