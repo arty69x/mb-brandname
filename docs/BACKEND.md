@@ -2,57 +2,51 @@
 
 ## I. Overview
 
-The MB BRANDNAME "Backend" is a high-fidelity simulated architecture designed for seamless prototyping and real-time data persistence within the Next.js runtime. It utilizes a centralized `MockDB` pattern to manage the boutique's digital bounty.
+The MB BRANDNAME "Backend" is a high-fidelity simulated architecture designed for seamless prototyping and real-time data persistence within the Next.js runtime. It utilizes a centralized `MockDB` pattern to manage the boutique's digital bounty and customer transactions.
 
 ## II. Data Models
 
 ### 1. `Product` Archive
+Representing an authenticated luxury item.
+- **Attributes**: `id`, `name`, `brand`, `category`, `price`, `image`, `description` (EN/TH), `stock`, `featured`, `newArrival`.
+- **Metadata**: `condition` (Japanese Grade), `dimensions`, `period`.
 
-The core entity representing a luxury item.
-
-- **Attributes**: `id`, `name`, `brand`, `category`, `price` (THB), `image`, `description` (EN/TH), `stock`, `featured`, `newArrival`.
-- **Metadata**: `condition` (Japanese Grade Scale), `dimensions`, `period`.
-
-### 2. `Category` Taxonomy
-
-Governs the organization of the collection.
-
-- **Structure**: `id`, `slug`, `name` (EN/TH), `image`.
-- **Current Verticals**: `bags`, `accessories`.
+### 2. `Order` Records
+Managing customer acquisition and fulfillment.
+- **Attributes**: `id`, `userId`/`guestId`, `items` (OrderItem[]), `total`, `status` (`pending`, `shipped`, `delivered`, `cancelled`), `createdAt`.
+- **Shipping**: Structured object containing name, street, city, postal code, and country.
 
 ### 3. `HeroSlide` Cinematic State
-
-Governs the landing page storytelling.
-
-- **Attributes**: `id`, `image`, `video` (4K asset), `title`, `subtitle`.
+Governs landing page storytelling.
+- **Assets**: 1920x1080 Images and 4K Video background URLs.
 
 ## III. Data Governance (`MockDB`)
 
-The `MockDB` class provides static methods for state manipulation, simulating RESTful operations with in-memory persistence.
-
-- **Filtering Intelligence**: Case-insensitive category matching and ID-prefix detection (e.g., `h` for Hermès artifacts).
-- **Automatic Normalization**: Handles internal state synchronization during creation and amendment.
+The `MockDB` class acts as the single source of truth:
+- **Relational Simulation**: Links orders to products and users.
+- **Advanced Querying**: Implements multi-parameter filtering for the frontend search engine (brand, keyword, status).
+- **In-Memory Persistence**: Maintains state across page transitions during the browser session.
 
 ## IV. Administrative Suite: "The Vault Control"
 
-A dedicated backend interface (`/backend/products`) for boutique managers to audit and amend the archive.
+Accessed via `/backend`, this management layer allows boutique administrators to govern all aspects of the platform.
 
-### 1. Inventory Audit
+### 1. Catalog Management
+- **Audit**: CRUD operations for the entire product and category library.
+- **Metadata Control**: Real-time toggling of `Featured` and `New Arrival` spotlights.
 
-- Real-time status tracking (Live/Draft/Purged).
-- Stock level indicators with visual heatmaps (Red for low stock artifacts).
-- Global search across name, brand, and class.
+### 2. Marketplace Operations
+- **Order Processing**: Visibility into all customer orders with the ability to update shipping status.
+- **Status Workflow**: Tracks the lifecycle of a purchase from "Pending" to "Delivered".
 
-### 2. Metadata Amendment (`EditArchive`)
+### 3. Hero Visuals
+- Editable homepage carousel configuration (images/videos/titles).
 
-- Synchronous narrative editing (EN/TH).
-- Deployment directives: Control over `Featured` and `New Arrival` status.
-- Visual asset preview and stage management.
+## V. Security & Authentication
 
-## V. Security Integrity
-
-- **Robots Policy**: Restricted crawling of administrative and API routes through `robots.txt`.
-- **Auth Gate**: Backend routes are protected via the `AuthContext` to ensure only authorized boutique personnel can access the inventory meta-layer.
+- **Admin Access**: Protected via `AuthContext`. Default credentials: `admin` / `admin`.
+- **API Protection**: Backend API routes verify administrative privilege before allowing data mutation.
+- **SEO/Robots**: `robots.txt` ensures private dashboards are excluded from search engine indices.
 
 ---
 

@@ -6,50 +6,51 @@ The MB BRANDNAME frontend is engineered to evoke the atmosphere of a high-end To
 
 ## II. Technical Stack
 
-- **Framework**: Next.js 14+ (App Router)
-- **Styling**: Tailwind CSS (Primitive Layer) + Custom Design Tokens
-- **Typography**:
-  - _Bodoni Moda_: Elevated luxury serif for headings and hero moments.
-  - _Inter_: High-legibility sans-serif for functional UI.
-  - _Sarabun/Prompt_: Seamless Thai language integration.
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS 4 (Primitive Layer) + Custom Vanilla CSS
 - **Animations**: Framer Motion (Orchestration Layer)
-- **Icons**: Lucide React (Thin stroke variants)
+- **Carousel**: Swiper (Cinematic Transitions)
+- **Icons**: Lucide React
 
-## III. Key Pillars
+## III. Core System Components
 
-### 1. Bilingual Core (`LanguageContext`)
+### 1. Bilingual Localization (`LanguageContext`)
+A sophisticated engine supporting **Thai** and **English**.
+- Global `t()` function for string retrieval.
+- specialized fonts: `Bodoni Moda` (Serif) integrated with `Prompt/Sarabun` (Thai).
 
-A sophisticated localization engine supporting **Thai** and **English**.
+### 2. Transactional Engine (`CartContext` & `Checkout`)
+- Real-time cart state with local storage persistence.
+- Multi-step checkout flow (Information -> Shipping -> Payment -> Success).
+- Support for Guest Checkout and Profile-linked purchases.
 
-- Uses a `translations` map for UI strings.
-- Dynamic font switching: Thai glyphs are rendered with specialized typography to maintain the luxury aesthetic.
-
-### 2. Transactional Suite (`CartContext`)
-
-A real-time inventory management layer on the client side.
-
-- Handles formatted currency (THB ฿) with automatic normalization.
-- Syncs across all product and category views.
-
-### 3. Authentication Vault (`AuthContext`)
-
-Simulated secure access for the client profile and administrative bridge.
-
-- Persistent sessions for personalized curation.
-- Redirect logic for secure routes like `Checkout` and `Backend`.
+### 3. Navigation & Search Overlay
+- **Navbar**: High-fidelity sticky navigation with mobile-responsive menu.
+- **Global Search**: Modal-based search overlay with real-time results, brand highlighting, and instant product access.
 
 ## IV. Design System: "Tokyo Archive"
 
-- **Palette**: Zinc-based neutrals (`#09090b` to `#fafafa`) allowing product photography to dominate the visual stage.
-- **Signature Element**: `.luxury-serif` — Uppercase, 0.15em letter-spacing, Bodoni font.
-- **Imagery**: 3:4 Aspect ratios common in luxury editorial lookbooks.
+- **Visual Tone**: Minimalist monochrome layout (Zinc/White/Black) to accentuate luxury product photography.
+- **Typography Tokens**:
+  - `.luxury-serif`: Uppercase, high-tracking, Bodoni-inspired.
+  - `.narrative-text`: Italicized, elegant storytelling.
+- **UX Patterns**: 
+  - **Loading Skeletons**: Custom CSS-shimmer backgrounds replacing generic spinners.
+  - **Glassmorphism**: Subtle backdrop blurs for UI overlays and dropdown menus.
 
-## V. Key Pages
+## V. Strategic Pages
 
-- **Homepage**: Cinematic hero sequences with video integration and latest archive drops.
-- **Dynamic Product Discovery**: High-fidelity detail page featuring image zoom, localized narratives, and category-intelligent recommendations.
-- **Modular Category Grid**: Highly responsive layout with dynamic column toggling for the "New Arrivals" and "Bags" archives.
-- **Seamless Checkout**: A 3-step transactional flow with immersive success states.
+### 1. Immersive Homepage
+- Cinematic Swiper carousel with 4K video backgrounds.
+- Bento-grid layout for editorial storytelling.
+- Instagram-ready style galleries.
+
+### 2. Collection Discovery
+- **Bags/Accessories**: Grid layouts with real-time `FilterBar` (Filter by Brand, Sort by Price/Newest).
+- **Product Detail**: Multi-image zoom gallery, localized luxury descriptions, and dynamic "Related Products" feed.
+
+### 3. Administrative Interface
+- Secure login and unified dashboard for order and inventory tracking.
 
 ---
 
