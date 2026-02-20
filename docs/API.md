@@ -18,11 +18,13 @@ All API calls are wrapped in `async/await` blocks with built-in error handling a
 ### 1. Products Archive
 
 - `GET /products`: Retrieves the full collection or a filtered subset.
-  - **Query Parameters**: 
+  - **Query Parameters**:
     - `category`: Filter by category slug (bags, accessories).
+
     - `featured`: Filter by featured status (`true`/`false`).
     - `newArrival`: Filter by new arrival status (`true`/`false`).
     - `search`: Global search string (matches name, brand, description).
+
     - `brand`: Filter by specific brand name (e.g., "Chanel").
     - `sort`: `price_asc`, `price_desc`, or `newest`.
 - `GET /products/:id`: Retrieves a specific archive item.

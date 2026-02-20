@@ -32,22 +32,26 @@ MB BRANDNAME is a high-fidelity e-commerce platform curated for the rarest luxur
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/arty69x/mb-brandname.git
    cd mb-brandname
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    ```
 
 4. Build for production:
+
    ```bash
    npm run build
    ```
@@ -59,6 +63,7 @@ MB BRANDNAME is a high-fidelity e-commerce platform curated for the rarest luxur
 ## 📄 Documentation
 
 Detailed architectural overviews can be found in the `/docs` directory:
+
 - [Frontend Blueprint](./docs/FRONTEND.md)
 - [Backend Infrastructure](./docs/BACKEND.md)
 - [API Specification](./docs/API.md)
