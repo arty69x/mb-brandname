@@ -1,36 +1,38 @@
-# MB BRANDNAME — MASTER BLUEPRINT
-Authoritative Specification
+# MB BRANDNAME — FRONTEND AUTHORITATIVE SPEC
 Version: 1.0
-This file is the single source of truth for the entire project.
-If implementation conflicts with this file, this file always wins.
+Status: LOCKED
+This document overrides any existing implementation.
+If code conflicts with this document, this document wins.
 
----
+============================================================
+1. FRAMEWORK & BASELINE
+============================================================
 
-# 1. ARCHITECTURE
-
-## 1.1 Framework
-- Next.js Pages Router only
+- Next.js Pages Router ONLY
 - No App Router
-- TypeScript strict true
-- No `any` type
-- No runtime unsafe access
+- TypeScript strict: true
+- No `any`
+- No unused code
+- No console errors
+- No hydration mismatch
 
-## 1.2 Tailwind
-- Tailwind CSS v4
-- styles/globals.css MUST contain:
+Tailwind:
+- Version 4
+- styles/globals.css MUST contain exactly:
   @import "tailwindcss";
-- No arbitrary px values
-- No dynamic Tailwind class interpolation
+- No arbitrary px values (px-[13px] forbidden)
+- No dynamic Tailwind interpolation
+- No inline styles
 
----
+============================================================
+2. GLOBAL LAYOUT RULE (MANDATORY)
+============================================================
 
-# 2. GLOBAL LAYOUT RULE
-
-All pages MUST follow:
+All pages must follow:
 
 Layout
   main
-    section.py-24 or py-32
+    section.py-24 OR section.py-32
       div.container.mx-auto.px-4
 
 Exception:
@@ -39,13 +41,15 @@ Hero section MUST NOT use container.
 Hero:
 <section class="relative h-[75vh] w-full">
 
-No nested containers allowed.
+No nested containers.
+No container wrapping Layout root.
+No max-w-screen-* at root.
 
----
+============================================================
+3. SPACING SCALE (STRICT)
+============================================================
 
-# 3. SPACING SCALE
-
-Allowed vertical spacing only:
+Allowed vertical spacing ONLY:
 - py-16
 - py-24
 - py-32
@@ -55,17 +59,17 @@ Allowed gap values:
 - gap-12
 - gap-16
 
-Allowed margin values:
+Allowed margin:
 - mt-8
 - mt-12
 - mt-16
 - mt-24
 
-No other spacing values allowed.
+Any other spacing value must be removed.
 
----
-
-# 4. TYPOGRAPHY
+============================================================
+4. TYPOGRAPHY SYSTEM
+============================================================
 
 Hero:
 - uppercase
@@ -74,14 +78,14 @@ Hero:
 - text-5xl mobile
 - text-7xl desktop
 
-Section headings:
+Section heading:
 - uppercase
 - font-light
 - tracking-[0.45em]
 - text-2xl mobile
 - text-4xl desktop
 
-UI labels/buttons:
+UI labels:
 - uppercase
 - font-black
 - tracking-[0.3em]
@@ -90,30 +94,30 @@ UI labels/buttons:
 Body:
 - font-medium
 - opacity-80
-- max-w-3xl for long text
+- max-w-3xl for long paragraphs
 
----
-
-# 5. COLOR SYSTEM
+============================================================
+5. COLOR SYSTEM
+============================================================
 
 Primary:
-- background: white
-- text: black
+- bg-white
+- text-black
 
 Borders:
-- gray-100 only
+- border-gray-100 only
 
-Light sections:
-- gray-50 or gray-100
+Light background:
+- bg-gray-50 or bg-gray-100
 
 Accent:
-- minimal (badges, errors only)
+- minimal use only for badges or errors
 
----
+============================================================
+6. HOMEPAGE STRUCTURE (EXACTLY 6 SECTIONS)
+============================================================
 
-# 6. HOMEPAGE STRUCTURE (EXACTLY 6 SECTIONS)
-
-1. Hero
+1. Hero (full-bleed)
 2. New Arrivals
 3. Editorial Story
 4. About Us
@@ -121,74 +125,86 @@ Accent:
 6. Footer
 
 No additional sections allowed.
+No compare, no filters, no cart blocks on homepage.
 
----
-
-# 7. SHOP REQUIREMENTS
+============================================================
+7. SHOP REQUIREMENTS
+============================================================
 
 Must include:
-- Search
+
+- Search input
 - Category filter
 - Tag filter
-- Sort
+- Sort select
 - Pagination
 - Grid toggle (desktop only)
 - Skeleton loading
-- Empty state
+- Empty state safe
 
-Grid:
+Grid rules:
+
 Mobile:
 grid-cols-2 gap-8
 
 Desktop:
 md:grid-cols-4 gap-16
 
----
+No table layout on mobile.
 
-# 8. PRODUCT DETAIL PAGE
+============================================================
+8. PRODUCT DETAIL PAGE
+============================================================
 
 Must include:
+
 - Image gallery with thumbnails
-- Badges (Authentic, Grade, Origin, Stock)
-- Tabs (Description, Details, Reviews)
+- Badge row (Authentic, Grade, Origin, Stock)
+- Tabs: Description / Details / Reviews
 - Related products (4 items)
 - Sticky mobile buy bar
-- Real-time stock ticker simulation
+- Real-time stock simulation (interval 6–8 seconds)
+- Stock never negative
 
----
-
-# 9. CART
+============================================================
+9. CART
+============================================================
 
 - No table on mobile
 - Quantity clamp 1–99
 - Remove item
-- Summary separated with border-t pt-12
+- Summary separated by border-t pt-12
 - Empty state safe
 
----
+============================================================
+10. CHECKOUT (MOCK PAYMENT)
+============================================================
 
-# 10. CHECKOUT (MOCK PAYMENTS)
+Validation required:
 
-Validation:
 - Email validation
 - Luhn card validation
-- Expiry future check
+- Expiry must be future
 - CVC 3–4 digits
 
 Behavior:
-- Disable during processing
+
+- Disable form during processing
 - 20% random failure
 - On success:
   - Create PAID order
   - Clear cart
-  - Redirect to order page
+  - Redirect to order detail
 - On failure:
   - Create FAILED order
   - Keep cart
 
----
+All JSON parsing must use try/catch.
+Guard window before localStorage.
 
-# 11. WISHLIST & COMPARE
+============================================================
+11. WISHLIST & COMPARE
+============================================================
 
 Wishlist:
 - Toggle
@@ -201,11 +217,11 @@ Compare:
 - Desktop grid layout
 - No table on mobile
 
----
+============================================================
+12. STATE MANAGEMENT SAFETY
+============================================================
 
-# 12. STATE MANAGEMENT
-
-Global store must include:
+Store must include:
 - cart
 - wishlist
 - compare
@@ -217,57 +233,56 @@ Global store must include:
 
 Must:
 - Guard window
-- Wrap JSON parse in try/catch
+- Wrap JSON.parse in try/catch
 - Validate arrays before map
-- No undefined access
+- No undefined property access
 
----
+============================================================
+13. ANALYTICS
+============================================================
 
-# 13. ANALYTICS
-
-Track:
+Track events:
 - view_product
 - add_to_cart
 - begin_checkout
 - purchase_success
 - purchase_failed
 
-Dashboard must display:
+Dashboard must show:
 - Revenue (PAID orders)
 - Orders count
 - Conversion rate (mock)
 - Average order value
 
----
-
-# 14. PWA
+============================================================
+14. PWA
+============================================================
 
 Must include:
 - manifest.webmanifest
 - theme-color meta
 - icons
 
----
-
-# 15. TESTING
+============================================================
+15. TESTING
+============================================================
 
 Must include:
-- Jest unit tests for validation + reducer
-- Playwright e2e for full checkout flow
+- Jest tests for validation and reducer
+- Playwright test for full checkout flow
 
----
+============================================================
+16. FINAL VALIDATION BEFORE COMPLETION
+============================================================
 
-# 16. FINAL VALIDATION
-
-Before completion:
-- npm run build passes
+- npm run build must pass
 - No TypeScript errors
-- No runtime crashes
+- No runtime crash
 - No nested container
 - Hero full-bleed
 - No spacing drift
-- No mobile table layout
+- No table mobile layout
 - No arbitrary px values
 - No dynamic Tailwind interpolation
 
-End of authoritative specification.
+END OF FRONTEND AUTHORITATIVE SPEC
