@@ -1,32 +1,32 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Headphones, ShieldCheck, Sparkles, Truck } from "lucide-react";
+import { ArrowRight, Headphones, ShieldCheck, Sparkles, Star, Truck } from "lucide-react";
 
 import { api } from "@/lib/api-client";
 import { Product } from "@/types/api";
+import ProductCard from "@/components/ProductCard";
 
-const spotlightCards = [
+const valuePillars = [
   {
-    title: "Curated in Tokyo",
-    description: "Hand-picked archive pieces sourced from trusted Japanese collectors.",
+    title: "Tokyo Curated",
+    description: "Luxury archives selected with strict quality checks from trusted Japanese sources.",
   },
   {
-    title: "Verified Authenticity",
-    description: "Every item is inspected, documented, and guaranteed authentic before listing.",
+    title: "Authentication First",
+    description: "Every listing is reviewed for condition and originality before it reaches the storefront.",
   },
   {
-    title: "Worldwide Delivery",
-    description: "Premium insured shipping with tracking and dedicated support.",
+    title: "Collector Experience",
+    description: "Private-client level support from discovery through delivery.",
   },
 ];
 
-const heroImages = [
-  "https://images.pexels.com/photos/1927259/pexels-photo-1927259.jpeg?auto=compress&cs=tinysrgb&w=1800",
-  "https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "https://images.pexels.com/photos/5370706/pexels-photo-5370706.jpeg?auto=compress&cs=tinysrgb&w=1000",
+const collectionHighlights = [
+  { label: "Bags", href: "/bags", tone: "from-[#f8efe3] to-[#efe7dc]" },
+  { label: "Accessories", href: "/accessories", tone: "from-[#ececf6] to-[#dedeee]" },
+  { label: "New Arrivals", href: "/new-arrivals", tone: "from-[#e6f0ef] to-[#d5e4e2]" },
 ];
 
 export default function Home() {
@@ -35,112 +35,151 @@ export default function Home() {
   useEffect(() => {
     async function loadProducts() {
       const response = await api.getProducts({ featured: true });
-      setProducts(response.slice(0, 6));
+      setProducts(response.slice(0, 8));
     }
 
     loadProducts();
   }, []);
 
   return (
-    <main className="bg-[#f8f7f4] text-[#171717]">
-      <section className="mx-auto grid min-h-[85vh] w-full max-w-7xl grid-cols-1 gap-6 px-4 pb-8 pt-6 md:grid-cols-5 md:px-8 md:pb-16 md:pt-10">
-        <div className="relative overflow-hidden rounded-3xl md:col-span-3">
-          <Image src={heroImages[0]} alt="Luxury archive hero" fill priority className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-transparent" />
-          <div className="relative z-10 flex h-full flex-col justify-end p-8 md:p-12">
-            <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/40 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/90">
+    <main className="bg-[#f6f4ef] text-[#131313]">
+      <section className="relative overflow-hidden border-b border-zinc-200/80">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#d9cab0_0%,transparent_42%),radial-gradient(circle_at_25%_15%,#efe8db_0%,transparent_46%)]" />
+        <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-12 px-4 pb-16 pt-14 md:px-8 md:pb-24 md:pt-20">
+          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-600">
+            <span className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white/70 px-3 py-1.5">
               <Sparkles className="h-3.5 w-3.5" /> New Blueprint
-            </p>
-            <h1 className="max-w-2xl text-4xl font-light uppercase tracking-[0.12em] text-white md:text-6xl">
-              Redefined luxury archives for modern collectors
-            </h1>
-            <p className="mt-6 max-w-xl text-sm leading-7 text-white/80 md:text-base">
-              Discover rare pieces from iconic fashion houses with a fresh editorial experience built to feel elegant, calm, and premium.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/new-arrivals" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-xs uppercase tracking-[0.18em] text-black">
-                Shop new arrivals <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/about" className="inline-flex items-center rounded-full border border-white/60 px-6 py-3 text-xs uppercase tracking-[0.18em] text-white">
-                Our Story
-              </Link>
-            </div>
+            </span>
+            <span>MB Brandname Archive House</span>
           </div>
-        </div>
 
-        <div className="space-y-6 md:col-span-2">
-          <div className="relative h-[300px] overflow-hidden rounded-3xl md:h-[350px]">
-            <Image src={heroImages[1]} alt="Fashion portrait" fill className="object-cover" />
-          </div>
-          <div className="relative h-[260px] overflow-hidden rounded-3xl bg-[#e8e4dc] p-8">
-            <Image src={heroImages[2]} alt="Jewelry detail" fill className="object-cover opacity-15" />
-            <div className="relative z-10 space-y-3">
-              <p className="text-xs uppercase tracking-[0.25em] text-zinc-700">Tokyo Edit</p>
-              <p className="text-3xl font-light leading-tight">A cleaner, richer page blueprint with elevated visual rhythm.</p>
-              <Link href="/bags" className="inline-flex items-center gap-2 pt-2 text-sm font-medium uppercase tracking-[0.15em] text-zinc-900">
-                Explore collection <ArrowRight className="h-4 w-4" />
-              </Link>
+          <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr] md:items-end">
+            <div>
+              <h1 className="max-w-4xl text-4xl font-light uppercase leading-tight tracking-[0.1em] md:text-6xl">
+                A different full-page blueprint for modern luxury shopping
+              </h1>
+              <p className="mt-7 max-w-2xl text-sm leading-8 text-zinc-700 md:text-base">
+                Designed to feel elegant and cinematic while remaining clean and conversion-focused. Discover authenticated pieces from Chanel,
+                Hermès, Louis Vuitton, and Dior in a storefront built for collectors.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/new-arrivals"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#111] px-6 py-3 text-xs uppercase tracking-[0.2em] text-white"
+                >
+                  Shop Now <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center rounded-full border border-zinc-400 bg-white/70 px-6 py-3 text-xs uppercase tracking-[0.2em]"
+                >
+                  About MB
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-zinc-300/70 bg-white/70 p-6 backdrop-blur-sm">
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Client Promise</p>
+              <ul className="mt-5 space-y-4 text-sm text-zinc-700">
+                <li className="flex items-start gap-3">
+                  <Star className="mt-0.5 h-4 w-4" />
+                  100% authentic products with transparent condition notes.
+                </li>
+                <li className="flex items-start gap-3">
+                  <Star className="mt-0.5 h-4 w-4" />
+                  Carefully photographed and curated archive selections.
+                </li>
+                <li className="flex items-start gap-3">
+                  <Star className="mt-0.5 h-4 w-4" />
+                  Concierge-like support before and after checkout.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pb-8 md:grid-cols-3 md:px-8 md:pb-16">
-        {spotlightCards.map((card) => (
-          <article key={card.title} className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
-            <h2 className="text-sm uppercase tracking-[0.18em] text-zinc-500">{card.title}</h2>
-            <p className="mt-3 text-base leading-7 text-zinc-700">{card.description}</p>
-          </article>
-        ))}
+      <section className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
+        <div className="grid gap-4 md:grid-cols-3">
+          {valuePillars.map((pillar) => (
+            <article key={pillar.title} className="rounded-2xl border border-zinc-200 bg-white p-6">
+              <h2 className="text-xs uppercase tracking-[0.22em] text-zinc-500">{pillar.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">{pillar.description}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-4 pb-20 md:px-8">
-        <div className="mb-10 flex items-end justify-between gap-5">
+      <section className="mx-auto w-full max-w-7xl px-4 pb-8 md:px-8 md:pb-12">
+        <div className="mb-6 flex items-end justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">New Arrivals</p>
-            <h3 className="mt-3 text-3xl font-light uppercase tracking-[0.12em]">Freshly Added Treasures</h3>
+            <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">Curated Collections</p>
+            <h3 className="mt-2 text-2xl font-light uppercase tracking-[0.1em] md:text-3xl">Choose your lane</h3>
           </div>
-          <Link href="/new-arrivals" className="hidden items-center gap-2 text-sm uppercase tracking-[0.18em] text-zinc-800 md:inline-flex">
-            View all <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
-
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-6">
-          {products.map((product) => (
-            <Link key={product.id} href={`/product/${product.id}`} className="group">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-zinc-200">
-                <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <div className="pt-3 text-sm">
-                <p className="text-[11px] uppercase tracking-[0.14em] text-zinc-500">{product.category}</p>
-                <p className="mt-1 line-clamp-2 font-medium">{product.name}</p>
-                <p className="mt-1 text-zinc-700">{product.price}</p>
-              </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {collectionHighlights.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={`group rounded-2xl border border-zinc-200 bg-gradient-to-br ${item.tone} p-7 transition-transform duration-300 hover:-translate-y-1`}
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Collection</p>
+              <p className="mt-3 text-2xl font-light uppercase tracking-[0.08em]">{item.label}</p>
+              <p className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-zinc-800">
+                Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </p>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#111111] px-4 py-16 text-white md:px-8">
-        <div className="mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-2 md:items-center">
+      <section className="mx-auto w-full max-w-7xl px-4 pb-20 pt-8 md:px-8 md:pt-12">
+        <div className="mb-10 flex items-end justify-between gap-5">
           <div>
-            <h3 className="text-3xl font-light uppercase tracking-[0.12em]">100% Authentic from Japan</h3>
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/75">
-              Over a decade of sourcing premium pre-owned luxury pieces with strict verification standards. This updated page blueprint focuses on storytelling, trust, and visual harmony.
+            <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">New Arrivals</p>
+            <h3 className="mt-3 text-3xl font-light uppercase tracking-[0.1em]">Fresh archive drops</h3>
+          </div>
+          <Link href="/new-arrivals" className="hidden items-center gap-2 text-xs uppercase tracking-[0.2em] md:inline-flex">
+            View All <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              image={product.image}
+              category={product.category}
+              name={product.name}
+              price={product.price}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-200 bg-[#101010] px-4 py-16 text-white md:px-8">
+        <div className="mx-auto grid w-full max-w-7xl gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+          <div>
+            <h3 className="text-3xl font-light uppercase tracking-[0.1em]">All page experience, one luxury standard</h3>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/75 md:text-base">
+              This full-page redesign is built to make every section feel intentional—from hero storytelling and curated discovery to trust signals and
+              premium service proof points.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-white/15 bg-white/5 p-5 text-center">
               <Truck className="mx-auto h-8 w-8" strokeWidth={1.5} />
-              <p className="mt-3 text-xs uppercase tracking-[0.16em]">Fast Delivery</p>
+              <p className="mt-3 text-[11px] uppercase tracking-[0.16em]">Fast Delivery</p>
             </div>
             <div className="rounded-2xl border border-white/15 bg-white/5 p-5 text-center">
               <Headphones className="mx-auto h-8 w-8" strokeWidth={1.5} />
-              <p className="mt-3 text-xs uppercase tracking-[0.16em]">24/7 Support</p>
+              <p className="mt-3 text-[11px] uppercase tracking-[0.16em]">24/7 Support</p>
             </div>
             <div className="rounded-2xl border border-white/15 bg-white/5 p-5 text-center">
               <ShieldCheck className="mx-auto h-8 w-8" strokeWidth={1.5} />
-              <p className="mt-3 text-xs uppercase tracking-[0.16em]">Money Back</p>
+              <p className="mt-3 text-[11px] uppercase tracking-[0.16em]">Money Back</p>
             </div>
           </div>
         </div>
