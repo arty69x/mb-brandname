@@ -26,7 +26,7 @@ export default function ShopPage() {
   return (
     <Layout>
       <main>
-        <section className="py-32 md:py-40"><div className="container mx-auto px-4"><h1 className="text-2xl font-light uppercase tracking-[0.45em] md:text-4xl">Shop</h1>
+        <section className="py-32 md:py-40"><div className="container mx-auto px-4"><h1 className="text-4xl font-light uppercase tracking-[0.55em] md:text-7xl">Shop</h1>
           <div className="mt-12 grid gap-4 md:grid-cols-6">
             <input className="border border-gray-200 p-3 md:col-span-2" placeholder="Search" value={search} onChange={(e)=>setSearch(e.target.value)} />
             <select className="border border-gray-200 p-3" value={category} onChange={(e)=>setCategory(e.target.value as Category | "ALL")}><option>ALL</option><option>BAGS</option><option>ACCESSORIES</option><option>READY-TO-WEAR</option><option>FOOTWEAR</option></select>
