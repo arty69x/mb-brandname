@@ -1,64 +1,273 @@
-# MB BRANDNAME — Frontend Architectural Blueprint
-
-## I. Overarching Philosophy
-
-The MB BRANDNAME frontend is engineered to evoke the atmosphere of a high-end Tokyo boutique. Every interaction, transition, and typographic choice is curated to reflect the "Authentic Luxury Archive" status of the products.
-
-## II. Technical Stack
-
-- **Framework**: Next.js 16 (App Router)
-- **Styling**: Tailwind CSS 4 (Primitive Layer) + Custom Vanilla CSS
-- **Animations**: Framer Motion (Orchestration Layer)
-- **Carousel**: Swiper (Cinematic Transitions)
-- **Icons**: Lucide React
-
-## III. Core System Components
-
-### 1. Bilingual Localization (`LanguageContext`)
-
-A sophisticated engine supporting **Thai** and **English**.
-
-- Global `t()` function for string retrieval.
-- specialized fonts: `Bodoni Moda` (Serif) integrated with `Prompt/Sarabun` (Thai).
-
-### 2. Transactional Engine (`CartContext` & `Checkout`)
-
-- Real-time cart state with local storage persistence.
-- Multi-step checkout flow (Information -> Shipping -> Payment -> Success).
-- Support for Guest Checkout and Profile-linked purchases.
-
-### 3. Navigation & Search Overlay
-
-- **Navbar**: High-fidelity sticky navigation with mobile-responsive menu.
-- **Global Search**: Modal-based search overlay with real-time results, brand highlighting, and instant product access.
-
-## IV. Design System: "Tokyo Archive"
-
-- **Visual Tone**: Minimalist monochrome layout (Zinc/White/Black) to accentuate luxury product photography.
-- **Typography Tokens**:
-  - `.luxury-serif`: Uppercase, high-tracking, Bodoni-inspired.
-  - `.narrative-text`: Italicized, elegant storytelling.
-- **UX Patterns**:
-  - **Loading Skeletons**: Custom CSS-shimmer backgrounds replacing generic spinners.
-  - **Glassmorphism**: Subtle backdrop blurs for UI overlays and dropdown menus.
-
-## V. Strategic Pages
-
-### 1. Immersive Homepage
-
-- Cinematic Swiper carousel with 4K video backgrounds.
-- Bento-grid layout for editorial storytelling.
-- Instagram-ready style galleries.
-
-### 2. Collection Discovery
-
-- **Bags/Accessories**: Grid layouts with real-time `FilterBar` (Filter by Brand, Sort by Price/Newest).
-- **Product Detail**: Multi-image zoom gallery, localized luxury descriptions, and dynamic "Related Products" feed.
-
-### 3. Administrative Interface
-
-- Secure login and unified dashboard for order and inventory tracking.
+# MB BRANDNAME — MASTER BLUEPRINT
+Authoritative Specification
+Version: 1.0
+This file is the single source of truth for the entire project.
+If implementation conflicts with this file, this file always wins.
 
 ---
 
-_MB BRANDNAME — Curating the Future of Heritage._
+# 1. ARCHITECTURE
+
+## 1.1 Framework
+- Next.js Pages Router only
+- No App Router
+- TypeScript strict true
+- No `any` type
+- No runtime unsafe access
+
+## 1.2 Tailwind
+- Tailwind CSS v4
+- styles/globals.css MUST contain:
+  @import "tailwindcss";
+- No arbitrary px values
+- No dynamic Tailwind class interpolation
+
+---
+
+# 2. GLOBAL LAYOUT RULE
+
+All pages MUST follow:
+
+Layout
+  main
+    section.py-24 or py-32
+      div.container.mx-auto.px-4
+
+Exception:
+Hero section MUST NOT use container.
+
+Hero:
+<section class="relative h-[75vh] w-full">
+
+No nested containers allowed.
+
+---
+
+# 3. SPACING SCALE
+
+Allowed vertical spacing only:
+- py-16
+- py-24
+- py-32
+
+Allowed gap values:
+- gap-8
+- gap-12
+- gap-16
+
+Allowed margin values:
+- mt-8
+- mt-12
+- mt-16
+- mt-24
+
+No other spacing values allowed.
+
+---
+
+# 4. TYPOGRAPHY
+
+Hero:
+- uppercase
+- font-light
+- tracking-[0.55em]
+- text-5xl mobile
+- text-7xl desktop
+
+Section headings:
+- uppercase
+- font-light
+- tracking-[0.45em]
+- text-2xl mobile
+- text-4xl desktop
+
+UI labels/buttons:
+- uppercase
+- font-black
+- tracking-[0.3em]
+- text-[11px]
+
+Body:
+- font-medium
+- opacity-80
+- max-w-3xl for long text
+
+---
+
+# 5. COLOR SYSTEM
+
+Primary:
+- background: white
+- text: black
+
+Borders:
+- gray-100 only
+
+Light sections:
+- gray-50 or gray-100
+
+Accent:
+- minimal (badges, errors only)
+
+---
+
+# 6. HOMEPAGE STRUCTURE (EXACTLY 6 SECTIONS)
+
+1. Hero
+2. New Arrivals
+3. Editorial Story
+4. About Us
+5. Trust Icons
+6. Footer
+
+No additional sections allowed.
+
+---
+
+# 7. SHOP REQUIREMENTS
+
+Must include:
+- Search
+- Category filter
+- Tag filter
+- Sort
+- Pagination
+- Grid toggle (desktop only)
+- Skeleton loading
+- Empty state
+
+Grid:
+Mobile:
+grid-cols-2 gap-8
+
+Desktop:
+md:grid-cols-4 gap-16
+
+---
+
+# 8. PRODUCT DETAIL PAGE
+
+Must include:
+- Image gallery with thumbnails
+- Badges (Authentic, Grade, Origin, Stock)
+- Tabs (Description, Details, Reviews)
+- Related products (4 items)
+- Sticky mobile buy bar
+- Real-time stock ticker simulation
+
+---
+
+# 9. CART
+
+- No table on mobile
+- Quantity clamp 1–99
+- Remove item
+- Summary separated with border-t pt-12
+- Empty state safe
+
+---
+
+# 10. CHECKOUT (MOCK PAYMENTS)
+
+Validation:
+- Email validation
+- Luhn card validation
+- Expiry future check
+- CVC 3–4 digits
+
+Behavior:
+- Disable during processing
+- 20% random failure
+- On success:
+  - Create PAID order
+  - Clear cart
+  - Redirect to order page
+- On failure:
+  - Create FAILED order
+  - Keep cart
+
+---
+
+# 11. WISHLIST & COMPARE
+
+Wishlist:
+- Toggle
+- Grid layout
+- Empty state
+
+Compare:
+- Max 4 items
+- Mobile stacked layout
+- Desktop grid layout
+- No table on mobile
+
+---
+
+# 12. STATE MANAGEMENT
+
+Global store must include:
+- cart
+- wishlist
+- compare
+- orders
+- account
+- cookiePrefs
+- notifications
+- analytics
+
+Must:
+- Guard window
+- Wrap JSON parse in try/catch
+- Validate arrays before map
+- No undefined access
+
+---
+
+# 13. ANALYTICS
+
+Track:
+- view_product
+- add_to_cart
+- begin_checkout
+- purchase_success
+- purchase_failed
+
+Dashboard must display:
+- Revenue (PAID orders)
+- Orders count
+- Conversion rate (mock)
+- Average order value
+
+---
+
+# 14. PWA
+
+Must include:
+- manifest.webmanifest
+- theme-color meta
+- icons
+
+---
+
+# 15. TESTING
+
+Must include:
+- Jest unit tests for validation + reducer
+- Playwright e2e for full checkout flow
+
+---
+
+# 16. FINAL VALIDATION
+
+Before completion:
+- npm run build passes
+- No TypeScript errors
+- No runtime crashes
+- No nested container
+- Hero full-bleed
+- No spacing drift
+- No mobile table layout
+- No arbitrary px values
+- No dynamic Tailwind interpolation
+
+End of authoritative specification.
