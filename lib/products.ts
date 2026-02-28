@@ -19,47 +19,59 @@ export interface Product {
   newArrival: boolean;
 }
 
-const pool = [
+const imagePool = [
+  "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80",
 ];
-
-function pick(i: number): string[] {
-  return [pool[i % pool.length], pool[(i + 2) % pool.length], pool[(i + 4) % pool.length]];
-}
 
 const categories: Category[] = ["BAGS", "ACCESSORIES", "READY-TO-WEAR", "FOOTWEAR"];
 
-export const products: Product[] = Array.from({ length: 24 }).map((_, i) => {
+function pickImages(index: number): string[] {
+  return [
+    imagePool[index % imagePool.length],
+    imagePool[(index + 2) % imagePool.length],
+    imagePool[(index + 4) % imagePool.length],
+    imagePool[(index + 6) % imagePool.length],
+  ];
+}
+
+export const products: Product[] = Array.from({ length: 30 }).map((_, i) => {
   const category = categories[i % categories.length];
+  const edition = i + 1;
   return {
-    id: `tokyo-${i + 1}`,
-    title: `${category} Archive Piece ${i + 1}`,
+    id: `tokyo-${edition}`,
+    title: `${category} EDITION ${edition}`,
     category,
-    price: 220 + i * 25,
-    oldPrice: i % 3 === 0 ? 290 + i * 20 : undefined,
-    sku: `MB-${category.slice(0, 3)}-${(i + 1).toString().padStart(3, "0")}`,
-    grade: i % 5 === 0 ? "A+" : i % 2 === 0 ? "A" : "B",
+    price: 280 + i * 24,
+    oldPrice: i % 3 === 0 ? 340 + i * 24 : undefined,
+    sku: `MB-${category.slice(0, 3)}-${String(edition).padStart(3, "0")}`,
+    grade: i % 7 === 0 ? "A+" : i % 2 === 0 ? "A" : "B",
     origin: "Tokyo JP",
-    stock: (i % 10) + 1,
-    tags: ["Archive", "Tokyo", i % 2 === 0 ? "Collector" : "Minimal"],
-    images: pick(i),
-    description: "A carefully selected luxury archive item with a timeless silhouette and clean proportions.",
-    story: "Sourced from Tokyo archive circles and selected for condition, rarity, and practical elegance for everyday use.",
-    details: ["Authenticated by in-house team", "Premium finish and hardware", "Stored in climate-safe archive environment"],
-    featured: i < 12,
+    stock: (i % 11) + 1,
+    tags: ["ARCHIVE", "LUXURY", i % 2 === 0 ? "COLLECTOR" : "MINIMAL"],
+    images: pickImages(i),
+    description: "Curated archival luxury item selected for silhouette, material integrity, and everyday wear confidence.",
+    story: "Sourced through Tokyo dealers, authenticated in-house, and photographed with editorial neutrality for accurate purchase decisions.",
+    details: [
+      "In-house authenticity verification included",
+      "Archive condition grade with transparent notes",
+      "Premium protective packaging and insured dispatch",
+    ],
+    featured: i < 14,
     newArrival: i % 2 === 0,
   };
 });
 
 export function getProductById(id: string): Product | undefined {
-  return products.find((p) => p.id === id);
+  return products.find((product) => product.id === id);
 }
