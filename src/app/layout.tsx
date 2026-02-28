@@ -5,6 +5,7 @@ import { CartProvider } from "@/context/CartContext";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { FontProvider } from "@/context/FontContext";
 import { AuthProvider } from "@/context/AuthContext";
+import { WishlistProvider } from "@/context/WishlistContext";
 
 
 const inter = Inter({
@@ -91,7 +92,9 @@ export default function RootLayout({
         <FontProvider>
           <LanguageProvider>
             <CartProvider>
-              <AuthProvider>{children}</AuthProvider>
+              <WishlistProvider>
+                <AuthProvider>{children}</AuthProvider>
+              </WishlistProvider>
             </CartProvider>
           </LanguageProvider>
         </FontProvider>
