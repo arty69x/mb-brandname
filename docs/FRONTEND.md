@@ -1,4 +1,4 @@
-# MB BRANDNAME — FRONTEND AUTHORITATIVE SPEC
+# MB-BRANDNAME — FRONTEND AUTHORITATIVE SPEC
 Version: 1.0
 Status: LOCKED
 This document overrides any existing implementation.
