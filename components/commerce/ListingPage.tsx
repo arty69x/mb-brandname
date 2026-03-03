@@ -7,7 +7,6 @@ import ControlBar from './ControlBar';
 import FilterBar from './FilterBar';
 import ProductGrid from './ProductGrid';
 import Pagination from '../ui/Pagination';
-import PageTitleBlock from '../ui/PageTitleBlock';
 
 interface Props {
   products: Product[];
@@ -16,7 +15,7 @@ interface Props {
   categoryDefault?: string;
 }
 
-export default function ListingPage({ products, title, subtitle, categoryDefault = '' }: Props) {
+export default function ListingPage({ products, title, categoryDefault = '' }: Props) {
   const [sort, setSort] = useState('default');
   const [grid, setGrid] = useState(4);
   const [search, setSearch] = useState('');

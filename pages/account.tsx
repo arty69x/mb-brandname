@@ -11,5 +11,32 @@ export default function AccountPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [session, setSession] = useState(getSession());
-  return <Layout><SEO title='My Account — MB BRANDNAME' description='Manage your account.' canonical={canonical('/account')} /><main><section className='py-10 lg:py-14'><div className='container mx-auto px-4'><PageTitleBlock title='MY ACCOUNT' />{session ? <div className='border p-6'><p>{session.email}</p><Button onClick={() => { logout(); setSession(null); }}>Logout</Button></div> : <div className='max-w-xl border p-6 space-y-4'><Input id='email' label='Email' value={email} onChange={setEmail} /><Input id='password' label='Password' value={password} onChange={setPassword} type='password' /><Button onClick={() => setSession(login(email, password))}>Sign in</Button></div>}</div></section></main></Layout>;
+
+  return (
+    <Layout>
+      <SEO title='My Account — MB BRANDNAME' description='Manage your account.' canonical={canonical('/account')} />
+      <main>
+        <section className='bg-[var(--bg-alt)] py-10 lg:py-14'>
+          <div className='container mx-auto px-4'>
+            <PageTitleBlock title='MY ACCOUNT' subtitle='Manage profile, orders, and personalized luxury recommendations.' />
+            {session ? (
+              <div className='mx-auto max-w-xl rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
+                <p className='text-[14px] text-[var(--muted)]'>Signed in as</p>
+                <p className='mt-1 text-[16px]'>{session.email}</p>
+                <div className='mt-6'><Button onClick={() => { logout(); setSession(null); }}>Logout</Button></div>
+              </div>
+            ) : (
+              <div className='mx-auto max-w-xl rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
+                <div className='space-y-4'>
+                  <Input id='email' label='Email' value={email} onChange={setEmail} />
+                  <Input id='password' label='Password' value={password} onChange={setPassword} type='password' />
+                  <Button onClick={() => setSession(login(email, password))}>Sign in</Button>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      </main>
+    </Layout>
+  );
 }

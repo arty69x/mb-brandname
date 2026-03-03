@@ -13,14 +13,22 @@ import { Order } from '@/data/types';
 import { canonical } from '@/lib/seo';
 
 const emptyForm = { email: '', firstName: '', lastName: '', address: '', city: '', country: '', postalCode: '', phone: '' };
+
 export default function CheckoutPage() {
   const router = useRouter();
   const [cart, setCart] = useState(getCart());
   const [form, setForm] = useState(emptyForm);
   const [orderId, setOrderId] = useState('');
-  useEffect(() => { const c = getCart(); setCart(c); if (c.length === 0) { void router.replace('/cart'); } }, [router]);
+
+  useEffect(() => {
+    const c = getCart();
+    setCart(c);
+    if (c.length === 0) void router.replace('/cart');
+  }, [router]);
+
   const total = useMemo(() => cart.reduce((sum, item) => sum + (PRODUCTS.find((p) => p.id === item.productId)?.price ?? 0) * item.qty, 0), [cart]);
-  const valid = form.email.includes('@') && form.postalCode.length >= 3 && form.phone.length >= 7 && Object.values(form).every((v)=>v.trim().length>0);
+  const valid = form.email.includes('@') && form.postalCode.length >= 3 && form.phone.length >= 7 && Object.values(form).every((v) => v.trim().length > 0);
+
   const submit = (): void => {
     if (!valid || cart.length === 0) return;
     const id = createOrderId(cart);

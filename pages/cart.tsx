@@ -11,8 +11,16 @@ import { canonical } from '@/lib/seo';
 
 export default function CartPage() {
   const [items, setItems] = useState(getCart());
-  useEffect(() => { setItems(getCart()); }, []);
-  const rows = useMemo(() => items.map((item) => ({ item, product: PRODUCTS.find((p) => p.id === item.productId) })).filter((r) => Boolean(r.product)), [items]);
+
+  useEffect(() => {
+    setItems(getCart());
+  }, []);
+
+  const rows = useMemo(
+    () => items.map((item) => ({ item, product: PRODUCTS.find((p) => p.id === item.productId) })).filter((r) => Boolean(r.product)),
+    [items],
+  );
+
   const subtotal = rows.reduce((sum, row) => sum + (row.product?.price ?? 0) * row.item.qty, 0);
   return (
     <Layout>

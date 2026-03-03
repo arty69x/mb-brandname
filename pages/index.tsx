@@ -5,6 +5,18 @@ import Button from '@/components/ui/Button';
 import { PRODUCTS } from '@/data/products';
 import { canonical } from '@/lib/seo';
 
+const promises = [
+  { title: 'AUTHENTICITY GUARANTEE', body: 'Every item is reviewed through multi-step authentication before display and shipment.' },
+  { title: 'PROFESSIONAL CURATION', body: 'Collections are selected by category specialists for condition, value, and timeless design.' },
+  { title: 'WHITE-GLOVE SUPPORT', body: 'Luxury advisors help from pre-purchase consultation to post-purchase aftercare.' },
+];
+
+const categories = [
+  { title: 'BAGS', image: '/assets/mb/v1/p1a.svg', href: '/bags' },
+  { title: 'ACCESSORIES', image: '/assets/mb/v1/p3a.svg', href: '/accessories' },
+  { title: 'NEW ARRIVALS', image: '/assets/mb/v1/p2a.svg', href: '/new-arrivals' },
+];
+
 export default function HomePage() {
   return (
     <Layout headerVariant='home'>
