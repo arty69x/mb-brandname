@@ -37,42 +37,73 @@ export default function CheckoutPage() {
     clearCart();
     setOrderId(id);
   };
-
   return (
     <Layout>
       <SEO title='Checkout — MB BRANDNAME' description='Complete your order.' canonical={canonical('/checkout')} />
       <main>
-        <section className='bg-[var(--bg-alt)] py-10 lg:py-14'>
-          <div className='container mx-auto px-4'>
-            <PageTitleBlock title='CHECKOUT' subtitle='Secure your order with verified shipping and payment flow.' />
+        <section className='py-16 lg:py-24'>
+          <div className='container mx-auto px-4 max-w-[1200px]'>
+            <PageTitleBlock title='CHECKOUT' />
+            
             {orderId ? (
-              <div className='mx-auto max-w-xl rounded-2xl border border-[var(--border)] bg-white p-6 text-center lg:p-8'>
-                <p className='text-[14px] text-[var(--muted)]'>Order confirmed</p>
-                <p className='mt-2 text-[20px] tracking-[0.08em]'>{orderId}</p>
-                <div className='mt-6'><Button href='/shop'>Continue shopping</Button></div>
+              <div className='max-w-[600px] mx-auto text-center border border-[var(--border)] p-12 mt-10'>
+                <h2 className='text-[20px] uppercase tracking-[0.1em] mb-4'>Order Confirmed</h2>
+                <p className='text-[14px] text-[var(--muted)] mb-8'>Thank you for your purchase. Your order number is <strong>{orderId}</strong>.</p>
+                <div className='mt-8'>
+                  <Button href='/shop' variant='primary'>CONTINUE SHOPPING</Button>
+                </div>
               </div>
             ) : (
-              <div className='grid grid-cols-1 gap-10 lg:grid-cols-3'>
-                <div className='lg:col-span-2 rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
-                  <div className='grid gap-4 md:grid-cols-2'>
-                    <Input id='email' label='Email' value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
-                    <Input id='phone' label='Phone' value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} />
-                    <Input id='firstName' label='First name' value={form.firstName} onChange={(v) => setForm({ ...form, firstName: v })} />
-                    <Input id='lastName' label='Last name' value={form.lastName} onChange={(v) => setForm({ ...form, lastName: v })} />
-                    <Input id='address' label='Address' value={form.address} onChange={(v) => setForm({ ...form, address: v })} />
-                    <Input id='city' label='City' value={form.city} onChange={(v) => setForm({ ...form, city: v })} />
-                    <Input id='country' label='Country' value={form.country} onChange={(v) => setForm({ ...form, country: v })} />
-                    <Input id='postalCode' label='Postal code' value={form.postalCode} onChange={(v) => setForm({ ...form, postalCode: v })} />
+              <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-10'>
+                <div className='lg:col-span-8 space-y-10'>
+                  <div>
+                    <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6 pb-4 border-b border-[var(--border)]'>1. Contact Input</h2>
+                    <Input id='email' label='Email address' value={form.email} onChange={(v)=>setForm({ ...form, email: v })} />
                   </div>
-                  <div className='mt-5'>
-                    <Button onClick={submit} disabled={!valid}>Place order</Button>
+                  
+                  <div>
+                    <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6 pb-4 border-b border-[var(--border)]'>2. Shipping Address</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                      <Input id='firstName' label='First Name' value={form.firstName} onChange={(v)=>setForm({ ...form, firstName: v })} />
+                      <Input id='lastName' label='Last Name' value={form.lastName} onChange={(v)=>setForm({ ...form, lastName: v })} />
+                    </div>
+                    <div className='mt-6 space-y-6'>
+                      <Input id='address' label='Address' value={form.address} onChange={(v)=>setForm({ ...form, address: v })} />
+                      <Input id='city' label='City' value={form.city} onChange={(v)=>setForm({ ...form, city: v })} />
+                      <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                        <Input id='country' label='Country' value={form.country} onChange={(v)=>setForm({ ...form, country: v })} />
+                        <Input id='postalCode' label='Postal Code' value={form.postalCode} onChange={(v)=>setForm({ ...form, postalCode: v })} />
+                      </div>
+                      <Input id='phone' label='Phone' value={form.phone} onChange={(v)=>setForm({ ...form, phone: v })} />
+                    </div>
+                  </div>
+
+                  <div className='pt-6 w-full flex'>
+                     <Button variant='primary' onClick={submit} disabled={!valid}>PLACE ORDER</Button>
                   </div>
                 </div>
-                <aside className='rounded-2xl border border-[var(--border)] bg-white p-6'>
-                  <h2 className='text-[12px] uppercase tracking-[0.14em]'>Order summary</h2>
-                  <p className='mt-3 text-[14px] text-[var(--muted)]'>Subtotal</p>
-                  <p className='text-[24px]'>${total.toFixed(2)}</p>
-                </aside>
+
+                <div className='lg:col-span-4'>
+                  <div className='bg-[var(--bg-alt)] p-8 sticky top-32'>
+                    <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6'>Order Summary</h2>
+                    <div className='space-y-4 mb-6 border-b border-[var(--border)] pb-6'>
+                      {cart.map((item) => {
+                        const p = PRODUCTS.find((prod) => prod.id === item.productId);
+                        if (!p) return null;
+                        return (
+                          <div key={item.productId} className='flex justify-between text-[13px]'>
+                            <span className='text-[var(--text)]'>{p.title} <span className='text-[var(--muted)]'>x {item.qty}</span></span>
+                            <span>${(p.price * item.qty).toFixed(2)}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className='flex justify-between text-[15px] font-medium uppercase tracking-[0.1em]'>
+                      <span>Total</span>
+                      <span>${total.toFixed(2)}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
           </div>

@@ -3,7 +3,6 @@ import Layout from '@/components/layout/Layout';
 import SEO from '@/components/layout/SEO';
 import PageTitleBlock from '@/components/ui/PageTitleBlock';
 import EmptyState from '@/components/ui/EmptyState';
-import Button from '@/components/ui/Button';
 import { STORES } from '@/data/stores';
 import { canonical } from '@/lib/seo';
 

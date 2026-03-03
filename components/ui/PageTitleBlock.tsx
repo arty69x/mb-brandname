@@ -5,13 +5,13 @@ interface Props {
 
 export default function PageTitleBlock({ title, subtitle }: Props) {
   return (
-    <div className='pb-10 pt-6 text-center lg:pb-12 lg:pt-10'>
-      <h1 className='text-[20px] font-medium uppercase tracking-[0.24em] lg:text-[24px]'>{title}</h1>
-      {subtitle ? (
-        <p className='mx-auto mt-4 max-w-[760px] text-[14px] leading-[1.8] text-[var(--muted)] lg:text-[15px]'>
-          {subtitle}
-        </p>
-      ) : null}
+    <div className='relative mb-10 h-[300px] overflow-hidden lg:h-[380px]'>
+      <img src='/assets/mb/v1/hero3.svg' alt={title} className='h-full w-full object-cover' />
+      <div className='absolute inset-0 bg-black/35' />
+      <div className='absolute inset-0 flex flex-col items-center justify-center text-white'>
+        <h1 className='text-[58px] uppercase'>{title}</h1>
+        {subtitle ? <p className='mt-3 text-[16px] text-white/85'>{subtitle}</p> : null}
+      </div>
     </div>
   );
 }
