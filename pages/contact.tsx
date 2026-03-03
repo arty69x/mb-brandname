@@ -1,5 +1,6 @@
 import { FormEvent, useMemo, useState } from 'react';
 import Layout from '@/components/layout/Layout';
+import SEO from '@/components/layout/SEO';
 import PageTitleBlock from '@/components/ui/PageTitleBlock';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';

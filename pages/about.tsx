@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import SEO from '@/components/layout/SEO';
 import PageTitleBlock from '@/components/ui/PageTitleBlock';
+import Button from '@/components/ui/Button';
 import { canonical } from '@/lib/seo';
 
 export default function AboutPage() { 
