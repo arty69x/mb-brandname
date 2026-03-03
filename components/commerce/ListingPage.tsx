@@ -9,7 +9,12 @@ import ProductGrid from './ProductGrid';
 import Pagination from '../ui/Pagination';
 import PageTitleBlock from '../ui/PageTitleBlock';
 
-interface Props { products: Product[]; title: string; subtitle: string; categoryDefault?: string; }
+interface Props {
+  products: Product[];
+  title: string;
+  subtitle: string;
+  categoryDefault?: string;
+}
 
 export default function ListingPage({ products, title, subtitle, categoryDefault = '' }: Props) {
   const [sort, setSort] = useState('default');
@@ -19,5 +24,27 @@ export default function ListingPage({ products, title, subtitle, categoryDefault
   const [page, setPage] = useState(1);
   const filtered = useMemo(() => sortProducts(filterProducts(products, category, search), sort), [products, category, search, sort]);
   const paged = paginate(filtered, page);
-  return <main><section className='py-10 lg:py-14'><div className='container mx-auto px-4'><PageTitleBlock title={title} subtitle={subtitle} /><ControlBar count={filtered.length} sort={sort} onSort={setSort} grid={grid} onGrid={setGrid} onFilterToggle={() => null} /><div className='py-10 grid grid-cols-1 gap-10 lg:grid-cols-[280px_1fr]'><div className='hidden lg:block w-[280px] shrink-0'><FilterBar search={search} onSearch={setSearch} category={category} onCategory={setCategory} /></div><div className={grid === 2 ? 'lg:[&>div]:grid-cols-2' : grid === 3 ? 'lg:[&>div]:grid-cols-3' : ''}><ProductGrid products={paged.items} /></div></div><Pagination page={paged.currentPage} totalPages={paged.totalPages} onPage={setPage} /></div></section></main>;
+
+  return (
+    <main>
+      <section className='pb-16'>
+        <PageTitleBlock title={title} subtitle={subtitle} />
+        <div className='container mx-auto px-4'>
+          <ControlBar count={filtered.length} sort={sort} onSort={setSort} grid={grid} onGrid={setGrid} onFilterToggle={() => null} />
+
+          <div className='my-6 lg:hidden'>
+            <FilterBar search={search} onSearch={setSearch} category={category} onCategory={setCategory} />
+          </div>
+
+          <div className={grid === 2 ? 'lg:[&>div]:grid-cols-2' : grid === 3 ? 'lg:[&>div]:grid-cols-3' : ''}>
+            <ProductGrid products={paged.items} />
+          </div>
+
+          <div className='mt-10'>
+            <Pagination page={paged.currentPage} totalPages={paged.totalPages} onPage={setPage} />
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
