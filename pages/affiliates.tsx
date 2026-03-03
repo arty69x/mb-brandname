@@ -1,25 +1,33 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 import Layout from '@/components/layout/Layout';
 import SEO from '@/components/layout/SEO';
 import PageTitleBlock from '@/components/ui/PageTitleBlock';
 import Input from '@/components/ui/Input';
+import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
 import { canonical } from '@/lib/seo';
 
-const benefits = ['High commissions', 'Premium catalog', 'Fast payouts'];
+const benefits = [
+  { title: 'Commission up to 15%', body: 'Competitive rate for luxury-focused creators and media partners.' },
+  { title: 'Premium Assets', body: 'Receive campaign kits, launch calendars, and professional product visuals.' },
+  { title: 'Dedicated Manager', body: 'Direct support for tracking, offers, and performance optimization.' },
+];
+
+const initial = { name: '', email: '', channel: '', audience: '' };
 
 export default function AffiliatesPage() {
-  const [email, setEmail] = useState('');
+  const [form, setForm] = useState(initial);
   const [status, setStatus] = useState('');
+  const valid = useMemo(() => form.name.trim().length > 1 && form.email.includes('@') && form.channel.trim().length > 2, [form]);
 
   const onSubmit = (event: FormEvent): void => {
     event.preventDefault();
-    if (!email.includes('@')) {
-      setStatus('Please enter a valid email.');
+    if (!valid) {
+      setStatus('Please complete required information.');
       return;
     }
-    setStatus('Thanks! Our partnerships team will contact you soon.');
-    setEmail('');
+    setStatus('Application submitted. Our partnership team will contact you.');
+    setForm(initial);
   };
 
   return (
@@ -27,20 +35,29 @@ export default function AffiliatesPage() {
       <SEO title='Affiliates — MB BRANDNAME' description='Join the MB BRANDNAME affiliate program.' canonical={canonical('/affiliates')} />
       <main>
         <section className='bg-[var(--bg-alt)] py-10 lg:py-14'>
-          <div className='container mx-auto space-y-10 px-4'>
-            <PageTitleBlock title='AFFILIATES' subtitle='Partner with MB BRANDNAME and earn by sharing curated luxury with your community.' />
+          <div className='container mx-auto space-y-8 px-4'>
+            <PageTitleBlock title='AFFILIATE PROGRAM' subtitle='Partner with MB BRANDNAME and grow together through premium luxury campaigns.' />
             <div className='grid gap-4 md:grid-cols-3'>
               {benefits.map((benefit) => (
-                <article key={benefit} className='rounded-2xl border border-[var(--border)] bg-white p-6 text-center'>
-                  <h2 className='text-[13px] font-medium uppercase tracking-[0.16em]'>{benefit}</h2>
+                <article key={benefit.title} className='rounded-2xl border border-[var(--border)] bg-white p-6'>
+                  <h2 className='text-[13px] font-medium uppercase tracking-[0.16em]'>{benefit.title}</h2>
+                  <p className='mt-3 text-[14px] leading-[1.7] text-[var(--muted)]'>{benefit.body}</p>
                 </article>
               ))}
             </div>
-            <form onSubmit={onSubmit} className='max-w-2xl rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
-              <p className='mb-5 text-[14px] text-[var(--muted)]'>Tell us about your audience and we&apos;ll get back to you with partnership details.</p>
-              <div className='space-y-4'>
-                <Input id='email2' label='Email' value={email} onChange={setEmail} required />
-                <Button disabled={!email.includes('@')}>Apply now</Button>
+            <form onSubmit={onSubmit} className='rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
+              <h2 className='text-[13px] font-medium uppercase tracking-[0.18em]'>Application form</h2>
+              <div className='mt-4 grid gap-4 md:grid-cols-2'>
+                <Input id='affiliateName' label='Full Name' value={form.name} onChange={(name) => setForm((p) => ({ ...p, name }))} required />
+                <Input id='affiliateEmail' label='Email' value={form.email} onChange={(email) => setForm((p) => ({ ...p, email }))} required />
+                <Input id='channel' label='Channel / Platform' value={form.channel} onChange={(channel) => setForm((p) => ({ ...p, channel }))} required />
+                <Input id='followers' label='Monthly Reach (optional)' value={form.audience} onChange={(audience) => setForm((p) => ({ ...p, audience }))} />
+              </div>
+              <div className='mt-4'>
+                <Textarea id='proposal' label='How do you plan to promote MB BRANDNAME?' value={form.audience} onChange={(audience) => setForm((p) => ({ ...p, audience }))} />
+              </div>
+              <div className='mt-5 flex flex-wrap items-center gap-3'>
+                <Button type='submit' disabled={!valid}>Apply now</Button>
                 {status ? <p className='text-sm text-[var(--muted)]'>{status}</p> : null}
               </div>
             </form>
