@@ -1,0 +1,1 @@
+export default function LoadingSkeleton() { return <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>{Array.from({ length: 8 }).map((_, i) => <div key={i} className='space-y-3 animate-pulse'><div className='aspect-square bg-[var(--bg-alt)]' /><div className='h-4 bg-[var(--bg-alt)]' /></div>)}</div>; }
