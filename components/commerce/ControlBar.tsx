@@ -1,4 +1,18 @@
 interface Props { count: number; sort: string; onSort: (v: string) => void; grid: number; onGrid: (v: number) => void; onFilterToggle: () => void; }
-export default function ControlBar({ count, sort, onSort, grid, onGrid, onFilterToggle }: Props) {
-  return <div className='flex flex-col gap-4 border-y border-[var(--border)] py-4 lg:flex-row lg:items-center lg:justify-between'><p className='text-[12px] uppercase tracking-[0.12em] text-[var(--caption)]'>{count} results</p><div className='flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-4'><button className='lg:hidden rounded-full border border-[var(--border)] px-4 h-10 text-[12px] uppercase' onClick={onFilterToggle}>Filters</button><select aria-label='Sort products' value={sort} onChange={(e) => onSort(e.target.value)} className='h-10 rounded-full border border-[var(--border)] bg-white px-4 text-[12px] uppercase tracking-[0.12em]'><option value='default'>Default</option><option value='price-asc'>Price asc</option><option value='price-desc'>Price desc</option></select><div className='flex gap-2'>{[2,3,4].map((g)=><button key={g} onClick={() => onGrid(g)} className={`h-10 w-10 rounded-full border border-[var(--border)] text-[12px] uppercase tracking-[0.12em] ${grid===g ? 'bg-[var(--cta)] text-white border-[var(--cta)]' : ''}`}>{g}</button>)}</div></div></div>;
+
+export default function ControlBar({ sort, onSort, grid, onGrid, onFilterToggle }: Props) {
+  return (
+    <div className='flex flex-col gap-4 py-2 lg:flex-row lg:items-center lg:justify-end'>
+      <select aria-label='Sort products' value={sort} onChange={(e) => onSort(e.target.value)} className='h-8 border-b border-black bg-transparent px-2 text-[11px] uppercase tracking-[0.08em]'>
+        <option value='default'>Default sorting</option>
+        <option value='price-asc'>Price asc</option>
+        <option value='price-desc'>Price desc</option>
+      </select>
+      <div className='flex items-center gap-2 text-[11px] uppercase tracking-[0.08em]'>
+        <span>View</span>
+        {[2, 3, 4].map((g) => <button key={g} onClick={() => onGrid(g)} className={grid === g ? 'underline' : ''}>{g}</button>)}
+      </div>
+      <button className='h-8 px-2 text-[11px] uppercase tracking-[0.08em]' onClick={onFilterToggle}>Filter</button>
+    </div>
+  );
 }
