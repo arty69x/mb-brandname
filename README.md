@@ -105,4 +105,22 @@ Once secrets are set, every PR triggers **Vercel Preview** workflow and deploys 
 
 ## CI
 
-- `.github/workflows/build.yml` runs `npm ci` and `npm run build` on push/PR.
+- `.github/workflows/build.yml` runs `npm ci`, `npm run lint`, and `npm run build` on push/PR.
+
+## Promote PR branch to `main` (accept incoming branch state)
+
+If your intent is to accept the PR branch as source of truth and fast-forward `main`, run:
+
+```bash
+git fetch origin
+git checkout main
+git merge --ff-only <pr-branch>
+git push origin main
+```
+
+If `--ff-only` fails, resolve conflicts explicitly before pushing so `main` gets only reviewed changes.
+
+## Blueprint
+
+For full architecture and responsibility map, see `ARCHITECTURE.md`.
+
