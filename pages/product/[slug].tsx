@@ -27,9 +27,9 @@ export default function ProductDetailPage() {
         <section className='py-10 lg:py-14'>
           <div className='container mx-auto px-4'>
             <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Shop', href: '/shop' }, { label: product.title }]} />
-            <div className='mt-8 grid grid-cols-1 gap-10 lg:grid-cols-2'>
+            <div className='mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[1fr_0.9fr]'>
               <div>
-                <div className='aspect-square overflow-hidden rounded-2xl bg-[var(--bg-alt)]'>
+                <div className='aspect-square overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-alt)]'>
                   {images[img] ? <img src={images[img]} alt={product.title} className='h-full w-full object-cover' /> : null}
                 </div>
                 <div className='mt-4 grid grid-cols-5 gap-3'>
@@ -41,12 +41,16 @@ export default function ProductDetailPage() {
                 </div>
               </div>
               <article className='rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
-                <h1 className='text-[24px] font-light tracking-[0.02em] lg:text-[34px]'>{product.title}</h1>
+                <p className='text-[11px] uppercase tracking-[0.16em] text-[var(--caption)]'>{product.category}</p>
+                <h1 className='mt-3 text-[24px] font-light tracking-[0.02em] lg:text-[34px]'>{product.title}</h1>
                 <div className='mt-4 flex items-baseline gap-3'>
                   {product.compareAtPrice ? <span className='text-[12px] text-[var(--caption)] line-through'>${product.compareAtPrice}</span> : null}
-                  <span className={product.compareAtPrice ? 'text-[var(--danger)]' : ''}>${product.price}</span>
+                  <span className={`text-[20px] ${product.compareAtPrice ? 'text-[var(--danger)]' : ''}`}>${product.price}</span>
                 </div>
-                <p className='mt-6 text-[14px] leading-[1.7] text-[var(--muted)]'>{product.shortDescription}</p>
+                <p className='mt-6 text-[14px] leading-[1.8] text-[var(--muted)]'>{product.shortDescription}</p>
+                <ul className='mt-6 space-y-2 text-[13px] text-[var(--muted)]'>
+                  {product.additionalInfo.map((item) => <li key={item.label}>{item.label}: {item.value}</li>)}
+                </ul>
                 <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
                   <Button onClick={() => addToCart(product.id, 1)}>Add to cart</Button>
                   <WishlistButton productId={product.id} />
