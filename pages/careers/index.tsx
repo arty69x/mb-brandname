@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
+import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import SEO from '@/components/layout/SEO';
 import PageTitleBlock from '@/components/ui/PageTitleBlock';
@@ -8,7 +9,13 @@ import Button from '@/components/ui/Button';
 import { CAREER_ROLES } from '@/data/careers';
 import { canonical } from '@/lib/seo';
 
-const initial = { name: '', email: '', role: '', portfolio: '' };
+const initial = { name: '', email: '', role: '', message: '', portfolio: '' };
+
+const toSlug = (title: string): string =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 
 export default function CareersPage() {
   const [form, setForm] = useState(initial);
@@ -34,14 +41,17 @@ export default function CareersPage() {
             <PageTitleBlock title='CAREERS AT MB BRANDNAME' subtitle='Join a fast-growing luxury commerce team and shape premium customer experiences.' />
             <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
               {CAREER_ROLES.map((role) => (
-                <article key={role.title} className='rounded-2xl border border-[var(--border)] bg-white p-6'>
+                <article key={role.title} className='rounded-2xl border border-[#d9d9d9] bg-white p-6'>
                   <h2 className='text-[13px] font-medium uppercase tracking-[0.16em]'>{role.title}</h2>
-                  <p className='mt-2 text-[14px] text-[var(--muted)]'>{role.location}</p>
-                  <p className='mt-3 text-[13px] text-[var(--muted)]'>Full-time · Hybrid</p>
+                  <p className='mt-2 text-[14px] text-[#6b6b6b]'>{role.location}</p>
+                  <p className='mt-3 text-[13px] text-[#6b6b6b]'>Full-time · Hybrid</p>
+                  <Link href={`/careers/${toSlug(role.title)}`} className='mt-5 inline-block text-[12px] uppercase tracking-[0.12em] underline'>
+                    View role
+                  </Link>
                 </article>
               ))}
             </div>
-            <form onSubmit={onSubmit} className='rounded-2xl border border-[var(--border)] bg-[var(--bg-alt)] p-6 lg:p-8'>
+            <form onSubmit={onSubmit} className='rounded-2xl border border-[#d9d9d9] bg-[#f3f3f3] p-6 lg:p-8'>
               <h2 className='text-[13px] font-medium uppercase tracking-[0.16em]'>General application</h2>
               <div className='mt-4 grid gap-4 md:grid-cols-2'>
                 <Input id='careerName' label='Full Name' value={form.name} onChange={(name) => setForm((prev) => ({ ...prev, name }))} required />
@@ -50,11 +60,11 @@ export default function CareersPage() {
                 <Input id='careerPortfolio' label='Portfolio URL (optional)' value={form.portfolio} onChange={(portfolio) => setForm((prev) => ({ ...prev, portfolio }))} />
               </div>
               <div className='mt-4'>
-                <Textarea id='careerMessage' label='Tell us about yourself' value={form.portfolio} onChange={(portfolio) => setForm((prev) => ({ ...prev, portfolio }))} />
+                <Textarea id='careerMessage' label='Tell us about yourself' value={form.message} onChange={(message) => setForm((prev) => ({ ...prev, message }))} />
               </div>
               <div className='mt-5 flex flex-wrap items-center gap-3'>
                 <Button type='submit' disabled={!valid}>Submit application</Button>
-                {status ? <p className='text-sm text-[var(--muted)]'>{status}</p> : null}
+                {status ? <p className='text-sm text-[#6b6b6b]'>{status}</p> : null}
               </div>
             </form>
           </div>

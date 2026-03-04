@@ -37,22 +37,22 @@ export default function CartPage() {
             ) : (
               <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-10'>
                 <div className='lg:col-span-8'>
-                  <div className='hidden md:grid grid-cols-12 gap-4 pb-4 border-b border-[var(--border)] text-[12px] uppercase tracking-[0.1em] text-[var(--muted)] font-medium'>
+                  <div className='hidden md:grid grid-cols-12 gap-4 pb-4 border-b border-[#d9d9d9] text-[12px] uppercase tracking-[0.1em] text-[#6b6b6b] font-medium'>
                     <div className='col-span-6'>Product</div>
                     <div className='col-span-3 text-center'>Quantity</div>
                     <div className='col-span-3 text-right'>Total</div>
                   </div>
                   
                   {rows.map((row) => row.product ? (
-                    <div key={row.item.productId} className='flex flex-col md:grid md:grid-cols-12 gap-6 items-center border-b border-[var(--border)] py-8'>
+                    <div key={row.item.productId} className='flex flex-col md:grid md:grid-cols-12 gap-6 items-center border-b border-[#d9d9d9] py-8'>
                       <div className='col-span-6 flex items-start gap-6 w-full'>
-                        <div className='h-[120px] w-[90px] bg-[var(--bg-alt)] overflow-hidden shrink-0'>
+                        <div className='h-[120px] w-[90px] bg-[#f3f3f3] overflow-hidden shrink-0'>
                           {row.product.images[0] && <img src={row.product.images[0]} alt={row.product.title} className='h-full w-full object-cover'/>}
                         </div>
                         <div className='flex flex-col pt-2'>
                           <h2 className='text-[14px] uppercase tracking-[0.1em] mb-2'>{row.product.title}</h2>
-                          <p className='text-[14px] text-[var(--muted)]'>${row.product.price.toFixed(2)}</p>
-                          <button className='mt-4 text-[12px] uppercase tracking-[0.1em] text-[var(--muted)] hover:text-[var(--foreground)] text-left w-fit transition-colors' onClick={() => setItems(removeFromCart(row.item.productId))}>Remove</button>
+                          <p className='text-[14px] text-[#6b6b6b]'>${row.product.price.toFixed(2)}</p>
+                          <button className='mt-4 text-[12px] uppercase tracking-[0.1em] text-[#6b6b6b] hover:text-[#1a1a1a] text-left w-fit transition-colors' onClick={() => setItems(removeFromCart(row.item.productId))}>Remove</button>
                         </div>
                       </div>
                       <div className='col-span-3 flex justify-start md:justify-center w-full mt-4 md:mt-0'>

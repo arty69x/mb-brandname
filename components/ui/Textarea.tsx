@@ -9,13 +9,13 @@ interface Props {
 export default function Textarea({ id, label, value, onChange, required }: Props) {
   return (
     <div className='space-y-2'>
-      <label htmlFor={id} className='text-[12px] uppercase tracking-[0.14em] text-[var(--caption)]'>{label}</label>
+      <label htmlFor={id} className='text-[12px] uppercase tracking-[0.14em] text-[#8b8b8b]'>{label}</label>
       <textarea
         id={id}
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className='min-h-32 w-full rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-[var(--accentGold)]'
+        className='min-h-32 w-full rounded-2xl border border-[#d9d9d9] bg-white px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-[var(--accentGold)]'
       />
     </div>
   );

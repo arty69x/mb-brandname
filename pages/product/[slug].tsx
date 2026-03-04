@@ -40,14 +40,14 @@ export default function ProductDetailPage() {
             <div className='mt-6 grid grid-cols-1 gap-10 lg:grid-cols-[110px_1fr_1fr]'>
               <div className='order-2 flex gap-3 lg:order-1 lg:flex-col'>
                 {images.map((src, i) => (
-                  <button key={src} onClick={() => setImg(i)} className={`h-24 w-24 overflow-hidden border ${i === img ? 'border-black' : 'border-[var(--border)]'}`}>
+                  <button key={src} onClick={() => setImg(i)} className={`h-24 w-24 overflow-hidden border ${i === img ? 'border-black' : 'border-[#d9d9d9]'}`}>
                     <img src={src} alt={`${product.title} ${i + 1}`} className='h-full w-full object-cover' />
                   </button>
                 ))}
               </div>
 
               <div className='order-1 lg:order-2'>
-                <div className='aspect-square overflow-hidden bg-[var(--bg-alt)]'>
+                <div className='aspect-square overflow-hidden bg-[#f3f3f3]'>
                   {images[img] ? <img src={images[img]} alt={product.title} className='h-full w-full object-cover' /> : null}
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function ProductDetailPage() {
               <div className='order-3'>
                 <h1 className='text-[50px] leading-tight'>{product.title}</h1>
                 <p className='mt-2 text-[44px] font-medium'>${product.price}</p>
-                <p className='mt-6 text-[17px] leading-8 text-[var(--muted)]'>{product.shortDescription}</p>
+                <p className='mt-6 text-[17px] leading-8 text-[#6b6b6b]'>{product.shortDescription}</p>
 
                 <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
                   <Button onClick={() => addToCart(product.id, 1)}>Add to cart</Button>
@@ -72,31 +72,31 @@ export default function ProductDetailPage() {
                   </Button>
                 </div>
 
-                <div className='mt-8 space-y-2 text-[14px] text-[var(--muted)]'>
+                <div className='mt-8 space-y-2 text-[14px] text-[#6b6b6b]'>
                   <p>
-                    <b className='text-[var(--text)]'>SKU:</b> N/A
+                    <b className='text-[#1a1a1a]'>SKU:</b> N/A
                   </p>
                   <p>
-                    <b className='text-[var(--text)]'>Categories:</b> {product.category}
+                    <b className='text-[#1a1a1a]'>Categories:</b> {product.category}
                   </p>
                   <p>
-                    <b className='text-[var(--text)]'>Tags:</b> {product.tags.join(', ')}
+                    <b className='text-[#1a1a1a]'>Tags:</b> {product.tags.join(', ')}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className='mt-16 grid gap-10 border-t border-[var(--border)] pt-10 lg:grid-cols-2'>
+            <div className='mt-16 grid gap-10 border-t border-[#d9d9d9] pt-10 lg:grid-cols-2'>
               <div>
                 <h2 className='mb-5 text-[26px] uppercase'>Description</h2>
-                <p className='text-[17px] leading-8 text-[var(--muted)]'>{product.description}</p>
+                <p className='text-[17px] leading-8 text-[#6b6b6b]'>{product.description}</p>
               </div>
               <div>
                 <h2 className='mb-5 text-[26px] uppercase'>Additional information</h2>
-                <ul className='space-y-3 text-[17px] text-[var(--muted)]'>
+                <ul className='space-y-3 text-[17px] text-[#6b6b6b]'>
                   {product.additionalInfo.map((item) => (
                     <li key={item.label}>
-                      <b className='text-[var(--text)]'>{item.label}:</b> {item.value}
+                      <b className='text-[#1a1a1a]'>{item.label}:</b> {item.value}
                     </li>
                   ))}
                 </ul>

@@ -23,11 +23,11 @@ export default function BlogPostPage() {
           <div className='container mx-auto px-4'>
             <Breadcrumbs items={[{ label: 'HOME', href: '/' }, { label: 'BLOG', href: '/blog' }, { label: post.title }]} />
             <img src={post.image} alt={post.title} className='mt-6 aspect-video w-full rounded-2xl object-cover' />
-            <article className='mx-auto mt-8 max-w-[780px] rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
+            <article className='mx-auto mt-8 max-w-[780px] rounded-2xl border border-[#d9d9d9] bg-white p-6 lg:p-8'>
               <h1 className='text-[22px] lg:text-[30px]'>{post.title}</h1>
-              <p className='mt-3 text-[14px] text-[var(--muted)]'>{post.excerpt}</p>
+              <p className='mt-3 text-[14px] text-[#6b6b6b]'>{post.excerpt}</p>
               <div className='mt-6 space-y-4'>
-                {post.body.map((b, i) => <p key={i} className='text-[14px] leading-[1.8] text-[var(--muted)]'>{b}</p>)}
+                {post.body.map((b, i) => <p key={i} className='text-[14px] leading-[1.8] text-[#6b6b6b]'>{b}</p>)}
               </div>
               <div className='mt-8'><Button href='/blog' variant='secondary'>Back to blog</Button></div>
             </article>

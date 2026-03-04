@@ -5,7 +5,7 @@ export default function CookieBar() {
   if (!open) return null;
 
   return (
-    <div className='fixed bottom-0 left-0 right-0 z-50 border-t border-[var(--border)] bg-[var(--bg)]'>
+    <div className='fixed bottom-0 left-0 right-0 z-50 border-t border-[#d9d9d9] bg-[#ffffff]'>
       <div className='mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-3 md:flex-row md:items-center md:justify-between'>
         <div>
           <p className='max-w-[760px] text-[11px] font-medium uppercase leading-[1.4] tracking-[0.04em]'>

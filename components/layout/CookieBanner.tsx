@@ -19,13 +19,13 @@ export default function CookieBanner() {
   if (accepted) return null;
 
   return (
-    <aside className='fixed inset-x-0 bottom-0 z-40 border-t border-[var(--border)] bg-white/95 backdrop-blur'>
+    <aside className='fixed inset-x-0 bottom-0 z-40 border-t border-[#d9d9d9] bg-white/95 backdrop-blur'>
       <div className='mx-auto flex max-w-[1400px] flex-col gap-4 px-6 py-6 lg:flex-row lg:items-center lg:justify-between'>
         <div>
           <p className='max-w-[780px] text-[13px] font-semibold uppercase tracking-[0.06em]'>
             WE USE COOKIES TO ENHANCE YOUR EXPERIENCE WHILE NAVIGATE OUR SITE, ANALYZE SITE USAGE, AND ASSIST IN OUR MARKETING EFFORTS.
           </p>
-          <p className='mt-3 text-[11px] uppercase text-[var(--muted)]'>Privacy policy &gt;</p>
+          <p className='mt-3 text-[11px] uppercase text-[#6b6b6b]'>Privacy policy &gt;</p>
         </div>
         <div className='flex items-center gap-4'>
           <button
@@ -35,7 +35,7 @@ export default function CookieBanner() {
           >
             Accept all
           </button>
-          <button type='button' className='text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]'>
+          <button type='button' className='text-[11px] font-semibold uppercase tracking-[0.08em] text-[#6b6b6b]'>
             Personalize my choices &gt;
           </button>
         </div>

@@ -26,7 +26,7 @@ export default function Header({ variant = 'solid' }: { variant?: 'home' | 'soli
 
   return (
     <header
-      className={`${isHome ? 'absolute left-0 right-0 top-0 z-30 border-b border-white/10 bg-black/55 text-white' : 'border-b border-[var(--border)] bg-white text-[var(--text)]'}`}
+      className={`${isHome ? 'absolute left-0 right-0 top-0 z-30 border-b border-white/10 bg-black/55 text-white' : 'border-b border-[#d9d9d9] bg-white text-[#1a1a1a]'}`}
     >
       <div className='container mx-auto flex items-center justify-between px-4 py-4 lg:py-5'>
         <Brand />
