@@ -9,19 +9,19 @@ interface Props {
 
 export default function ControlBar({ sort, onSort, grid, onGrid, onFilterToggle }: Props) {
   return (
-    <div className='flex flex-col gap-4 border-b border-[var(--border)] pb-5 lg:flex-row lg:items-center lg:justify-end'>
+    <div className='flex flex-col gap-4 border-b border-[#d9d9d9] pb-5 lg:flex-row lg:items-center lg:justify-end'>
       <select
         aria-label='Sort products'
         value={sort}
         onChange={(e) => onSort(e.target.value)}
-        className='h-10 border-b border-[var(--text)] bg-transparent px-1 text-[12px] uppercase tracking-[0.08em]'
+        className='h-10 border-b border-[#1a1a1a] bg-transparent px-1 text-[12px] uppercase tracking-[0.08em]'
       >
         <option value='default'>Default sorting</option>
         <option value='price-asc'>Price low-high</option>
         <option value='price-desc'>Price high-low</option>
       </select>
 
-      <div className='flex items-center gap-3 border-l border-[var(--border)] pl-4 text-[12px] uppercase tracking-[0.08em]'>
+      <div className='flex items-center gap-3 border-l border-[#d9d9d9] pl-4 text-[12px] uppercase tracking-[0.08em]'>
         <span>View</span>
         {[2, 3, 4].map((g) => (
           <button
@@ -35,7 +35,7 @@ export default function ControlBar({ sort, onSort, grid, onGrid, onFilterToggle 
         ))}
       </div>
 
-      <button onClick={onFilterToggle} className='border-l border-[var(--border)] pl-4 text-[12px] uppercase tracking-[0.08em] lg:hidden'>
+      <button onClick={onFilterToggle} className='border-l border-[#d9d9d9] pl-4 text-[12px] uppercase tracking-[0.08em] lg:hidden'>
         Filter
       </button>
     </div>

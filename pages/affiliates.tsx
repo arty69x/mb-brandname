@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 import Layout from '@/components/layout/Layout';
 import SEO from '@/components/layout/SEO';
 import PageTitleBlock from '@/components/ui/PageTitleBlock';
@@ -34,18 +34,18 @@ export default function AffiliatesPage() {
     <Layout>
       <SEO title='Affiliates — MB BRANDNAME' description='Join the MB BRANDNAME affiliate program.' canonical={canonical('/affiliates')} />
       <main>
-        <section className='bg-[var(--bg-alt)] py-10 lg:py-14'>
+        <section className='bg-[#f3f3f3] py-10 lg:py-14'>
           <div className='container mx-auto space-y-8 px-4'>
             <PageTitleBlock title='AFFILIATE PROGRAM' subtitle='Partner with MB BRANDNAME and grow together through premium luxury campaigns.' />
             <div className='grid gap-4 md:grid-cols-3'>
               {benefits.map((benefit) => (
-                <article key={benefit.title} className='rounded-2xl border border-[var(--border)] bg-white p-6'>
+                <article key={benefit.title} className='rounded-2xl border border-[#d9d9d9] bg-white p-6'>
                   <h2 className='text-[13px] font-medium uppercase tracking-[0.16em]'>{benefit.title}</h2>
-                  <p className='mt-3 text-[14px] leading-[1.7] text-[var(--muted)]'>{benefit.body}</p>
+                  <p className='mt-3 text-[14px] leading-[1.7] text-[#6b6b6b]'>{benefit.body}</p>
                 </article>
               ))}
             </div>
-            <form onSubmit={onSubmit} className='rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
+            <form onSubmit={onSubmit} className='rounded-2xl border border-[#d9d9d9] bg-white p-6 lg:p-8'>
               <h2 className='text-[13px] font-medium uppercase tracking-[0.18em]'>Application form</h2>
               <div className='mt-4 grid gap-4 md:grid-cols-2'>
                 <Input id='affiliateName' label='Full Name' value={form.name} onChange={(name) => setForm((p) => ({ ...p, name }))} required />
@@ -58,7 +58,7 @@ export default function AffiliatesPage() {
               </div>
               <div className='mt-5 flex flex-wrap items-center gap-3'>
                 <Button type='submit' disabled={!valid}>Apply now</Button>
-                {status ? <p className='text-sm text-[var(--muted)]'>{status}</p> : null}
+                {status ? <p className='text-sm text-[#6b6b6b]'>{status}</p> : null}
               </div>
             </form>
           </div>

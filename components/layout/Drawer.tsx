@@ -15,13 +15,13 @@ export default function Drawer({ open, onClose, children }: Props): ReactNode {
   if (!open) return null;
 
   return (
-    <div className='fixed inset-0 z-50 bg-[var(--bg)]'>
+    <div className='fixed inset-0 z-50 bg-[#ffffff]'>
       <div className='flex h-full flex-col'>
         <div className='flex items-center justify-end p-3'>
           <button onClick={onClose} className='text-4xl leading-none'>×</button>
         </div>
         <div className='flex-1 px-4'>{children}</div>
-        <div className='grid grid-cols-2 border-t border-[var(--border)] px-4 py-4 text-[27px] uppercase tracking-[0.1em]'>
+        <div className='grid grid-cols-2 border-t border-[#d9d9d9] px-4 py-4 text-[27px] uppercase tracking-[0.1em]'>
           <span>Stores</span>
           <span>About us</span>
         </div>

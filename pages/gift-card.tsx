@@ -35,10 +35,10 @@ export default function GiftCardPage() {
           <div className='container mx-auto space-y-8 px-4'>
             <PageTitleBlock title='DIGITAL GIFT CARD' subtitle='Send premium gifting in minutes. Perfect for birthdays, milestones, and special occasions.' />
             <div className='grid gap-6 lg:grid-cols-[1.1fr_0.9fr]'>
-              <form onSubmit={onSubmit} className='rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
+              <form onSubmit={onSubmit} className='rounded-2xl border border-[#d9d9d9] bg-white p-6 lg:p-8'>
                 <h2 className='text-[13px] font-medium uppercase tracking-[0.16em]'>Gift card details</h2>
                 <div className='mt-4 space-y-4'>
-                  <select value={amount} onChange={(e) => setAmount(Number(e.target.value))} className='h-11 w-full rounded-full border border-[var(--border)] px-4'>
+                  <select value={amount} onChange={(e) => setAmount(Number(e.target.value))} className='h-11 w-full rounded-full border border-[#d9d9d9] px-4'>
                     <option value={100}>$100</option>
                     <option value={200}>$200</option>
                     <option value={500}>$500</option>
@@ -48,12 +48,12 @@ export default function GiftCardPage() {
                   <Input id='sender' label='Sender name' value={sender} onChange={setSender} required />
                   <Textarea id='giftmessage' label='Personal message (optional)' value={message} onChange={setMessage} />
                   <Button type='submit' disabled={!valid}>Add gift card to cart</Button>
-                  {status ? <p className='text-sm text-[var(--muted)]'>{status}</p> : null}
+                  {status ? <p className='text-sm text-[#6b6b6b]'>{status}</p> : null}
                 </div>
               </form>
-              <article className='rounded-2xl border border-[var(--border)] bg-[var(--bg-alt)] p-6 lg:p-8'>
+              <article className='rounded-2xl border border-[#d9d9d9] bg-[#f3f3f3] p-6 lg:p-8'>
                 <h2 className='text-[13px] font-medium uppercase tracking-[0.16em]'>How it works</h2>
-                <ol className='mt-4 space-y-3 text-[14px] text-[var(--muted)]'>
+                <ol className='mt-4 space-y-3 text-[14px] text-[#6b6b6b]'>
                   <li>1. Select the amount and recipient details.</li>
                   <li>2. Gift card is delivered digitally to recipient email.</li>
                   <li>3. Recipient can redeem during checkout on any eligible item.</li>

@@ -6,8 +6,8 @@ export default function OfferModal() {
 
   return (
     <div className='fixed inset-0 z-40 hidden items-center justify-center bg-black/70 p-4 lg:flex'>
-      <div className='grid w-full max-w-[900px] grid-cols-[1fr_1fr] overflow-hidden rounded bg-[var(--bg)]'>
-        <img src='/assets/mb/v1/hero2.svg' alt='Offer visual' className='h-full min-h-[500px] w-full object-cover' />
+      <div className='grid w-full max-w-[900px] grid-cols-[1fr_1fr] overflow-hidden rounded bg-[#ffffff]'>
+        <img src='/assets/mb/v1/ref/hero2.svg' alt='Offer visual' className='h-full min-h-[500px] w-full object-cover' />
         <div className='relative flex flex-col items-center justify-center px-12 text-center'>
           <button onClick={() => setOpen(false)} className='absolute right-7 top-6 text-3xl text-[#9b97a0]'>×</button>
           <h2 className='text-[58px] font-light leading-[1.05] text-[#8b8890]'>You deserve it</h2>

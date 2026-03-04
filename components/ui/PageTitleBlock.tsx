@@ -6,7 +6,7 @@ interface Props {
 export default function PageTitleBlock({ title, subtitle }: Props) {
   return (
     <div className='relative mb-10 h-[300px] overflow-hidden lg:h-[380px]'>
-      <img src='/assets/mb/v1/hero3.svg' alt={title} className='h-full w-full object-cover' />
+      <img src='/assets/mb/v1/ref/hero3.svg' alt={title} className='h-full w-full object-cover' />
       <div className='absolute inset-0 bg-black/35' />
       <div className='absolute inset-0 flex flex-col items-center justify-center text-white'>
         <h1 className='text-[58px] uppercase'>{title}</h1>

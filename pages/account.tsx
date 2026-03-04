@@ -16,17 +16,17 @@ export default function AccountPage() {
     <Layout>
       <SEO title='My Account — MB BRANDNAME' description='Manage your account.' canonical={canonical('/account')} />
       <main>
-        <section className='bg-[var(--bg-alt)] py-10 lg:py-14'>
+        <section className='bg-[#f3f3f3] py-10 lg:py-14'>
           <div className='container mx-auto px-4'>
             <PageTitleBlock title='MY ACCOUNT' subtitle='Manage profile, orders, and personalized luxury recommendations.' />
             {session ? (
-              <div className='mx-auto max-w-xl rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
-                <p className='text-[14px] text-[var(--muted)]'>Signed in as</p>
+              <div className='mx-auto max-w-xl rounded-2xl border border-[#d9d9d9] bg-white p-6 lg:p-8'>
+                <p className='text-[14px] text-[#6b6b6b]'>Signed in as</p>
                 <p className='mt-1 text-[16px]'>{session.email}</p>
                 <div className='mt-6'><Button onClick={() => { logout(); setSession(null); }}>Logout</Button></div>
               </div>
             ) : (
-              <div className='mx-auto max-w-xl rounded-2xl border border-[var(--border)] bg-white p-6 lg:p-8'>
+              <div className='mx-auto max-w-xl rounded-2xl border border-[#d9d9d9] bg-white p-6 lg:p-8'>
                 <div className='space-y-4'>
                   <Input id='email' label='Email' value={email} onChange={setEmail} />
                   <Input id='password' label='Password' value={password} onChange={setPassword} type='password' />

@@ -12,9 +12,9 @@ const promises = [
 ];
 
 const categories = [
-  { title: 'BAGS', image: '/assets/mb/v1/p1a.svg', href: '/bags' },
-  { title: 'ACCESSORIES', image: '/assets/mb/v1/p3a.svg', href: '/accessories' },
-  { title: 'NEW ARRIVALS', image: '/assets/mb/v1/p2a.svg', href: '/new-arrivals' },
+  { title: 'BAGS', image: '/assets/mb/v1/ref/p1a.svg', href: '/bags' },
+  { title: 'ACCESSORIES', image: '/assets/mb/v1/ref/p3a.svg', href: '/accessories' },
+  { title: 'NEW ARRIVALS', image: '/assets/mb/v1/ref/p2a.svg', href: '/new-arrivals' },
 ];
 
 export default function HomePage() {
@@ -28,9 +28,9 @@ export default function HomePage() {
       <main>
         <section className='relative h-[78vh] min-h-[520px]'>
           <div className='absolute inset-0 grid grid-cols-12 grid-rows-6'>
-            <img src='/assets/mb/v1/hero1.svg' alt='hero 1' className='col-span-5 row-span-3 h-full w-full object-cover' />
-            <img src='/assets/mb/v1/hero2.svg' alt='hero 2' className='col-span-7 row-span-6 h-full w-full object-cover' />
-            <img src='/assets/mb/v1/hero3.svg' alt='hero 3' className='col-span-5 row-span-3 h-full w-full object-cover' />
+            <img src='/assets/mb/v1/ref/hero1.svg' alt='hero 1' className='col-span-5 row-span-3 h-full w-full object-cover' />
+            <img src='/assets/mb/v1/ref/hero2.svg' alt='hero 2' className='col-span-7 row-span-6 h-full w-full object-cover' />
+            <img src='/assets/mb/v1/ref/hero3.svg' alt='hero 3' className='col-span-5 row-span-3 h-full w-full object-cover' />
           </div>
           <div className='absolute inset-0 bg-black/25' />
           <div className='absolute inset-0 flex items-center justify-center'>
@@ -38,7 +38,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-[var(--bg-alt)] py-16 lg:py-20'>
+        <section className='bg-[#f3f3f3] py-16 lg:py-20'>
           <div className='container mx-auto px-4'>
             <h2 className='mb-10 text-center text-[20px] font-medium uppercase tracking-[0.16em]'>New Arrivals</h2>
             <ProductGrid products={PRODUCTS.slice(0, 8)} />
@@ -50,16 +50,16 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-[var(--bg-alt)] py-16 lg:py-20'>
+        <section className='bg-[#f3f3f3] py-16 lg:py-20'>
           <div className='container mx-auto grid grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2'>
-            <img src='/assets/mb/v1/p4a.svg' alt='brand story' className='w-full object-cover' />
+            <img src='/assets/mb/v1/ref/p4a.svg' alt='brand story' className='w-full object-cover' />
             <div>
               <h2 className='mb-6 text-[52px] leading-tight font-medium'>A bracelet with timeless elegance.</h2>
-              <p className='mb-5 text-[19px] leading-9 text-[var(--muted)]'>
+              <p className='mb-5 text-[19px] leading-9 text-[#6b6b6b]'>
                 This bracelet embodies timeless beauty through its refined yet powerful design. The gold-tone frame is paired with soft,
                 luminous white accents, highlighted by the brand&apos;s iconic logo.
               </p>
-              <p className='mb-8 text-[19px] leading-9 text-[var(--muted)]'>
+              <p className='mb-8 text-[19px] leading-9 text-[#6b6b6b]'>
                 More than just jewelry, this piece carries a story of taste, craftsmanship, and individuality.
               </p>
               <Button variant='pill' href='/about'>
@@ -69,11 +69,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-[var(--bg-alt)] py-16 text-center'>
+        <section className='bg-[#f3f3f3] py-16 text-center'>
           <div className='container mx-auto px-4'>
             <h2 className='mb-7 text-[20px] uppercase tracking-[0.16em]'>About us</h2>
             <p className='mb-6 text-[30px] uppercase'>100% Authentic branded items from Japan</p>
-            <p className='mx-auto max-w-[980px] text-[20px] leading-9 text-[var(--muted)]'>
+            <p className='mx-auto max-w-[980px] text-[20px] leading-9 text-[#6b6b6b]'>
               MB BRANDNAME carefully selects and imports authentic secondhand luxury from Japan. With over 10 years of experience, every
               item is inspected thoroughly before delivery.
             </p>

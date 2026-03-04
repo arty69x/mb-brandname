@@ -19,15 +19,15 @@ export default function ContactPage() {
             <div className='max-w-[1000px] mx-auto mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24'>
               <div className='space-y-8'>
                 <h2 className='text-[18px] uppercase tracking-[0.1em] font-medium'>Store Information</h2>
-                <div className='space-y-6 text-[14px] lg:text-[15px] leading-[1.8] text-[var(--muted)]'>
+                <div className='space-y-6 text-[14px] lg:text-[15px] leading-[1.8] text-[#6b6b6b]'>
                   <p>
                     1418 River Drive, Suite 35<br/>
                     Cottonhall, CA 9622<br/>
                     United States
                   </p>
                   <p>
-                    <a href='mailto:sale@uomo.com' className='hover:text-[var(--foreground)] transition-colors'>sale@uomo.com</a><br/>
-                    <a href='tel:+12463450695' className='hover:text-[var(--foreground)] transition-colors'>+1 246-345-0695</a>
+                    <a href='mailto:sale@uomo.com' className='hover:text-[#1a1a1a] transition-colors'>sale@uomo.com</a><br/>
+                    <a href='tel:+12463450695' className='hover:text-[#1a1a1a] transition-colors'>+1 246-345-0695</a>
                   </p>
                   <p>
                     <strong>Opening Hours:</strong><br/>

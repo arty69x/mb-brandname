@@ -46,9 +46,9 @@ export default function CheckoutPage() {
             <PageTitleBlock title='CHECKOUT' />
             
             {orderId ? (
-              <div className='max-w-[600px] mx-auto text-center border border-[var(--border)] p-12 mt-10'>
+              <div className='max-w-[600px] mx-auto text-center border border-[#d9d9d9] p-12 mt-10'>
                 <h2 className='text-[20px] uppercase tracking-[0.1em] mb-4'>Order Confirmed</h2>
-                <p className='text-[14px] text-[var(--muted)] mb-8'>Thank you for your purchase. Your order number is <strong>{orderId}</strong>.</p>
+                <p className='text-[14px] text-[#6b6b6b] mb-8'>Thank you for your purchase. Your order number is <strong>{orderId}</strong>.</p>
                 <div className='mt-8'>
                   <Button href='/shop' variant='primary'>CONTINUE SHOPPING</Button>
                 </div>
@@ -57,12 +57,12 @@ export default function CheckoutPage() {
               <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-10'>
                 <div className='lg:col-span-8 space-y-10'>
                   <div>
-                    <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6 pb-4 border-b border-[var(--border)]'>1. Contact Input</h2>
+                    <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6 pb-4 border-b border-[#d9d9d9]'>1. Contact Input</h2>
                     <Input id='email' label='Email address' value={form.email} onChange={(v)=>setForm({ ...form, email: v })} />
                   </div>
                   
                   <div>
-                    <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6 pb-4 border-b border-[var(--border)]'>2. Shipping Address</h2>
+                    <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6 pb-4 border-b border-[#d9d9d9]'>2. Shipping Address</h2>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                       <Input id='firstName' label='First Name' value={form.firstName} onChange={(v)=>setForm({ ...form, firstName: v })} />
                       <Input id='lastName' label='Last Name' value={form.lastName} onChange={(v)=>setForm({ ...form, lastName: v })} />
@@ -84,15 +84,15 @@ export default function CheckoutPage() {
                 </div>
 
                 <div className='lg:col-span-4'>
-                  <div className='bg-[var(--bg-alt)] p-8 sticky top-32'>
+                  <div className='bg-[#f3f3f3] p-8 sticky top-32'>
                     <h2 className='text-[16px] uppercase tracking-[0.1em] font-medium mb-6'>Order Summary</h2>
-                    <div className='space-y-4 mb-6 border-b border-[var(--border)] pb-6'>
+                    <div className='space-y-4 mb-6 border-b border-[#d9d9d9] pb-6'>
                       {cart.map((item) => {
                         const p = PRODUCTS.find((prod) => prod.id === item.productId);
                         if (!p) return null;
                         return (
                           <div key={item.productId} className='flex justify-between text-[13px]'>
-                            <span className='text-[var(--text)]'>{p.title} <span className='text-[var(--muted)]'>x {item.qty}</span></span>
+                            <span className='text-[#1a1a1a]'>{p.title} <span className='text-[#6b6b6b]'>x {item.qty}</span></span>
                             <span>${(p.price * item.qty).toFixed(2)}</span>
                           </div>
                         );
