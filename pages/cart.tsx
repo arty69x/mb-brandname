@@ -1,13 +1,17 @@
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
+import { Heart, ShoppingBag } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import SEO from '@/components/layout/SEO';
-import PageTitleBlock from '@/components/ui/PageTitleBlock';
-import EmptyState from '@/components/ui/EmptyState';
 import QuantityStepper from '@/components/commerce/QuantityStepper';
-import CartSummary from '@/components/commerce/CartSummary';
 import { PRODUCTS } from '@/data/products';
 import { getCart, removeFromCart, updateQty } from '@/lib/cart';
 import { canonical } from '@/lib/seo';
+
+function formatTHB(price: number): string {
+  const mapped = Math.round((price * 32.1) / 10) * 10;
+  return `${mapped.toLocaleString('en-US')} THB`;
+}
 
 export default function CartPage() {
   const [items, setItems] = useState(getCart());
@@ -17,58 +21,70 @@ export default function CartPage() {
   }, []);
 
   const rows = useMemo(
-    () => items.map((item) => ({ item, product: PRODUCTS.find((p) => p.id === item.productId) })).filter((r) => Boolean(r.product)),
+    () => items.map((item) => ({ item, product: PRODUCTS.find((p) => p.id === item.productId) })).filter((row) => Boolean(row.product)),
     [items],
   );
 
-  const subtotal = rows.reduce((sum, row) => sum + (row.product?.price ?? 0) * row.item.qty, 0);
   return (
     <Layout>
       <SEO title='Cart — MB BRANDNAME' description='Review your shopping cart.' canonical={canonical('/cart')} />
       <main>
-        <section className='py-16 lg:py-24'>
-          <div className='container mx-auto px-4 max-w-[1200px]'>
-            <PageTitleBlock title='SHOPPING CART' />
-            
+        <section className='bg-[#f2f2f2] pb-16'>
+          <div className='container mx-auto px-4'>
             {rows.length === 0 ? (
-              <div className='mt-10'>
-                <EmptyState title='Cart is empty' body='Add products to continue checkout.' ctaHref='/shop' ctaLabel='CONTINUE SHOPPING' />
+              <div className='flex min-h-[calc(100vh-160px)] flex-col items-center justify-center text-center'>
+                <h1 className='text-[28px] font-black uppercase tracking-[0.06em] sm:text-[36px]'>YOUR BAG IS EMPTY</h1>
+                <Link
+                  href='/new-arrivals'
+                  className='mt-12 border-b-2 border-black pb-1 text-[16px] font-bold uppercase tracking-[0.08em] transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30 sm:text-[20px]'
+                >
+                  CONTINUE SHOPPING
+                </Link>
               </div>
             ) : (
-              <div className='grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-10'>
-                <div className='lg:col-span-8'>
-                  <div className='hidden md:grid grid-cols-12 gap-4 pb-4 border-b border-[#d9d9d9] text-[12px] uppercase tracking-[0.1em] text-[#6b6b6b] font-medium'>
-                    <div className='col-span-6'>Product</div>
-                    <div className='col-span-3 text-center'>Quantity</div>
-                    <div className='col-span-3 text-right'>Total</div>
-                  </div>
-                  
-                  {rows.map((row) => row.product ? (
-                    <div key={row.item.productId} className='flex flex-col md:grid md:grid-cols-12 gap-6 items-center border-b border-[#d9d9d9] py-8'>
-                      <div className='col-span-6 flex items-start gap-6 w-full'>
-                        <div className='h-[120px] w-[90px] bg-[#f3f3f3] overflow-hidden shrink-0'>
-                          {row.product.images[0] && <img src={row.product.images[0]} alt={row.product.title} className='h-full w-full object-cover'/>}
+              <div className='py-8'>
+                <h1 className='pb-8 text-center text-[24px] font-black uppercase tracking-[0.08em] sm:text-[30px]'>YOUR BAG</h1>
+                <div className='space-y-4'>
+                  {rows.map((row) =>
+                    row.product ? (
+                      <article key={row.item.productId} className='grid grid-cols-12 gap-4 border border-[#d7d7d7] bg-white p-4'>
+                        <div className='col-span-4'>
+                          <div className='aspect-square overflow-hidden bg-[#ededed]'>
+                            {row.product.images[0] ? (
+                              <img src={row.product.images[0]} alt={row.product.title} loading='lazy' className='h-full w-full object-cover' />
+                            ) : null}
+                          </div>
                         </div>
-                        <div className='flex flex-col pt-2'>
-                          <h2 className='text-[14px] uppercase tracking-[0.1em] mb-2'>{row.product.title}</h2>
-                          <p className='text-[14px] text-[#6b6b6b]'>${row.product.price.toFixed(2)}</p>
-                          <button className='mt-4 text-[12px] uppercase tracking-[0.1em] text-[#6b6b6b] hover:text-[#1a1a1a] text-left w-fit transition-colors' onClick={() => setItems(removeFromCart(row.item.productId))}>Remove</button>
+                        <div className='col-span-8 flex flex-col'>
+                          <div className='flex items-start justify-between gap-2'>
+                            <h2 className='text-[14px] font-bold uppercase sm:text-[16px]'>{row.product.title}</h2>
+                            <button
+                              onClick={() => setItems(removeFromCart(row.item.productId))}
+                              className='text-[11px] uppercase tracking-[0.08em] text-[#5a5a5a] hover:text-black sm:text-[12px]'
+                            >
+                              Remove
+                            </button>
+                          </div>
+                          <p className='mt-2 text-[14px] font-semibold sm:text-[16px]'>{formatTHB(row.product.price)}</p>
+                          <div className='mt-auto flex items-center justify-between pt-4'>
+                            <QuantityStepper qty={row.item.qty} onChange={(qty) => setItems(updateQty(row.item.productId, qty))} />
+                            <div className='flex items-center gap-2'>
+                              <ShoppingBag className='h-5 w-5 sm:h-6 sm:w-6' />
+                              <Heart className='h-5 w-5 sm:h-6 sm:w-6' />
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <div className='col-span-3 flex justify-start md:justify-center w-full mt-4 md:mt-0'>
-                        <QuantityStepper qty={row.item.qty} onChange={(qty) => setItems(updateQty(row.item.productId, qty))} />
-                      </div>
-                      <div className='col-span-3 flex justify-start md:justify-end w-full mt-2 md:mt-0 text-[14px] md:text-right'>
-                        ${(row.product.price * row.item.qty).toFixed(2)}
-                      </div>
-                    </div>
-                  ) : null)}
+                      </article>
+                    ) : null,
+                  )}
                 </div>
-                
-                <div className='lg:col-span-4'>
-                  <div className='sticky top-32'>
-                    <CartSummary subtotal={subtotal} disabled={rows.length === 0} />
-                  </div>
+                <div className='mt-6'>
+                  <Link
+                    href='/checkout'
+                    className='flex h-14 items-center justify-center bg-black text-[16px] font-bold uppercase tracking-[0.08em] text-white transition-opacity hover:opacity-90 sm:h-16 sm:text-[20px]'
+                  >
+                    CHECKOUT
+                  </Link>
                 </div>
               </div>
             )}

@@ -1,3 +1,5 @@
+import { SlidersHorizontal } from 'lucide-react';
+
 interface Props {
   count: number;
   sort: string;
@@ -7,36 +9,29 @@ interface Props {
   onFilterToggle: () => void;
 }
 
-export default function ControlBar({ sort, onSort, grid, onGrid, onFilterToggle }: Props) {
+export default function ControlBar({ sort, onSort, onFilterToggle }: Props) {
   return (
-    <div className='flex flex-col gap-4 border-b border-[#d9d9d9] pb-5 lg:flex-row lg:items-center lg:justify-end'>
-      <select
-        aria-label='Sort products'
-        value={sort}
-        onChange={(e) => onSort(e.target.value)}
-        className='h-10 border-b border-[#1a1a1a] bg-transparent px-1 text-[12px] uppercase tracking-[0.08em]'
-      >
-        <option value='default'>Default sorting</option>
-        <option value='price-asc'>Price low-high</option>
-        <option value='price-desc'>Price high-low</option>
-      </select>
-
-      <div className='flex items-center gap-3 border-l border-[#d9d9d9] pl-4 text-[12px] uppercase tracking-[0.08em]'>
-        <span>View</span>
-        {[2, 3, 4].map((g) => (
-          <button
-            key={g}
-            onClick={() => onGrid(g)}
-            aria-label={`Set grid to ${g} columns`}
-            className={grid === g ? 'font-bold underline' : ''}
-          >
-            {g}
-          </button>
-        ))}
+    <div className='grid grid-cols-2 items-center border-y border-[#d7d7d7]'>
+      <div className='flex h-[56px] items-center border-r border-[#d7d7d7] px-2 sm:h-[64px]'>
+        <label htmlFor='product-sort' className='sr-only'>Sort products</label>
+        <select
+          id='product-sort'
+          aria-label='Sort products'
+          value={sort}
+          onChange={(e) => onSort(e.target.value)}
+          className='w-full border-b border-black bg-transparent pb-1.5 text-[13px] font-bold uppercase tracking-[0.12em] focus-visible:outline-none sm:text-[15px]'
+        >
+          <option value='default'>DEFAULT SORTING</option>
+          <option value='price-asc'>PRICE LOW-HIGH</option>
+          <option value='price-desc'>PRICE HIGH-LOW</option>
+        </select>
       </div>
-
-      <button onClick={onFilterToggle} className='border-l border-[#d9d9d9] pl-4 text-[12px] uppercase tracking-[0.08em] lg:hidden'>
-        Filter
+      <button
+        onClick={onFilterToggle}
+        className='flex h-[56px] items-center justify-center gap-2 text-[13px] font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 sm:h-[64px] sm:text-[15px]'
+      >
+        <SlidersHorizontal className='h-4 w-4 sm:h-5 sm:w-5' />
+        FILTER
       </button>
     </div>
   );

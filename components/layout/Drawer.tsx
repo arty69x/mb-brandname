@@ -1,6 +1,12 @@
+import Link from 'next/link';
 import { ReactNode, useEffect } from 'react';
+import { X } from 'lucide-react';
 
-interface Props { open: boolean; onClose: () => void; children: ReactNode; }
+interface Props {
+  open: boolean;
+  onClose: () => void;
+  children: ReactNode;
+}
 
 export default function Drawer({ open, onClose, children }: Props): ReactNode {
   useEffect(() => {
@@ -15,15 +21,31 @@ export default function Drawer({ open, onClose, children }: Props): ReactNode {
   if (!open) return null;
 
   return (
-    <div className='fixed inset-0 z-50 bg-[#ffffff]'>
+    <div className='fixed inset-0 z-50 bg-[#f2f2f2]'>
       <div className='flex h-full flex-col'>
-        <div className='flex items-center justify-end p-3'>
-          <button onClick={onClose} className='text-4xl leading-none'>×</button>
+        <div className='border-b border-[#d7d7d7]'>
+          <div className='container mx-auto px-4'>
+            <div className='flex h-[56px] items-center justify-end sm:h-[64px]'>
+              <button
+                onClick={onClose}
+                aria-label='Close menu'
+                className='inline-flex h-10 w-10 items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40'
+              >
+                <X className='h-9 w-9 stroke-[1.8]' />
+              </button>
+            </div>
+          </div>
         </div>
-        <div className='flex-1 px-4'>{children}</div>
-        <div className='grid grid-cols-2 border-t border-[#d9d9d9] px-4 py-4 text-[27px] uppercase tracking-[0.1em]'>
-          <span>Stores</span>
-          <span>About us</span>
+
+        <div className='container mx-auto flex-1 px-4'>{children}</div>
+
+        <div className='mt-8 border-t border-[#d7d7d7]'>
+          <div className='container mx-auto grid grid-cols-2 gap-x-8 gap-y-6 px-4 py-8 text-[16px] font-semibold uppercase text-[#4b5565] sm:text-[18px]'>
+            <Link href='/find-a-store' onClick={onClose}>STORES</Link>
+            <Link href='/about' onClick={onClose}>ABOUT US</Link>
+            <Link href='/affiliates' onClick={onClose}>PARTNERSHIP</Link>
+            <Link href='/careers' onClick={onClose}>SUPPLIER APPLICATIONS</Link>
+          </div>
         </div>
       </div>
     </div>
