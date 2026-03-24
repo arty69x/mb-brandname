@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MBbrandname — No.1 Authentic Luxury from Japan</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300&family=Cormorant+Garamond:ital,wght@0,200;0,300;1,200;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--k:#1a1a1a;--w:#fff;--cr:#f5f4f1;--mu:#888;--bo:#e8e8e8;--go:#c9a84c;--re:#c0392b;--sa:'Jost',sans-serif;--se:'Cormorant Garamond',serif;--nh:62px;--mw:1300px;--ez:cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+/* ── REFINED TYPOGRAPHY FOR EXTRALIGHT ── */
+body{font-family:var(--sa);color:var(--k);background:var(--w);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-weight:200;letter-spacing:.04em;line-height:1.6}
+h1,h2,h3,h4,h5,h6{font-weight:200;letter-spacing:.02em;line-height:1.2}
+p{line-height:1.85}
+input,select,textarea{font-weight:200;letter-spacing:.03em}
+img{display:block;max-width:100%}
+button{cursor:pointer;background:none;border:none;font-family:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+input,select,textarea{font-family:inherit;font-size:inherit}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none}
+:focus-visible{outline:2px solid var(--go);outline-offset:2px}
+
+/* UTILS */
+.w{max-width:var(--mw);margin:0 auto;padding:0 28px}
+.view{display:none;min-height:100vh;background:var(--w);color:var(--k)}
+.view.on{display:block;animation:fi .3s var(--ez)}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* BUTTONS */
+/* ── BUTTONS refined ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:9px;letter-spacing:.28em;text-transform:uppercase;font-weight:300;padding:13px 30px;transition:all .22s;white-space:nowrap;border:1px solid transparent;border-radius:2px}
+.bp{background:var(--k);color:var(--w)}.bp:hover{background:#2a2a2a}.bp:active{transform:scale(.98)}
+.bo{border-color:var(--k)}.bo:hover{background:var(--k);color:var(--w)}
+.bg{background:var(--go);color:var(--w);border-color:var(--go)}.bg:hover{background:#b8963e}
+.bw{border:1px solid rgba(255,255,255,.4);color:#fff}.bw:hover{background:rgba(255,255,255,.12)}
+.bf{width:100%}.bpill{border-radius:999px}.bsm{padding:8px 18px;font-size:8px;letter-spacing:.24em}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nh);background:var(--w);border-bottom:1px solid var(--bo);transition:box-shadow .3s,background .3s,border-color .3s}
+.nav.fl{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.nav.gl{background:rgba(20,20,20,.65);backdrop-filter:blur(14px);border-bottom-color:transparent}
+.nav.gl .nl,.nav.gl .ni-i,.nav.gl .lt,.nav.gl .ls{color:var(--w)}
+.nav.gl .cb{background:var(--w);color:var(--k)}
+.nav.gl.fl{background:var(--w);border-bottom-color:var(--bo)}
+.nav.gl.fl .nl,.nav.gl.fl .ni-i,.nav.gl.fl .lt,.nav.gl.fl .ls{color:var(--k)}
+.nav.gl.fl .cb{background:var(--k);color:var(--w)}
+.nv{height:var(--nh);display:flex;align-items:center;justify-content:space-between;max-width:var(--mw);margin:0 auto;padding:0 28px}
+.lg{display:flex;flex-direction:column;gap:1px;line-height:1;transition:opacity .2s}
+.lg:hover{opacity:.6}
+/* ── NAV refined ── */
+.lt{font-family:var(--se);font-size:21px;font-weight:200;letter-spacing:.02em}
+.ls{font-size:7px;letter-spacing:.2em;text-transform:uppercase;opacity:.45;font-weight:200}
+.nls{display:flex;align-items:center;gap:28px}
+.nl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:200;position:relative;padding-bottom:3px;transition:opacity .2s}
+.nl::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:currentColor;transform:scaleX(0);transition:transform .2s;transform-origin:left}
+.nl.on::after{transform:scaleX(1)}
+.nl.on{font-weight:300}
+.nl:hover{opacity:.55}
+.na{display:flex;align-items:center;gap:4px}
+.ni-i{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.ni-i:hover{background:var(--cr)}
+.nav.gl .ni-i:hover{background:rgba(255,255,255,.12)}
+.ni-i svg{width:17px;height:17px;stroke-width:1.3}
+.cw{position:relative}
+.cb{position:absolute;top:-3px;right:-3px;width:17px;height:17px;border-radius:50%;background:var(--k);color:var(--w);font-size:9px;font-weight:300;display:flex;align-items:center;justify-content:center;transition:transform .25s}
+.cb.pop{animation:cbp .35s var(--ez)}
+@keyframes cbp{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+.burg{display:none;flex-direction:column;gap:5px;width:38px;height:38px;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.burg:hover{background:var(--cr)}
+.burg span{display:block;width:20px;height:1.5px;background:currentColor;transition:transform .25s,opacity .25s}
+.burg.on span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burg.on span:nth-child(2){opacity:0}
+.burg.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* DRAWER */
+.drawer{position:fixed;inset:0;z-index:850;background:var(--w);transform:translateX(-100%);transition:transform .38s var(--ez);overflow-y:auto}
+.drawer.on{transform:none}
+/* ── DRAWER refined ── */
+.dh{height:var(--nh);display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid var(--bo)}
+.dl{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:200;border-bottom:1px solid var(--bo);transition:background .15s}
+.dl:hover{background:var(--cr)}
+.dl svg{width:12px;height:12px;stroke-width:1.2}
+
+/* SEARCH OVERLAY */
+.sov{position:fixed;inset:0;z-index:950;background:rgba(255,255,255,.97);backdrop-filter:blur(4px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:14vh;opacity:0;pointer-events:none;transition:opacity .3s}
+.sov.on{opacity:1;pointer-events:all}
+.sb{display:flex;align-items:center;gap:14px;width:min(680px,90%);border-bottom:2px solid var(--k);padding-bottom:12px}
+.si{flex:1;font-size:clamp(20px,2.5vw,28px);font-family:var(--se);font-weight:200;border:none;outline:none;background:transparent;color:var(--k)}
+.scl{position:absolute;top:20px;right:24px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:22px;transition:color .2s}
+.scl:hover{color:var(--k)}
+.sr{margin-top:36px;display:flex;gap:20px;flex-wrap:wrap;justify-content:center;max-width:920px;padding:0 20px}
+
+/* HERO */
+.hero{position:relative;width:100%;height:100svh;min-height:540px;max-height:920px;overflow:hidden;background:var(--k)}
+.ht{display:flex;width:100%;height:100%;transition:transform .9s cubic-bezier(.77,0,.175,1)}
+.hs{flex:0 0 100%;height:100%;position:relative;overflow:hidden}
+.hi{width:100%;height:100%;object-fit:cover;opacity:.82;transition:transform 7s ease}
+.hs.on .hi{transform:scale(1.05)}
+.hs.split .hi{display:none}
+.hgr{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.hgr img{width:100%;height:100%;object-fit:cover}
+.hov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.12) 55%,transparent 100%)}
+.hc{position:absolute;bottom:22%;left:8%;color:var(--w);max-width:520px}
+.hey{font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:200;opacity:.65;margin-bottom:14px}
+.htl{font-family:var(--se);font-size:clamp(38px,5.5vw,68px);font-weight:200;line-height:1.12;margin-bottom:20px}
+.hca{display:flex;gap:12px;flex-wrap:wrap}
+.har{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:50%;color:var(--w);display:flex;align-items:center;justify-content:center;z-index:2;transition:border-color .2s,background .2s}
+.har:hover{border-color:rgba(255,255,255,.85);background:rgba(255,255,255,.1)}
+.hp{left:24px}.hn{right:24px}
+.har svg{width:15px;height:15px;stroke-width:1.3}
+.hd{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2}
+.hdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);border:none;transition:background .3s,transform .3s}
+.hdot.on{background:var(--w);transform:scale(1.3)}
+
+/* PAGE HERO */
+.ph{position:relative;height:280px;overflow:hidden;background:var(--k);margin-top:var(--nh)}
+.phi{width:100%;height:100%;object-fit:cover;opacity:.55}
+.pht{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--w)}
+.phl{font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:10px}
+.phh{font-family:var(--se);font-size:clamp(28px,4vw,52px);font-weight:300;letter-spacing:.1em}
+
+/* SECTION HEAD */
+.sh{text-align:center;padding:64px 24px 44px}
+.se{font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--mu);margin-bottom:12px}
+.st{font-family:var(--se);font-size:clamp(28px,3.5vw,46px);font-weight:300;line-height:1.2}
+.sb2{font-size:13px;font-weight:300;color:var(--mu);line-height:1.9;max-width:560px;margin:14px auto 0}
+
+/* PRODUCT GRID */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.grid.c4{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:960px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.grid.c2{grid-template-columns:repeat(2,1fr)}}
+
+/* PRODUCT CARD */
+.pc{cursor:pointer}
+.piw{position:relative;overflow:hidden;aspect-ratio:1;background:var(--cr);margin-bottom:12px;border-radius:2px}
+.pim{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ez)}
+.pc:hover .pim{transform:scale(1.06)}
+.pbg{position:absolute;top:10px;left:10px;z-index:3;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;font-weight:300}
+.pbn{background:var(--k);color:var(--w)}.pbs{background:var(--re);color:var(--w)}.pbg2{background:var(--go);color:var(--w)}
+.pacs{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px;z-index:3;opacity:0;transform:translateX(8px);transition:opacity .22s,transform .22s}
+.pc:hover .pacs{opacity:1;transform:none}
+.pac{width:32px;height:32px;border-radius:50%;background:var(--w);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:transform .18s}
+.pac:hover{transform:scale(1.12)}
+.pac svg{width:13px;height:13px;stroke-width:1.3}
+.pac.wl svg{fill:var(--re);stroke:var(--re)}
+.patc{position:absolute;bottom:0;left:0;right:0;background:rgba(26,26,26,.9);color:var(--w);padding:11px;text-align:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:300;transform:translateY(100%);transition:transform .28s var(--ez);z-index:3}
+.pc:hover .patc{transform:none}
+.pcat{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-bottom:4px;font-weight:200}
+.pnm{font-size:13px;font-weight:200;line-height:1.4;margin-bottom:6px}
+.ppr{font-size:13px;font-weight:200;display:flex;align-items:center;gap:8px}
+.por{color:var(--mu);text-decoration:line-through;font-size:11px;font-weight:200}
+.psl{color:var(--re);font-weight:300}
+.vmr{text-align:center;padding:36px 0 60px}
+
+/* STORY */
+.story{background:var(--cr);padding:80px 0;position:relative;overflow:hidden}
+.strin{max-width:var(--mw);margin:0 auto;padding:0 80px;position:relative}
+.sls{display:none;gap:72px;align-items:center}
+.sls.on{display:flex}
+.slw{flex:0 0 42%;max-width:42%;aspect-ratio:4/5;overflow:hidden}
+.slw img{width:100%;height:100%;object-fit:cover}
+.slb{flex:1}
+.slt{font-family:var(--se);font-size:clamp(24px,2.8vw,38px);font-weight:200;line-height:1.28;margin-bottom:22px}
+.slp{font-size:13px;font-weight:200;color:var(--mu);line-height:1.9;margin-bottom:12px}
+.slcat{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--go);font-weight:200;margin-bottom:14px}
+.sar2{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:1px solid #ccc;display:flex;align-items:center;justify-content:center;z-index:5;transition:all .2s}
+.sar2:hover{border-color:var(--k);background:var(--k);color:var(--w)}
+.sap{left:20px}.san{right:20px}
+.sar2 svg{width:13px;height:13px;stroke-width:1.3}
+.sdts{display:flex;justify-content:center;gap:8px;margin-top:44px}
+.sdt{width:6px;height:6px;border-radius:50%;background:rgba(26,26,26,.2);border:none;transition:background .28s}
+.sdt.on{background:var(--k)}
+@media(max-width:768px){.strin{padding:0 48px}.sls{flex-direction:column;gap:32px}.slw{flex:none;max-width:100%;width:100%}}
+
+/* TRUST */
+.trust{border-top:1px solid var(--bo);padding:56px 24px}
+.tg{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:36px;text-align:center}
+@media(max-width:640px){.tg{grid-template-columns:1fr;gap:32px}}
+.ti{margin:0 auto 14px;width:46px;height:46px;display:flex;align-items:center;justify-content:center}
+.ti svg{width:38px;height:38px;stroke:var(--k);stroke-width:.8;fill:none}
+.tt{font-size:12px;font-weight:500;margin-bottom:5px}
+.td{font-size:11px;color:var(--mu);line-height:1.7}
+
+/* ABOUT STRIP */
+.astrip{padding:72px 24px;text-align:center}
+.aste{font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;margin-bottom:20px}
+.asth{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:14px}
+.astb{font-size:12px;letter-spacing:.08em;color:var(--mu);line-height:2.3;max-width:520px;margin:0 auto}
+
+/* TOOLBAR */
+.toolbar{display:flex;align-items:center;justify-content:space-between;padding:24px 0 18px;flex-wrap:wrap;gap:12px;border-bottom:1px solid var(--bo);margin-bottom:24px}
+.tbl,.tbr{display:flex;align-items:center;gap:14px}
+.tc{font-size:11px;color:var(--mu);letter-spacing:.06em}
+.ts{border:1px solid var(--bo);padding:8px 12px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--w);outline:none;cursor:pointer;border-radius:2px}
+.ts:focus{border-color:var(--k)}
+.tvl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+.tvb{font-size:11px;padding:4px 7px;transition:color .2s}
+.tvb.on{font-weight:700;border-bottom:2px solid var(--k)}
+.tfb{display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:color .2s}
+.tfb:hover{color:var(--go)}
+.tfb svg{width:14px;height:14px;stroke-width:1.5}
+.fp{overflow:hidden;max-height:0;transition:max-height .38s var(--ez);background:var(--cr);margin-bottom:0}
+.fp.on{max-height:420px;margin-bottom:24px}
+.fpi{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding:24px 28px}
+@media(min-width:768px){.fpi{grid-template-columns:repeat(4,1fr)}}
+.fgt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.fc{display:flex;align-items:center;gap:9px;margin-bottom:9px;cursor:pointer;font-size:12px;font-weight:300}
+.fc input{accent-color:var(--k);width:14px;height:14px}
+
+/* DETAIL PAGE */
+.detp{padding-top:var(--nh)}
+.bc{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--bo);max-width:var(--mw);margin:0 auto}
+.bcp{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+.bcb{transition:color .2s}.bcb:hover{color:var(--k)}
+.dl2{max-width:var(--mw);margin:0 auto;padding:36px 28px 80px;display:grid;grid-template-columns:1fr;gap:52px}
+@media(min-width:768px){.dl2{grid-template-columns:1fr 1fr}}
+.gal{display:flex;flex-direction:column-reverse;gap:12px}
+@media(min-width:640px){.gal{flex-direction:row;gap:14px}}
+.gths{display:flex;flex-direction:row;gap:8px;overflow-x:auto}
+@media(min-width:640px){.gths{flex-direction:column;overflow-x:visible;flex-shrink:0;width:76px}}
+.gth{flex-shrink:0;width:76px;height:76px;overflow:hidden;border:2px solid transparent;cursor:pointer;transition:border-color .2s;background:var(--cr);border-radius:2px}
+.gth.on{border-color:var(--k)}
+.gth img{width:100%;height:100%;object-fit:cover}
+.gm{flex:1;aspect-ratio:1;background:var(--cr);position:relative;overflow:hidden;border-radius:2px}
+.gmi{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ez);cursor:zoom-in}
+.gm:hover .gmi{transform:scale(1.04)}
+.gnav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.1);z-index:2;transition:background .2s}
+.gnav:hover{background:var(--w)}
+.gp{left:12px}.gn{right:12px}
+.gnav svg{width:12px;height:12px;stroke-width:2}
+.gz{position:absolute;bottom:12px;right:12px;width:32px;height:32px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.gz svg{width:12px;height:12px;stroke-width:1.8}
+.pt{font-size:26px;font-weight:300;line-height:1.3;margin-bottom:6px}
+.prt{display:flex;align-items:center;gap:6px;margin-bottom:14px}
+.pst{color:var(--go);font-size:13px;letter-spacing:2px}
+.prc{font-size:11px;color:var(--mu)}
+.pp{font-size:24px;font-weight:300;margin-bottom:20px}
+.pd{font-size:13px;font-weight:300;color:var(--mu);line-height:1.85;margin-bottom:24px}
+.pqr{display:flex;align-items:stretch;gap:10px;margin-bottom:14px}
+.pqc{display:flex;align-items:center;border:1px solid var(--bo);height:46px}
+.pqb{width:38px;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .15s}
+.pqb:hover{background:var(--cr)}
+.pqi{width:46px;height:100%;text-align:center;font-size:14px;border:none;border-left:1px solid var(--bo);border-right:1px solid var(--bo);outline:none;background:var(--w)}
+.patcb{flex:1;height:46px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.psa{display:flex;align-items:center;gap:20px;padding:14px 0;border-top:1px solid var(--bo);border-bottom:1px solid var(--bo);margin-bottom:18px}
+.psb{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);transition:color .2s}
+.psb:hover{color:var(--k)}
+.psb svg{width:14px;height:14px;stroke-width:1.5}
+.psb.wld svg{fill:var(--re);stroke:var(--re)}
+.pm{font-size:12px;font-weight:300;color:var(--mu);line-height:2}
+.pml{text-transform:uppercase;letter-spacing:.08em;font-size:10px;font-weight:500;color:var(--k)}
+.pgr{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--cr);margin-top:18px;border-radius:2px}
+.pgr svg{width:20px;height:20px;stroke-width:1;flex-shrink:0;color:var(--go)}
+.pgr p{font-size:11px;font-weight:200;color:var(--mu);line-height:1.6}
+.pgr strong{font-weight:300;color:var(--k);display:block;font-size:12px;margin-bottom:2px}
+
+/* TABS */
+.tabs{border-top:1px solid var(--bo);margin-top:72px}
+.tabn{display:flex;border-bottom:1px solid var(--bo);overflow-x:auto}
+.tabb{padding:15px 22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;white-space:nowrap;font-weight:300}
+.tabb.on{color:var(--k);border-bottom-color:var(--k);font-weight:500}
+.tabp{display:none;padding:44px 0}.tabp.on{display:block}
+.rv{display:flex;gap:18px;padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--bo)}
+.rvav{width:42px;height:42px;border-radius:50%;background:var(--k);color:var(--w);font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rvn{font-size:13px;font-weight:500}
+.rvd{font-size:11px;color:var(--mu)}
+.rvst{color:var(--go);font-size:13px;letter-spacing:2px}
+.rvtx{font-size:12px;font-weight:300;color:var(--mu);line-height:1.85;margin-top:8px}
+.itbl{width:100%;border-collapse:collapse;font-size:13px}
+.itbl tr{border-bottom:1px solid var(--bo)}
+.itbl td{padding:13px 0}
+.itbl td:first-child{font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--mu);width:200px}
+.sp{display:flex;gap:4px;margin-bottom:20px}
+.sp span{font-size:24px;color:#ddd;cursor:pointer;transition:color .15s;line-height:1}
+.sp span.on,.sp span.hov{color:var(--go)}
+.rff{width:100%;border:1px solid var(--bo);padding:12px 14px;font-size:12px;font-weight:300;outline:none;transition:border-color .2s;margin-bottom:12px;background:var(--w);border-radius:2px}
+.rff:focus{border-color:var(--k)}
+.rft{resize:vertical;min-height:100px}
+
+/* CART */
+.cartp{padding:var(--nh) 0 88px}
+.cartl{display:grid;grid-template-columns:1fr;gap:44px}
+@media(min-width:960px){.cartl{grid-template-columns:1fr 360px}}
+.ctbl{width:100%;border-collapse:collapse}
+.ctbl th{text-align:left;padding-bottom:14px;border-bottom:2px solid var(--bo);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.ctbl td{padding:22px 0;border-bottom:1px solid var(--bo);vertical-align:middle}
+.ctbl td:last-child{text-align:right}
+.cprod{display:flex;align-items:center;gap:16px}
+.cth{width:76px;height:76px;object-fit:cover;background:var(--cr);flex-shrink:0;border-radius:2px}
+.cnm{font-size:13px;font-weight:300;line-height:1.5}
+.cmt{font-size:11px;color:var(--mu);margin-top:3px}
+.cqty{display:inline-flex;align-items:center;border:1px solid var(--bo);border-radius:2px}
+.cqb{width:30px;height:34px;display:flex;align-items:center;justify-content:center;font-size:16px;transition:background .15s}
+.cqb:hover{background:var(--cr)}
+.cqv{width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:13px;border-left:1px solid var(--bo);border-right:1px solid var(--bo)}
+.crm{font-size:18px;color:var(--mu);transition:color .2s;padding:4px}
+.crm:hover{color:var(--re)}
+.coup{display:flex;gap:10px;margin-top:28px;padding-top:28px;border-top:1px solid var(--bo)}
+.coui{flex:1;border:1px solid var(--bo);padding:11px 14px;font-size:12px;outline:none;border-radius:2px;transition:border-color .2s}
+.coui:focus{border-color:var(--k)}
+.coub{background:var(--k);color:var(--w);padding:11px 20px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:opacity .2s}
+.coub:hover{opacity:.8}
+.csum{border:1px solid var(--bo);padding:28px;position:sticky;top:calc(var(--nh)+20px);border-radius:2px}
+.csumtit{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:22px}
+.csumr{display:flex;justify-content:space-between;font-size:13px;margin-bottom:10px}
+.csumr.tot{font-size:15px;font-weight:500;padding-top:16px;border-top:1px solid var(--bo);margin-top:6px}
+.csuml{color:var(--mu)}
+
+/* CHECKOUT */
+.cop{padding:var(--nh) 0 88px}
+.col{display:grid;grid-template-columns:1fr;gap:44px}
+@media(min-width:960px){.col{grid-template-columns:1fr 400px}}
+.cost{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:18px;margin-top:28px}
+.cost:first-child{margin-top:0}
+.cog2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.cog2{grid-template-columns:1fr}}
+.cof{border:1px solid var(--bo);padding:12px 15px;font-size:12px;font-weight:300;outline:none;width:100%;transition:border-color .2s;background:var(--w);border-radius:2px}
+.cof:focus{border-color:var(--k)}
+.coff{grid-column:1/-1}
+.payopt{display:flex;align-items:center;gap:12px;border:1px solid var(--bo);padding:14px 16px;cursor:pointer;transition:border-color .2s;margin-bottom:8px;border-radius:2px}
+.payopt.on{border-color:var(--k)}
+.payopt input{accent-color:var(--k)}
+.payopt-l{font-size:12px;font-weight:300}
+.cfd{padding:18px 16px;border:1px solid var(--k);border-top:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px;border-radius:0 0 2px 2px}
+.cfd .cof{grid-column:1/-1}
+.cfd .cof.half{grid-column:auto}
+.cfd.hide{display:none}
+.ssl{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--mu);margin:18px 0}
+.ssl svg{width:14px;height:14px;stroke-width:1.2;flex-shrink:0}
+.osum{border:1px solid var(--bo);padding:26px;position:sticky;top:calc(var(--nh)+20px);border-radius:2px}
+.osumtit{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:20px}
+.oitem{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.oith{width:52px;height:52px;object-fit:cover;background:var(--cr);flex-shrink:0;border-radius:2px}
+.oinm{font-size:12px;font-weight:300;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.oiqt{font-size:11px;color:var(--mu)}
+.oipr{font-size:12px;flex-shrink:0}
+.odiv{border:none;border-top:1px solid var(--bo);margin:16px 0}
+.or{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}
+.orl{color:var(--mu)}
+.or.tot{font-size:14px;font-weight:500;padding-top:12px;border-top:1px solid var(--bo);margin-top:4px}
+.cfv{display:none;flex-direction:column;align-items:center;padding:80px 24px;text-align:center}
+.cfv.on{display:flex}
+.cfic{width:64px;height:64px;border-radius:50%;background:#e8f5e9;color:#388e3c;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.cfic svg{width:32px;height:32px;stroke-width:2}
+.cftit{font-family:var(--se);font-size:38px;font-weight:300;margin-bottom:8px}
+.cfsub{font-size:13px;color:var(--mu);font-weight:300;max-width:420px;line-height:1.9;margin-bottom:40px}
+
+/* ABOUT */
+.abh{position:relative;height:360px;overflow:hidden}
+.abhim{width:100%;height:100%;object-fit:cover;opacity:.55;background:var(--k)}
+.abhc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--w);text-align:center}
+.abht{font-family:var(--se);font-size:clamp(34px,4.5vw,58px);font-weight:300;margin-bottom:10px}
+.abhs{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.65}
+.abm{padding:80px 24px;text-align:center}
+.abmt{font-family:var(--se);font-size:36px;font-weight:300;margin-bottom:28px}
+.abmb{font-size:14px;font-weight:300;color:var(--mu);line-height:2.1;max-width:660px;margin:0 auto 20px}
+.abv{padding:64px 24px;background:var(--cr)}
+.abvg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:32px;text-align:center}
+@media(min-width:640px){.abvg{grid-template-columns:repeat(4,1fr)}}
+.abvi{margin:0 auto 16px;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.abvi svg{width:42px;height:42px;stroke-width:1;stroke:var(--k);fill:none}
+.abvt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:6px}
+.abvd{font-size:11px;color:var(--mu);line-height:1.7}
+.abtm{padding:80px 24px;text-align:center}
+.tmg{display:grid;grid-template-columns:repeat(1,1fr);gap:48px;max-width:840px;margin:0 auto}
+@media(min-width:640px){.tmg{grid-template-columns:repeat(3,1fr)}}
+.tmav{width:100px;height:100px;border-radius:50%;object-fit:cover;background:var(--cr);margin:0 auto 16px}
+.tmn{font-size:14px;font-weight:500;margin-bottom:4px}
+.tmr{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+
+/* CAREERS */
+.pcgrid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(min-width:768px){.pcgrid{grid-template-columns:repeat(4,1fr)}}
+.pck{background:var(--w);padding:32px 24px;text-align:center;border-radius:2px}
+.pckic{margin:0 auto 18px;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.pckic svg{width:36px;height:36px;stroke:var(--k);stroke-width:.8;fill:none}
+.pcktt{font-size:13px;font-weight:500;margin-bottom:8px}
+.pckd{font-size:12px;color:var(--mu);font-weight:300;line-height:1.75}
+.jcard{border:1px solid var(--bo);padding:28px 32px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-radius:2px;transition:border-color .2s,box-shadow .2s}
+.jcard:hover{border-color:var(--k);box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.jdept{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--go);font-weight:500;margin-bottom:6px}
+.jtit{font-family:var(--se);font-size:20px;font-weight:300;margin-bottom:6px}
+.jmeta{font-size:12px;color:var(--mu);display:flex;gap:18px;flex-wrap:wrap}
+.tag{font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--bo);font-weight:500;background:var(--cr);border-radius:2px}
+
+/* AFFILIATES */
+.stpg{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(1,1fr);gap:40px;text-align:center}
+@media(min-width:640px){.stpg{grid-template-columns:repeat(3,1fr)}}
+.stn{font-family:var(--se);font-size:72px;font-weight:300;color:var(--go);line-height:1;margin-bottom:14px}
+.sttit{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.std{font-size:12px;color:var(--mu);font-weight:300;line-height:1.8}
+.rg{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(1,1fr);gap:20px}
+@media(min-width:640px){.rg{grid-template-columns:repeat(3,1fr)}}
+.rc{background:var(--w);border:1px solid var(--bo);padding:36px 24px;text-align:center;position:relative;overflow:hidden;border-radius:2px}
+.rc.feat{border-color:var(--go)}
+.rc.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--go)}
+.rtier{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mu);margin-bottom:14px}
+.rpct{font-family:var(--se);font-size:58px;font-weight:300;line-height:1;margin-bottom:4px}
+.rpct.gold{color:var(--go)}
+.runit{font-size:11px;color:var(--mu);font-weight:300;margin-bottom:20px}
+.rfl{list-style:none;font-size:12px;color:var(--mu);line-height:2.2}
+.rfl li::before{content:'✓  ';color:var(--go)}
+
+/* BLOG */
+.bcbar{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:30px 24px 0}
+.bcbtn{font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:8px 18px;border:1px solid var(--bo);cursor:pointer;transition:all .2s;border-radius:2px;font-weight:200}
+.bcbtn.on,.bcbtn:hover{background:var(--k);color:var(--w);border-color:var(--k)}
+.bfc{display:grid;grid-template-columns:1fr;gap:40px;cursor:pointer}
+@media(min-width:768px){.bfc{grid-template-columns:1fr 1fr;gap:56px}}
+.bfci{aspect-ratio:16/9;overflow:hidden;background:var(--cr);border-radius:2px}
+.bfci img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ez)}
+.bfc:hover .bfci img{transform:scale(1.04)}
+.bfcb{display:flex;flex-direction:column;justify-content:center}
+.btag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--go);font-weight:500;margin-bottom:12px}
+.bftit{font-family:var(--se);font-size:clamp(22px,2.8vw,36px);font-weight:300;line-height:1.3;margin-bottom:14px}
+.bfex{font-size:13px;font-weight:300;color:var(--mu);line-height:1.85;margin-bottom:22px}
+.bmet{font-size:11px;color:var(--mu);display:flex;gap:16px}
+.bgrid{display:grid;grid-template-columns:repeat(1,1fr);gap:36px}
+@media(min-width:640px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.bgrid{grid-template-columns:repeat(3,1fr)}}
+.bcard{cursor:pointer}
+.bcardi{aspect-ratio:3/2;overflow:hidden;background:var(--cr);margin-bottom:18px;border-radius:2px}
+.bcardi img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ez)}
+.bcard:hover .bcardi img{transform:scale(1.04)}
+.bcardtit{font-family:var(--se);font-size:21px;font-weight:300;line-height:1.35;margin-bottom:8px}
+.bcardex{font-size:12px;color:var(--mu);font-weight:300;line-height:1.8;margin-bottom:12px}
+.bcardm{font-size:11px;color:var(--mu)}
+.bmore{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--go);margin-top:12px;display:flex;align-items:center;gap:4px;transition:gap .2s}
+.bcard:hover .bmore{gap:8px}
+
+/* CONTACT */
+.conl{display:grid;grid-template-columns:1fr;max-width:var(--mw);margin:0 auto}
+@media(min-width:768px){.conl{grid-template-columns:1fr 1fr}}
+.conf{padding:72px 48px}
+@media(max-width:480px){.conf{padding:48px 24px}}
+.coni{background:var(--k);color:var(--w);padding:72px 48px}
+@media(max-width:480px){.coni{padding:48px 24px}}
+.confi{border:1px solid var(--bo);padding:12px 15px;font-size:12px;font-weight:300;outline:none;width:100%;transition:border-color .2s;background:var(--w);border-radius:2px}
+.confi:focus{border-color:var(--k)}
+.conft{resize:vertical;min-height:120px}
+.cib{margin-bottom:40px}
+.citit{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--go);margin-bottom:12px}
+.cival{font-size:13px;font-weight:300;color:rgba(255,255,255,.7);line-height:2}
+.hgr2{display:grid;grid-template-columns:auto 1fr;gap:4px 22px}
+.hgr2 dt{font-size:12px;color:rgba(255,255,255,.45)}
+.hgr2 dd{font-size:12px;color:rgba(255,255,255,.75)}
+.cmap{height:200px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-top:28px;border-radius:2px}
+
+/* CUSTOMER SERVICE */
+.cscc{padding:64px 24px;background:var(--cr)}
+.csccg{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(1,1fr);gap:20px}
+@media(min-width:640px){.csccg{grid-template-columns:repeat(3,1fr)}}
+.cscard{background:var(--w);padding:36px 28px;text-align:center;border:1px solid var(--bo);border-radius:2px;transition:box-shadow .22s,border-color .22s}
+.cscard:hover{border-color:var(--k);box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.cscic{margin:0 auto 18px;width:50px;height:50px;display:flex;align-items:center;justify-content:center}
+.cscic svg{width:36px;height:36px;stroke:var(--k);stroke-width:.8;fill:none}
+.csctit{font-size:14px;font-weight:500;margin-bottom:8px}
+.cscd{font-size:12px;color:var(--mu);font-weight:300;line-height:1.75;margin-bottom:18px}
+.cscdet{font-size:15px;font-weight:500}
+.faqw{max-width:860px;margin:0 auto;padding:72px 28px 88px}
+.faqi{border-bottom:1px solid var(--bo)}
+.faqq{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;font-size:14px;font-weight:300;gap:20px;transition:color .2s}
+.faqq:hover{color:var(--go)}
+.faqic{width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .32s var(--ez)}
+.faqi.on .faqic{transform:rotate(45deg)}
+.faqa{overflow:hidden;max-height:0;transition:max-height .4s var(--ez)}
+.faqi.on .faqa{max-height:300px}
+.faqai{padding:0 0 24px;font-size:13px;font-weight:300;color:var(--mu);line-height:1.9}
+
+/* MY ACCOUNT */
+.acw{max-width:500px;margin:0 auto;padding:72px 24px}
+.actabs{display:flex;border-bottom:2px solid var(--bo);margin-bottom:44px}
+.actab{flex:1;padding:14px;text-align:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;color:var(--mu);border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;cursor:pointer}
+.actab.on{color:var(--k);border-bottom-color:var(--k);font-weight:500}
+.acfm{display:none}.acfm.on{display:block}
+.acf{border:1px solid var(--bo);padding:13px 16px;font-size:13px;font-weight:300;outline:none;width:100%;transition:border-color .2s;background:var(--w);margin-bottom:12px;border-radius:2px}
+.acf:focus{border-color:var(--k)}
+.acfg{font-size:11px;color:var(--mu);text-align:right;display:block;margin-top:-6px;margin-bottom:22px;cursor:pointer;transition:color .2s}
+.acfg:hover{color:var(--k)}
+.acdiv{display:flex;align-items:center;gap:14px;margin:26px 0}
+.acdiv::before,.acdiv::after{content:'';flex:1;height:1px;background:var(--bo)}
+.acdivt{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);white-space:nowrap}
+.acsg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.acsb{border:1px solid var(--bo);padding:12px;text-align:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:300;display:flex;align-items:center;justify-content:center;gap:8px;transition:border-color .2s;border-radius:2px}
+.acsb:hover{border-color:var(--k)}
+.acsb svg{width:15px;height:15px;stroke-width:1.5}
+
+/* FIND A STORE */
+.fasl{display:grid;grid-template-columns:1fr}
+@media(min-width:768px){.fasl{grid-template-columns:380px 1fr;min-height:calc(100vh - var(--nh) - 280px)}}
+.faslp{border-right:1px solid var(--bo);overflow-y:auto}
+.fassw{padding:20px 24px;border-bottom:1px solid var(--bo)}
+.fassi{border:1px solid var(--bo);padding:11px 14px;font-size:12px;outline:none;width:100%;transition:border-color .2s;border-radius:2px}
+.fassi:focus{border-color:var(--k)}
+.stcard{padding:24px;border-bottom:1px solid var(--bo);cursor:pointer;transition:background .15s;border-left:3px solid transparent}
+.stcard:hover{background:var(--cr)}
+.stcard.on{background:var(--cr);border-left-color:var(--k)}
+.stn2{font-size:14px;font-weight:500;margin-bottom:5px}
+.sta{font-size:12px;font-weight:300;color:var(--mu);line-height:1.75;margin-bottom:10px}
+.sttg{display:flex;gap:6px;flex-wrap:wrap}
+.stmp{background:var(--cr);display:flex;align-items:center;justify-content:center;min-height:400px;flex:1}
+.stmpl{text-align:center;padding:40px}
+.stmppin{font-size:60px;opacity:.15;margin-bottom:20px}
+.stmpt{font-size:16px;font-weight:300;margin-bottom:8px}
+.stmpd{font-size:12px;color:var(--mu);font-weight:300}
+.stdp{padding:44px;text-align:left}
+.stdpt{font-family:var(--se);font-size:30px;font-weight:300;margin-bottom:26px}
+.stddl{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;font-size:13px;font-weight:300;margin-bottom:32px}
+.stddt{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--mu);align-self:start;padding-top:2px}
+.stddd{color:var(--k);line-height:1.65}
+
+/* LEGAL */
+.legl{display:grid;grid-template-columns:1fr;gap:52px;max-width:1100px;margin:0 auto;padding:64px 28px 100px}
+@media(min-width:860px){.legl{grid-template-columns:220px 1fr}}
+.legtoc{position:sticky;top:calc(var(--nh)+28px);align-self:start}
+/* ── LEGAL refined ── */
+.legtit{font-size:9px;letter-spacing:.28em;text-transform:uppercase;font-weight:300;margin-bottom:20px}
+.leglink{display:block;font-size:11px;font-weight:200;color:var(--mu);padding:8px 0 8px 14px;border-left:2px solid transparent;cursor:pointer;transition:color .2s,border-color .2s;letter-spacing:.04em}
+.leglink:hover,.leglink.on{color:var(--k);border-left-color:var(--k)}
+.legb h2{font-family:var(--se);font-size:28px;font-weight:200;margin:52px 0 20px;scroll-margin-top:calc(var(--nh)+24px);letter-spacing:.04em}
+.legb h2:first-child{margin-top:0}
+.legb p{font-size:13px;font-weight:200;color:var(--mu);line-height:2.2;margin-bottom:18px;letter-spacing:.03em}
+.legb ul{margin:0 0 18px 22px}
+.legb li{font-size:13px;font-weight:200;color:var(--mu);line-height:2.2;letter-spacing:.03em}
+.legb strong{font-weight:300;color:var(--k)}
+.legupd{font-size:10px;color:var(--mu);letter-spacing:.1em;display:block;margin-bottom:40px;font-weight:200}
+
+/* GIFT CARD */
+.gcl{display:grid;grid-template-columns:1fr;gap:56px;max-width:1100px;margin:0 auto;padding:64px 28px 100px}
+@media(min-width:768px){.gcl{grid-template-columns:1fr 1fr}}
+.gcps{position:sticky;top:calc(var(--nh)+20px);align-self:start}
+.gcc{aspect-ratio:16/9;border-radius:8px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;color:var(--w);position:relative;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.2);transition:background .4s}
+.gccs{position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.06) 50%,transparent 70%);pointer-events:none}
+.gcl2{font-family:var(--se);font-size:20px;font-weight:300}
+.gcl2 span{display:block;font-family:var(--sa);font-size:7px;letter-spacing:.16em;text-transform:uppercase;opacity:.5;margin-top:2px}
+.gcamt2{font-family:var(--se);font-size:clamp(36px,6vw,60px);font-weight:300;text-align:center;color:var(--go)}
+.gcbot{display:flex;align-items:flex-end;justify-content:space-between}
+.gcto{font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.5}
+.gcto strong{display:block;font-size:14px;font-weight:300;text-transform:none;opacity:1;margin-top:3px}
+.gcnum{font-family:monospace;font-size:12px;letter-spacing:.2em;opacity:.3}
+.gcthmbs{display:flex;gap:10px;margin-top:18px}
+.gcthb{width:38px;height:26px;border-radius:4px;border:2px solid transparent;cursor:pointer;transition:border-color .2s}
+.gcthb.on{border-color:var(--k)}
+.gcag{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:24px}
+.gcab{border:1px solid var(--bo);padding:13px;text-align:center;font-size:13px;font-weight:300;cursor:pointer;transition:all .2s;border-radius:2px}
+.gcab.on{border-color:var(--k);background:var(--k);color:var(--w)}
+.gcab:hover:not(.on){border-color:var(--k)}
+.gcfi{border:1px solid var(--bo);padding:12px 15px;font-size:12px;font-weight:300;outline:none;width:100%;transition:border-color .2s;background:var(--w);border-radius:2px;margin-bottom:12px}
+.gcfi:focus{border-color:var(--k)}
+.gcfil{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;margin-bottom:8px;margin-top:18px;display:block}
+.gcmsg{border:1px solid var(--bo);padding:12px 15px;font-size:12px;font-weight:300;outline:none;width:100%;resize:none;min-height:84px;transition:border-color .2s;background:var(--w);border-radius:2px;margin-bottom:12px}
+.gcmsg:focus{border-color:var(--k)}
+
+/* POPUP */
+.popback{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .38s;pointer-events:none}
+.popback.on{opacity:1;pointer-events:all}
+.pop{background:var(--w);max-width:780px;width:100%;display:flex;overflow:hidden;position:relative;transform:translateY(24px);transition:transform .38s var(--ez);border-radius:2px}
+.popback.on .pop{transform:none}
+.popvis{flex:0 0 46%;display:none}
+@media(min-width:580px){.popvis{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}}
+.popvis img{width:100%;height:100%;object-fit:cover}
+.popbod{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 36px;text-align:center}
+.popx{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--mu);transition:color .2s,background .2s;z-index:2}
+.popx:hover{color:var(--k);background:var(--cr)}
+.poptit{font-family:var(--se);font-size:36px;font-weight:200;margin-bottom:10px}
+.popsub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);line-height:1.9;margin-bottom:36px;font-weight:200}
+.popclaim{width:100%;border:1px solid var(--k);padding:14px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:300;transition:background .22s,color .22s;margin-bottom:12px;border-radius:2px}
+.popclaim:hover{background:var(--k);color:var(--w)}
+.popno{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);transition:color .2s;font-weight:200}
+.popno:hover{color:var(--k)}
+
+/* COOKIE */
+.ckban{position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--w);border-top:1px solid var(--bo);transform:translateY(100%);transition:transform .42s var(--ez)}
+.ckban.on{transform:none}
+.ckin{max-width:var(--mw);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cktx{font-size:11px;font-weight:300;line-height:1.7;max-width:560px}
+.ckpl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-top:5px;cursor:pointer;transition:color .2s}
+.ckpl:hover{color:var(--k)}
+.ckac{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.ckpe{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);cursor:pointer;transition:color .2s}
+.ckpe:hover{color:var(--k)}
+.ckab{background:var(--k);color:var(--w);padding:11px 26px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:opacity .2s}
+.ckab:hover{opacity:.8}
+.ckpmod{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.52);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.ckpmod.on{opacity:1;pointer-events:all}
+.ckpbox{background:var(--w);max-width:500px;width:100%;padding:36px;border-radius:2px}
+.ckptit{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
+.ckpi{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--bo)}
+.ckpi:last-of-type{border-bottom:none;margin-bottom:0}
+.ckprow{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.ckpnm{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.ckpal{font-size:11px;color:var(--mu)}
+.ckpd{font-size:11px;color:var(--mu);line-height:1.75}
+.tog{width:42px;height:23px;border-radius:12px;background:#4caf50;position:relative;cursor:pointer;border:none;transition:background .22s;flex-shrink:0}
+.tog::after{content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:var(--w);transition:transform .22s}
+.tog.off{background:#ccc}
+.tog.on::after{transform:translateX(19px)}
+
+/* TOAST */
+.toast{position:fixed;bottom:88px;right:24px;z-index:2000;background:var(--k);color:var(--w);padding:13px 22px;font-size:12px;letter-spacing:.05em;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;pointer-events:none;border-radius:2px;max-width:320px}
+.toast.on{opacity:1;transform:none}
+
+/* FOOTER */
+.footer{background:var(--k);color:var(--w)}
+.ftmain{display:grid;grid-template-columns:1fr;gap:44px;padding:60px 28px;max-width:var(--mw);margin:0 auto}
+@media(min-width:640px){.ftmain{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.ftmain{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+.ftn{font-family:var(--se);font-size:22px;font-weight:300;margin-bottom:2px}
+.fts{font-size:8px;letter-spacing:.16em;text-transform:uppercase;opacity:.45;margin-bottom:20px}
+.fta{font-size:11px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.9;margin-bottom:8px}
+.ftso{display:flex;gap:10px;margin-top:22px}
+.ftsob{width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.38);transition:color .2s}
+.ftsob:hover{color:var(--w)}
+.ftsob svg{width:15px;height:15px}
+.ftct{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin-bottom:18px;color:rgba(255,255,255,.6)}
+.ftls{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ftlb{font-size:12px;font-weight:300;color:rgba(255,255,255,.42);transition:color .2s;text-align:left}
+.ftlb:hover{color:var(--w)}
+.fthr{font-size:12px;font-weight:300;color:rgba(255,255,255,.42);line-height:2.2}
+.ftbot{border-top:1px solid rgba(255,255,255,.08);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;max-width:var(--mw);margin:0 auto}
+.ftcp{font-size:11px;font-weight:300;color:rgba(255,255,255,.24)}
+.ftloc{display:flex;align-items:center;gap:18px;font-size:11px;font-weight:300;color:rgba(255,255,255,.24)}
+.ftnw{margin-top:24px}
+.ftnwl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
+.ftnwr{display:flex}
+.ftnwi{flex:1;padding:10px 14px;font-size:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:var(--w);outline:none;transition:border-color .2s}
+.ftnwi::placeholder{color:rgba(255,255,255,.3)}
+.ftnwi:focus{border-color:rgba(255,255,255,.4)}
+.ftnwb{padding:10px 18px;background:var(--go);color:var(--w);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:background .2s}
+.ftnwb:hover{background:#b8963e}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nls,.ni-i.desk{display:none}
+  .burg{display:flex}
+  .dl2{grid-template-columns:1fr}
+  .gal{flex-direction:column}
+  .gths{flex-direction:row;width:100%}
+  .gth{width:64px;height:64px}
+}
+@media(min-width:769px){.burg{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="Nav">
+  <div class="nv">
+    <button class="lg" onclick="App.go('home')">
+      <span class="lt">m3</span><span class="ls">MBbrandname</span>
+    </button>
+    <div class="nls">
+      <button class="nl" data-p="home"          onclick="App.go('home')">Home</button>
+      <button class="nl" data-p="new-arrivals"  onclick="App.go('new-arrivals')">New Arrivals</button>
+      <button class="nl" data-p="bags"          onclick="App.go('bags')">Bags</button>
+      <button class="nl" data-p="accessories"   onclick="App.go('accessories')">Accessories</button>
+      <button class="nl" data-p="about"         onclick="App.go('about')">About</button>
+      <button class="nl" data-p="blog"          onclick="App.go('blog')">Blog</button>
+    </div>
+    <div class="na">
+      <button class="ni-i desk" onclick="Search.open()" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      <button class="ni-i desk" onclick="App.go('account')" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="ni-i desk" onclick="App.go('wishlist')" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      <div class="cw">
+        <button class="ni-i" onclick="App.go('cart')" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+        <span class="cb" id="cartBadge">0</span>
+      </div>
+      <button class="burg" id="burgBtn" onclick="App.toggleDrawer()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH -->
+<div class="sov" id="searchOv">
+  <button class="scl" onclick="Search.close()">✕</button>
+  <div class="sb">
+    <input class="si" id="searchIn" type="text" placeholder="Search products, brands…" autocomplete="off" onkeydown="if(event.key==='Enter')Search.run()">
+    <button onclick="Search.run()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+  </div>
+  <p style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-top:16px">Press Enter to search · Esc to close</p>
+  <div class="sr" id="searchRes"></div>
+</div>
+
+<!-- MOBILE DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="dh">
+    <span class="lt" style="font-family:var(--se);font-size:21px">m3</span>
+    <button onclick="App.toggleDrawer()" style="font-size:22px;color:var(--mu)">✕</button>
+  </div>
+  <button class="dl" onclick="App.go('home')">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('new-arrivals')">New Arrivals<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('bags')">Bags<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('accessories')">Accessories<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('about')">About Us<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('blog')">Blog<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('careers')">Careers<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('contact')">Contact<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('account')">My Account<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('cart')">Cart<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button class="dl" onclick="App.go('wishlist')">Wishlist<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+</div>
+
+<!-- ═══════ HOME ═══════ -->
+<div class="view on" id="view-home">
+  <section class="hero">
+    <div class="ht" id="heroTrack">
+      <div class="hs split on">
+        <div class="hgr"><img src="https://picsum.photos/seed/mb-h1/800/500" alt="" loading="eager"><img src="https://picsum.photos/seed/mb-h2/800/500" alt="" loading="eager"><img src="https://picsum.photos/seed/mb-h3/800/500" alt="" loading="eager"><img src="https://picsum.photos/seed/mb-h4/800/500" alt="" loading="eager"></div>
+        <div class="hov"></div>
+        <div class="hc"><p class="hey">No.1 Authentic Luxury from Japan</p><h1 class="htl">Luxury<br>Brandname Stone</h1><div class="hca"><button class="btn bp bpill" onclick="App.go('new-arrivals')">Shop Now</button><button class="btn bw bpill" onclick="App.go('about')">Our Story</button></div></div>
+      </div>
+      <div class="hs"><img class="hi" src="https://picsum.photos/seed/mb-h5/1600/900" alt="" loading="lazy"><div class="hov"></div><div class="hc"><p class="hey">Sourced Directly from Japan</p><h1 class="htl">Curated<br>Vintage Treasures</h1><div class="hca"><button class="btn bp bpill" onclick="App.go('bags')">Shop Bags</button></div></div></div>
+      <div class="hs"><img class="hi" src="https://picsum.photos/seed/mb-h6/1600/900" alt="" loading="lazy"><div class="hov"></div><div class="hc"><p class="hey">Authenticated &amp; Inspected</p><h1 class="htl">Iconic Bags<br>&amp; Accessories</h1><div class="hca"><button class="btn bp bpill" onclick="App.go('accessories')">Shop Accessories</button></div></div></div>
+    </div>
+    <button class="har hp" onclick="Hero.prev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="har hn" onclick="Hero.next()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="hd" id="heroDots"></div>
+  </section>
+  <section><div class="sh"><p class="se">Just In</p><h2 class="st" style="font-weight:200">New Arrivals</h2></div><div class="w"><div class="grid c4" id="homeGrid"></div><div class="vmr"><button class="btn bo" onclick="App.go('new-arrivals')">View All New Arrivals →</button></div></div></section>
+  <section class="story"><div class="strin"><button class="sar2 sap" onclick="Story.prev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"/></svg></button><button class="sar2 san" onclick="Story.next()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button><div id="storyContainer"></div><div class="sdts" id="storyDots"></div></div></section>
+  <div class="astrip"><div class="w"><p class="aste">About MBbrandname</p><h3 class="asth">100% Authentic Branded Items From Japan</h3><p class="astb">Carefully selected and imported directly from Japan. With over 10 years of experience in authentic secondhand branded goods, we guarantee genuine quality. Each item is thoroughly inspected before delivery.</p></div></div>
+  <div class="trust"><div class="tg"><div><div class="ti"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><p class="tt">Fast &amp; Free Delivery</p><p class="td">Free on orders over ฿4,500. Express 1–2 day available.</p></div><div><div class="ti"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 15a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 4.2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 11.9a16 16 0 0 0 6 6l.95-.94a2 2 0 0 1 2.11-.45c.9.34 1.85.58 2.81.7A2 2 0 0 1 22 19.92z"/></svg></div><p class="tt">24/7 Customer Support</p><p class="td">Phone, email &amp; live chat. Always here for you.</p></div><div><div class="ti"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><p class="tt">Money-Back Guarantee</p><p class="td">30-day hassle-free returns on all items.</p></div></div></div>
+</div>
+
+<!-- ═══════ LISTINGS ═══════ -->
+<div class="view" id="view-new-arrivals">
+  <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-arr/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Shop</p><h1 class="phh">New Arrivals</h1></div></div>
+  <div class="w" style="padding-bottom:88px">
+    <div class="toolbar"><div class="tbl"><span class="tc" id="cnt-new-arrivals"></span><select class="ts" onchange="Listing.sort('new-arrivals',this.value)"><option value="">Default Sorting</option><option value="pa">Price: Low to High</option><option value="pd">Price: High to Low</option><option value="na">Name A–Z</option></select></div><div class="tbr"><span class="tvl">View</span><button class="tvb" onclick="Listing.cols('new-arrivals',2)">2</button><button class="tvb" onclick="Listing.cols('new-arrivals',3)">3</button><button class="tvb on" onclick="Listing.cols('new-arrivals',4)">4</button><button class="tfb" onclick="Listing.filter('new-arrivals')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>Filter</button></div></div>
+    <div class="fp" id="fp-new-arrivals"><div class="fpi"><div><p class="fgt">Category</p><label class="fc"><input type="checkbox" onchange="Listing.filter2('new-arrivals',this,'cat',this.value)"> Bags</label><label class="fc"><input type="checkbox" onchange="Listing.filter2('new-arrivals',this,'cat',this.value)"> Accessories</label></div><div><p class="fgt">Brand</p><label class="fc"><input type="checkbox"> Chanel</label><label class="fc"><input type="checkbox"> Gucci</label><label class="fc"><input type="checkbox"> Louis Vuitton</label><label class="fc"><input type="checkbox"> Cartier</label></div><div><p class="fgt">Price (THB)</p><label class="fc"><input type="checkbox"> Under ฿5,000</label><label class="fc"><input type="checkbox"> ฿5,000–฿20,000</label><label class="fc"><input type="checkbox"> Over ฿20,000</label></div><div><p class="fgt">Condition</p><label class="fc"><input type="checkbox"> Excellent</label><label class="fc"><input type="checkbox"> Very Good</label><label class="fc"><input type="checkbox"> Good</label></div></div></div>
+    <div class="grid c4" id="grid-new-arrivals"></div>
+    <div class="vmr"><button class="btn bo" onclick="Toast.show('All items loaded')">Show More</button></div>
+  </div>
+</div>
+
+<div class="view" id="view-bags">
+  <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-bags/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Shop</p><h1 class="phh">Bags</h1></div></div>
+  <div class="w" style="padding-bottom:88px">
+    <div class="toolbar"><div class="tbl"><span class="tc" id="cnt-bags"></span><select class="ts"><option>Default Sorting</option><option>Price: Low to High</option><option>Price: High to Low</option></select></div><div class="tbr"><span class="tvl">View</span><button class="tvb" onclick="Listing.cols('bags',2)">2</button><button class="tvb" onclick="Listing.cols('bags',3)">3</button><button class="tvb on" onclick="Listing.cols('bags',4)">4</button><button class="tfb" onclick="Listing.filter('bags')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>Filter</button></div></div>
+    <div class="fp" id="fp-bags"><div class="fpi"><div><p class="fgt">Brand</p><label class="fc"><input type="checkbox"> Chanel</label><label class="fc"><input type="checkbox"> Hermès</label><label class="fc"><input type="checkbox"> Louis Vuitton</label><label class="fc"><input type="checkbox"> Bottega Veneta</label></div><div><p class="fgt">Style</p><label class="fc"><input type="checkbox"> Shoulder</label><label class="fc"><input type="checkbox"> Tote</label><label class="fc"><input type="checkbox"> Crossbody</label><label class="fc"><input type="checkbox"> Clutch</label></div><div><p class="fgt">Price (THB)</p><label class="fc"><input type="checkbox"> Under ฿15,000</label><label class="fc"><input type="checkbox"> ฿15,000–฿50,000</label><label class="fc"><input type="checkbox"> Over ฿50,000</label></div><div><p class="fgt">Condition</p><label class="fc"><input type="checkbox"> Excellent</label><label class="fc"><input type="checkbox"> Very Good</label><label class="fc"><input type="checkbox"> Good</label></div></div></div>
+    <div class="grid c4" id="grid-bags"></div>
+    <div class="vmr"><button class="btn bo">Show More</button></div>
+  </div>
+</div>
+
+<div class="view" id="view-accessories">
+  <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-acc/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Shop</p><h1 class="phh">Accessories</h1></div></div>
+  <div class="w" style="padding-bottom:88px">
+    <div class="toolbar"><div class="tbl"><span class="tc" id="cnt-accessories"></span><select class="ts"><option>Default Sorting</option><option>Price: Low to High</option><option>Price: High to Low</option></select></div><div class="tbr"><span class="tvl">View</span><button class="tvb" onclick="Listing.cols('accessories',2)">2</button><button class="tvb" onclick="Listing.cols('accessories',3)">3</button><button class="tvb on" onclick="Listing.cols('accessories',4)">4</button><button class="tfb" onclick="Listing.filter('accessories')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>Filter</button></div></div>
+    <div class="fp" id="fp-accessories"><div class="fpi"><div><p class="fgt">Type</p><label class="fc"><input type="checkbox"> Necklaces</label><label class="fc"><input type="checkbox"> Bracelets</label><label class="fc"><input type="checkbox"> Earrings</label><label class="fc"><input type="checkbox"> Sunglasses</label></div><div><p class="fgt">Brand</p><label class="fc"><input type="checkbox"> Chanel</label><label class="fc"><input type="checkbox"> Gucci</label><label class="fc"><input type="checkbox"> Cartier</label><label class="fc"><input type="checkbox"> Dior</label></div><div><p class="fgt">Price (THB)</p><label class="fc"><input type="checkbox"> Under ฿8,000</label><label class="fc"><input type="checkbox"> ฿8,000–฿25,000</label><label class="fc"><input type="checkbox"> Over ฿25,000</label></div><div><p class="fgt">Metal</p><label class="fc"><input type="checkbox"> Gold-tone</label><label class="fc"><input type="checkbox"> Silver-tone</label><label class="fc"><input type="checkbox"> Rose gold</label></div></div></div>
+    <div class="grid c4" id="grid-accessories"></div>
+    <div class="vmr"><button class="btn bo">Show More</button></div>
+  </div>
+</div>
+
+<!-- ═══════ DETAIL ═══════ -->
+<div class="view" id="view-detail">
+  <div class="detp">
+    <div class="bc">
+      <div class="bcp"><button class="bcb" onclick="App.go('home')">Home</button><span>/</span><button class="bcb" id="det-bcat" onclick="App.go('new-arrivals')">Shop</button><span>/</span><span id="det-bnm" style="color:var(--k)">Product</span></div>
+      <div style="display:flex;gap:16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)"><button style="transition:color .2s" onmouseover="this.style.color='var(--k)'" onmouseout="this.style.color='var(--mu)'">← Prev</button><button style="transition:color .2s" onmouseover="this.style.color='var(--k)'" onmouseout="this.style.color='var(--mu)'">Next →</button></div>
+    </div>
+    <div class="dl2 w">
+      <div class="gal">
+        <div class="gths" id="galThumbs"></div>
+        <div class="gm">
+          <img class="gmi" id="galMain" src="https://picsum.photos/seed/mb-prod/600/600" alt="Product">
+          <button class="gnav gp" onclick="Gallery.prev()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="gnav gn" onclick="Gallery.next()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+          <button class="gz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>
+        </div>
+      </div>
+      <div>
+        <h1 class="pt" id="det-title">Product</h1>
+        <div class="prt"><div class="pst">★★★★★</div><span class="prc">(24 reviews)</span></div>
+        <div class="pp" id="det-price">฿0</div>
+        <p class="pd">Each piece is sourced directly from authenticated dealers in Japan. We inspect every item for condition, authenticity marks, hardware integrity, and presentation before listing. What arrives is exactly what you see — and more.</p>
+        <div class="pqr">
+          <div class="pqc">
+            <button class="pqb" onclick="Detail.qty(-1)">−</button>
+            <input class="pqi" id="detQty" type="number" value="1" min="1">
+            <button class="pqb" onclick="Detail.qty(1)">+</button>
+          </div>
+          <button class="btn bp patcb" onclick="Detail.atc()">Add to Cart</button>
+        </div>
+        <div class="psa">
+          <button class="psb" id="detWishBtn" data-id="" onclick="Detail.wish(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Add to Wishlist</button>
+          <button class="psb" onclick="Toast.show('Link copied!')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share</button>
+        </div>
+        <div class="pm" id="detMeta"></div>
+        <div class="pgr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><p><strong>100% Authenticity Guaranteed</strong>Every item is authenticated by our Japan-trained specialists before shipping.</p></div>
+      </div>
+    </div>
+    <div class="w">
+      <div class="tabs">
+        <div class="tabn">
+          <button class="tabb" onclick="Tabs.set('desc')" id="tab-desc">Description</button>
+          <button class="tabb" onclick="Tabs.set('info')" id="tab-info">Additional Info</button>
+          <button class="tabb on" onclick="Tabs.set('rev')" id="tab-rev">Reviews (3)</button>
+        </div>
+        <div class="tabp" id="pane-desc">
+        <h2 style="font-family:var(--se);font-size:24px;font-weight:200;margin-bottom:16px">Craftsmanship that endures.</h2>
+          <p style="font-size:13px;font-weight:200;color:var(--mu);line-height:1.9;margin-bottom:16px">Each item in our collection tells a story of heritage craftsmanship. Sourced from trusted dealers across Tokyo, Osaka, and Kyoto, every piece undergoes our 12-point authentication process — examining serial numbers, hardware, stitching, lining, and materials against original brand specifications.</p>
+          <p style="font-size:13px;font-weight:200;color:var(--mu);line-height:1.9">We believe pre-loved luxury is a more conscious, sustainable way to enjoy the world's finest pieces. When you shop with us, you're not just acquiring a beautiful item — you're preserving craftsmanship history.</p>
+        </div>
+        <div class="tabp" id="pane-info">
+          <table class="itbl"><tr><td>Condition</td><td>Excellent — Grade A</td></tr><tr><td>Origin</td><td>Japan</td></tr><tr><td>Authentication</td><td>Verified by MBbrandname Specialists</td></tr><tr><td>Warranty</td><td>30-Day Money-Back Guarantee</td></tr><tr><td>Shipping</td><td>Fully insured, trackable worldwide</td></tr><tr><td>Returns</td><td>Within 30 days of delivery</td></tr></table>
+        </div>
+        <div class="tabp on" id="pane-rev">
+          <div class="rv"><div class="rvav">JM</div><div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><div><p class="rvn">Janice Miller</p><p class="rvd">April 06, 2024</p></div><div class="rvst">★★★★★</div></div><p class="rvtx">Absolutely stunning piece. Arrived beautifully packaged and exactly as described. The gold tone is magnificent and it looks even better in person.</p></div></div>
+          <div class="rv"><div class="rvav">BP</div><div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><div><p class="rvn">Benjamin Porter</p><p class="rvd">March 15, 2024</p></div><div class="rvst" style="color:var(--go)">★★★★<span style="color:#ddd">★</span></div></div><p class="rvtx">Excellent authentic piece. Verified everything matches the real item. Very happy with the purchase and would definitely buy again.</p></div></div>
+          <div class="rv"><div class="rvav">SK</div><div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><div><p class="rvn">Suki Kimura</p><p class="rvd">February 2, 2024</p></div><div class="rvst">★★★★★</div></div><p class="rvtx">Perfect condition, exactly as shown. Arrived quickly and securely packaged. The authentication certificate gave me full confidence.</p></div></div>
+          <div style="border-top:1px solid var(--bo);padding-top:32px;margin-top:8px">
+            <p style="font-size:13px;font-weight:500;margin-bottom:4px">Leave a Review</p>
+            <p style="font-size:11px;color:var(--mu);margin-bottom:20px">Your email will not be published. Fields marked * are required.</p>
+            <p style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:8px">Your Rating *</p>
+            <div class="sp" id="starPick"><span data-v="1" onclick="Rvw.set(1)" onmouseenter="Rvw.hov(1)" onmouseleave="Rvw.unhov()">★</span><span data-v="2" onclick="Rvw.set(2)" onmouseenter="Rvw.hov(2)" onmouseleave="Rvw.unhov()">★</span><span data-v="3" onclick="Rvw.set(3)" onmouseenter="Rvw.hov(3)" onmouseleave="Rvw.unhov()">★</span><span data-v="4" onclick="Rvw.set(4)" onmouseenter="Rvw.hov(4)" onmouseleave="Rvw.unhov()">★</span><span data-v="5" onclick="Rvw.set(5)" onmouseenter="Rvw.hov(5)" onmouseleave="Rvw.unhov()">★</span></div>
+            <textarea class="rff rft" placeholder="Your Review *"></textarea>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px"><input class="rff" type="text" placeholder="Name *" style="margin-bottom:0"><input class="rff" type="email" placeholder="Email *" style="margin-bottom:0"></div>
+            <label style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--mu);margin-bottom:20px;cursor:pointer;font-weight:200"><input type="checkbox" style="accent-color:var(--k)"> Save my details for next time</label>
+            <button class="btn bp" onclick="Rvw.submit()">Submit Review</button>
+          </div>
+        </div>
+      </div>
+      <div style="padding:64px 0 0"><h2 style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;margin-bottom:28px">Related Products</h2><div class="grid c4" id="relGrid"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CART ═══════ -->
+<div class="view" id="view-cart">
+  <div class="cartp"><div class="w">
+    <h1 style="font-size:22px;font-weight:200;letter-spacing:.12em;text-transform:uppercase;margin-bottom:36px">Shopping Cart</h1>
+    <div class="cartl">
+      <div>
+        <table class="ctbl"><thead><tr><th>Product</th><th style="text-align:center;width:120px">Qty</th><th style="text-align:right">Subtotal</th><th style="width:40px"></th></tr></thead><tbody id="cartBody"></tbody></table>
+        <div class="coup"><input class="coui" type="text" placeholder="Coupon code (try: WELCOME10)"><button class="coub" onclick="Cart.applyCoupon()">Apply</button></div>
+      </div>
+      <div>
+        <div class="csum">
+          <h2 class="csumtit">Cart Totals</h2>
+          <div class="csumr"><span class="csuml">Subtotal</span><span id="cSub">฿0</span></div>
+          <div class="csumr"><span class="csuml">Shipping</span><span id="cShip">Free</span></div>
+          <div class="csumr"><span class="csuml">Discount</span><span id="cDisc" style="color:var(--re)">-</span></div>
+          <div class="csumr tot"><span>Total</span><span id="cTot">฿0</span></div>
+          <br>
+          <button class="btn bp bf" onclick="App.go('checkout')">Proceed to Checkout</button>
+          <div style="text-align:center;margin-top:14px"><button class="btn" style="font-size:10px;letter-spacing:.1em;color:var(--mu)" onclick="App.go('new-arrivals')">← Continue Shopping</button></div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══════ CHECKOUT ═══════ -->
+<div class="view" id="view-checkout">
+  <div class="cop"><div class="w">
+    <div class="cfv" id="cfView">
+      <div class="cfic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h1 class="cftit">Thank You</h1>
+      <p class="cfsub" id="cfNum"></p>
+      <div id="cfItems" style="background:var(--cr);padding:24px;margin-bottom:24px;text-align:left;width:100%;max-width:480px;border-radius:2px"></div>
+      <button class="btn bo" onclick="App.go('home')">Continue Shopping →</button>
+    </div>
+    <div id="coFormWrap">
+      <h1 style="font-size:22px;font-weight:200;letter-spacing:.12em;text-transform:uppercase;margin-bottom:36px">Checkout</h1>
+      <div class="col">
+        <div>
+          <h2 class="cost">Contact Information</h2>
+          <input class="cof" id="coEmail" type="email" placeholder="Email Address *" style="margin-bottom:12px">
+          <input class="cof" type="tel" placeholder="Phone Number">
+          <h2 class="cost">Shipping Address</h2>
+          <div class="cog2" style="margin-bottom:12px">
+            <input class="cof" type="text" placeholder="First Name *">
+            <input class="cof" type="text" placeholder="Last Name *">
+            <input class="cof coff" type="text" placeholder="Street Address *">
+            <input class="cof" type="text" placeholder="City *">
+            <input class="cof" type="text" placeholder="District / State">
+            <input class="cof" type="text" placeholder="Postal Code *">
+            <select class="cof coff"><option value="">Country *</option><option selected>Thailand</option><option>Japan</option><option>United States</option><option>United Kingdom</option><option>Singapore</option><option>Australia</option></select>
+          </div>
+          <h2 class="cost">Payment Method</h2>
+          <label class="payopt on" id="popt-card" onclick="Checkout.pay('card')"><input type="radio" name="pay" checked><span class="payopt-l">Credit / Debit Card</span><span style="margin-left:auto;font-size:11px;color:var(--mu)">Visa · Mastercard · Amex</span></label>
+          <div class="cfd" id="cardFields">
+            <input class="cof" type="text" placeholder="Card Number">
+            <input class="cof half" type="text" placeholder="MM / YY">
+            <input class="cof half" type="text" placeholder="CVV">
+          </div>
+          <label class="payopt" id="popt-pp" onclick="Checkout.pay('paypal')"><input type="radio" name="pay"><span class="payopt-l">PayPal</span></label>
+          <label class="payopt" id="popt-pm" onclick="Checkout.pay('promptpay')"><input type="radio" name="pay"><span class="payopt-l">PromptPay</span><span style="margin-left:auto;font-size:11px;color:var(--mu)">Thai QR Payment</span></label>
+          <br>
+          <div class="ssl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>256-bit SSL encrypted. Your payment is secure.</div>
+          <button class="btn bp bf" style="padding:16px" onclick="Checkout.place()">Place Order →</button>
+        </div>
+        <div>
+          <div class="osum">
+            <h2 class="osumtit">Order Summary</h2>
+            <div id="orderItems"></div>
+            <hr class="odiv">
+            <div class="or"><span class="orl">Subtotal</span><span id="oSub">฿0</span></div>
+            <div class="or"><span class="orl">Shipping</span><span>Free</span></div>
+            <div class="or tot"><span>Total</span><span id="oTot">฿0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ═══════ ABOUT ═══════ -->
+<div class="view" id="view-about">
+  <div style="padding-top:var(--nh)">
+    <div class="abh"><img class="abhim" src="https://picsum.photos/seed/mb-about/1600/800" alt="" loading="lazy"><div class="abhc"><h1 class="abht">About Us</h1><p class="abhs">No.1 Luxury Brandname</p></div></div>
+    <div class="abm"><div class="w"><h2 class="abmt">Our Mission</h2><p class="abmb">We believe that luxury should be accessible without compromising on authenticity. Every piece in our collection is meticulously sourced from Japan, authenticated by our expert team, and inspected to ensure it meets our exacting standards before reaching your hands.</p><p class="abmb">With over 10 years of experience in the authentic secondhand luxury market, we have built trust with thousands of customers worldwide who return to us for pieces that tell a story of refinement, heritage, and individuality.</p></div></div>
+          <div class="abv"><div class="w"><div class="sh" style="padding-top:0;padding-bottom:44px"><p class="se">Our Values</p></div><div class="abvg"><div><div class="abvi"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><p class="abvt">Authenticity</p><p class="abvd">Every item is certified genuine by our specialist team</p></div><div><div class="abvi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><p class="abvt">10+ Years</p><p class="abvd">A decade of trusted expertise in pre-loved luxury</p></div><div><div class="abvi"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><p class="abvt">Direct from Japan</p><p class="abvd">Sourced at the origin from trusted partners</p></div><div><div class="abvi"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><p class="abvt">Inspected Items</p><p class="abvd">12-point quality check before every delivery</p></div></div></div></div>
+    <div class="abtm"><div class="w"><div class="sh" style="padding-top:0"><p class="se">Meet the Team</p></div><div class="tmg"><div><img class="tmav" src="https://picsum.photos/seed/mb-tm1/200/200" alt=""><p class="tmn">Yuki Tanaka</p><p class="tmr">Founder &amp; CEO</p></div><div><img class="tmav" src="https://picsum.photos/seed/mb-tm2/200/200" alt=""><p class="tmn">Naomi Sato</p><p class="tmr">Head of Authentication</p></div><div><img class="tmav" src="https://picsum.photos/seed/mb-tm3/200/200" alt=""><p class="tmn">Kenji Watanabe</p><p class="tmr">Sourcing Director, Japan</p></div></div></div></div>
+  </div>
+</div>
+
+<!-- ═══════ WISHLIST ═══════ -->
+<div class="view" id="view-wishlist">
+  <div style="padding-top:var(--nh)">
+    <div class="ph" style="height:200px"><h1 class="pht"><p class="phl">Your</p><span class="phh">Wishlist</span></h1></div>
+    <div class="w" style="padding:28px 28px 88px">
+      <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:28px"><span id="wlCount">0</span> saved items</p>
+      <div class="grid c4" id="wlGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CAREERS ═══════ -->
+<div class="view" id="view-careers">
+  <div style="padding-top:var(--nh)">
+    <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-careers/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Join Us</p><h1 class="phh">Careers</h1></div></div>
+    <div class="sh"><p class="se">Work With Purpose</p><h2 class="st">Build the Future of Luxury</h2><p class="sb2">We're a passionate team dedicated to bringing authentic luxury to people who appreciate quality and craftsmanship. Join us.</p></div>
+    <div style="padding:72px 24px;background:var(--cr)"><div class="w"><div class="pcgrid">
+      <div class="pck"><div class="pckic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="pcktt">Health &amp; Wellness</h3><p class="pckd">Comprehensive health, dental, and vision coverage for you and your family.</p></div>
+      <div class="pck"><div class="pckic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3 class="pcktt">Flexible Work</h3><p class="pckd">Hybrid model with flexible hours to support work-life balance.</p></div>
+      <div class="pck"><div class="pckic"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3 class="pcktt">Growth &amp; Learning</h3><p class="pckd">Annual learning budget, mentorship programs, and career pathways.</p></div>
+      <div class="pck"><div class="pckic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><h3 class="pcktt">Staff Discount</h3><p class="pckd">Generous employee discount on all luxury collections.</p></div>
+    </div></div></div>
+      <div style="padding:72px 24px;max-width:var(--mw);margin:0 auto;padding-bottom:88px">
+        <div class="sh" style="text-align:left;padding:0 0 36px"><p class="se">Open Positions</p><h2 class="st">Current Openings</h2></div>
+        <div class="jcard">
+          <div><p class="jdept">Curation</p><h3 class="jtit">Senior Authenticator — Japan Sourcing</h3><div class="jmeta"><span>📍 Tokyo, Japan</span><span>Full-time</span></div></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span class="tag">Luxury Goods</span><span class="tag">5+ Years</span><button class="btn bp bsm" onclick="Toast.show('Application form coming soon')">Apply Now</button></div>
+        </div>
+        <div class="jcard">
+          <div><p class="jdept">E-Commerce</p><h3 class="jtit">Digital Marketing Manager</h3><div class="jmeta"><span>📍 Bangkok, Thailand</span><span>Full-time / Hybrid</span></div></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span class="tag">Marketing</span><span class="tag">3+ Years</span><button class="btn bp bsm" onclick="Toast.show('Application form coming soon')">Apply Now</button></div>
+        </div>
+        <div class="jcard">
+          <div><p class="jdept">Customer Experience</p><h3 class="jtit">Luxury Client Advisor</h3><div class="jmeta"><span>📍 Bangkok, Thailand</span><span>Full-time</span></div></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span class="tag">Customer Service</span><span class="tag">2+ Years</span><button class="btn bp bsm" onclick="Toast.show('Application form coming soon')">Apply Now</button></div>
+        </div>
+        <div class="jcard">
+          <div><p class="jdept">Technology</p><h3 class="jtit">Full-Stack Developer</h3><div class="jmeta"><span>📍 Remote</span><span>Full-time</span></div></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span class="tag">Engineering</span><span class="tag">4+ Years</span><button class="btn bp bsm" onclick="Toast.show('Application form coming soon')">Apply Now</button></div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- ═══════ AFFILIATES ═══════ -->
+<div class="view" id="view-affiliates">
+  <div style="padding-top:var(--nh)">
+    <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-aff/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Partner With Us</p><h1 class="phh">Affiliates</h1></div></div>
+    <div class="sh"><p class="se">Earn With Every Sale</p><h2 class="st">Join Our Affiliate Program</h2><p class="sb2">Earn competitive commissions by promoting authentic luxury goods to your audience. Perfect for influencers, bloggers, and content creators who love fashion.</p></div>
+    <div style="padding:72px 24px"><div class="w"><div class="stpg"><div><div class="stn">01</div><h3 class="sttit">Apply &amp; Get Approved</h3><p class="std">Fill in the application. Our team reviews within 2–3 business days. Approval based on content quality and audience fit.</p></div><div><div class="stn">02</div><h3 class="sttit">Share Your Links</h3><p class="std">Get your unique affiliate link and custom discount codes. Share on your blog, Instagram, YouTube, TikTok, or any platform.</p></div><div><div class="stn">03</div><h3 class="sttit">Earn Commissions</h3><p class="std">Earn on every sale through your link. Paid monthly via bank transfer or PayPal with no minimum threshold.</p></div></div></div></div>
+    <div style="padding:56px 24px;background:var(--cr)"><div class="w"><div class="sh" style="padding-top:0"><p class="se">Commission Tiers</p><h2 class="st">Your Earnings Potential</h2></div><div class="rg"><div class="rc"><p class="rtier">Starter</p><div class="rpct">8<span style="font-size:28px">%</span></div><p class="runit">Per Sale</p><ul class="rfl"><li>Up to 50 sales/month</li><li>Basic analytics</li><li>Email support</li></ul></div><div class="rc feat"><p class="rtier">Growth</p><div class="rpct gold">12<span style="font-size:28px">%</span></div><p class="runit">Per Sale</p><ul class="rfl"><li>50–200 sales/month</li><li>Advanced analytics</li><li>Priority support</li><li>Exclusive previews</li></ul><br><span class="tag" style="display:inline-block">Most Popular</span></div><div class="rc"><p class="rtier">Elite</p><div class="rpct">18<span style="font-size:28px">%</span></div><p class="runit">Per Sale</p><ul class="rfl"><li>200+ sales/month</li><li>Dedicated manager</li><li>Custom materials</li><li>Early access</li></ul></div></div></div></div>
+    <div style="max-width:700px;margin:0 auto;padding:72px 28px">
+      <div class="sh" style="text-align:left;padding:0 0 36px"><p class="se">Get Started</p><h2 class="st">Apply Now</h2></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px"><input class="cof" type="text" placeholder="First Name *"><input class="cof" type="text" placeholder="Last Name *"></div>
+      <input class="cof" type="email" placeholder="Email Address *" style="margin-bottom:12px"><input class="cof" type="url" placeholder="Website / Social Media URL *" style="margin-bottom:12px">
+      <select class="cof" style="margin-bottom:12px;color:var(--mu)"><option value="">Platform / Audience Type *</option><option>Instagram Influencer</option><option>YouTube Creator</option><option>Fashion Blogger</option><option>TikTok Creator</option><option>Newsletter</option><option>Other</option></select>
+      <textarea class="rff rft" placeholder="Tell us about your audience and why you'd like to partner with MBbrandname…" style="margin-bottom:20px"></textarea>
+      <button class="btn bp bf" onclick="Toast.show('Application submitted! We\'ll be in touch within 2–3 business days.')">Submit Application</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ BLOG ═══════ -->
+<div class="view" id="view-blog">
+  <div style="padding-top:var(--nh)">
+    <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-blog/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Journal</p><h1 class="phh">Editorial</h1></div></div>
+    <div class="bcbar"><button class="bcbtn on" onclick="Blog.cat(this,'')">All</button><button class="bcbtn" onclick="Blog.cat(this,'Style Guide')">Style Guide</button><button class="bcbtn" onclick="Blog.cat(this,'Authentication')">Authentication</button><button class="bcbtn" onclick="Blog.cat(this,'Investment')">Investment</button><button class="bcbtn" onclick="Blog.cat(this,'Japan')">Japan</button><button class="bcbtn" onclick="Blog.cat(this,'Brand Stories')">Brand Stories</button></div>
+    <div style="padding:48px 28px 16px;max-width:var(--mw);margin:0 auto">
+      <div class="bfc" onclick="Toast.show('Full article opening soon')">
+        <div class="bfci"><img src="https://picsum.photos/seed/mb-blog-feat/800/450" alt="" loading="lazy"></div>
+        <div class="bfcb"><p class="btag">Investment Pieces</p><h2 class="bftit">Why Chanel Bags Are the Ultimate Investment in 2025</h2><p class="bfex">Over the past decade, Chanel handbags have consistently outperformed the stock market. We dive into the data, examine which models hold their value best, and explain why now might be the perfect time to invest.</p><div class="bmet"><span>By Naomi Sato</span><span>·</span><span>March 8, 2025</span><span>·</span><span>8 min read</span></div><br><button class="btn bo bsm" style="margin-top:4px">Read Article →</button></div>
+      </div>
+    </div>
+    <div style="padding:20px 28px 88px;max-width:var(--mw);margin:0 auto">
+      <div class="bgrid" id="blogGrid"></div>
+      <div class="vmr"><button class="btn bo">Load More Articles</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CONTACT ═══════ -->
+<div class="view" id="view-contact">
+  <div style="padding-top:var(--nh)">
+    <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-contact/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Get in Touch</p><h1 class="phh">Contact Us</h1></div></div>
+    <div class="conl">
+      <div class="conf">
+        <p style="font-size:10px;letter-spacing:.25em;text-transform:uppercase;font-weight:200;color:var(--mu);margin-bottom:12px">Send a Message</p>
+          <h2 style="font-family:var(--se);font-size:32px;font-weight:200;margin-bottom:32px">We'd love to hear<br>from you.</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px"><input class="confi" type="text" placeholder="First Name *"><input class="confi" type="text" placeholder="Last Name *"></div>
+        <input class="confi" type="email" placeholder="Email Address *" style="margin-bottom:12px">
+        <input class="confi" type="text" placeholder="Subject" style="margin-bottom:12px">
+        <select class="confi" style="margin-bottom:12px;color:var(--mu)"><option value="">Enquiry Type</option><option>Product Enquiry</option><option>Order Support</option><option>Authentication Query</option><option>Returns &amp; Refunds</option><option>Partnership</option><option>Other</option></select>
+        <textarea class="confi conft" placeholder="Your Message *" style="margin-bottom:20px"></textarea>
+        <button class="btn bp bf" onclick="Toast.show('Message sent! We\'ll respond within 24 hours.')">Send Message →</button>
+      </div>
+      <div class="coni">
+        <p style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:200;color:rgba(255,255,255,.4);margin-bottom:40px">Contact Info</p>
+        <div class="cib"><p class="citit">Main Office</p><p class="cival">1418 River Drive, Suite 35<br>Cottonhall, CA 9122<br>United States</p></div>
+        <div class="cib"><p class="citit">Japan Office</p><p class="cival">3-14-2 Minami-Aoyama<br>Minato-ku, Tokyo 107-0062<br>Japan</p></div>
+        <div class="cib"><p class="citit">Contact Details</p><p class="cival">hello@mbbrandname.com<br>+1 246-345-0695<br>LINE: @mbbrandname</p></div>
+        <div class="cib"><p class="citit">Opening Hours</p><dl class="hgr2"><dt>Mon–Fri</dt><dd>8:00 AM – 9:00 PM</dd><dt>Saturday</dt><dd>9:00 AM – 8:00 PM</dd><dt>Sunday</dt><dd>Closed</dd></dl></div>
+        <div class="cmap"><p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25)">📍 Map Integration</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CUSTOMER SERVICE ═══════ -->
+<div class="view" id="view-customer-service">
+  <div style="padding-top:var(--nh)">
+    <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-cs/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">We're Here</p><h1 class="phh">Customer Service</h1></div></div>
+    <div class="sh"><p class="se">How Can We Help?</p><h2 class="st">Support Channels</h2></div>
+    <div class="cscc"><div class="w"><div class="csccg"><div class="cscard"><div class="cscic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 15a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 4.2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 11.9a16 16 0 0 0 6 6l.95-.94a2 2 0 0 1 2.11-.45c.9.34 1.85.58 2.81.7A2 2 0 0 1 22 19.92z"/></svg></div><h3 class="csctit">Call Us</h3><p class="cscd">Mon–Fri 8AM–9PM. Speak with a luxury advisor directly.</p><p class="cscdet">+1 246-345-0695</p></div><div class="cscard"><div class="cscic"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3 class="csctit">Email Us</h3><p class="cscd">Send a message. We respond within 24 hours on business days.</p><button class="btn bo bsm" onclick="App.go('contact')">Send a Message</button></div><div class="cscard"><div class="cscic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3 class="csctit">Live Chat</h3><p class="cscd">Chat in real time, 7 days a week, 9AM–6PM (ICT).</p><button class="btn bp bsm" onclick="Toast.show('Live chat coming soon')">Start Chat</button></div></div></div></div>
+    <div class="faqw">
+      <div class="sh" style="text-align:left;padding:0 0 36px"><p class="se">FAQ</p><h2 class="st">Frequently Asked Questions</h2></div>
+      <div id="faqList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ MY ACCOUNT ═══════ -->
+<div class="view" id="view-account">
+  <div style="padding-top:var(--nh)">
+    <div class="ph" style="height:180px"><h1 class="pht"><span class="phh">My Account</span></h1></div>
+    <div class="acw">
+      <div class="actabs">
+        <button class="actab on" id="act-login" onclick="Account.tab('login')">Sign In</button>
+        <button class="actab" id="act-reg" onclick="Account.tab('register')">Create Account</button>
+      </div>
+      <div class="acfm on" id="acform-login">
+        <input class="acf" type="email" placeholder="Email Address *">
+        <input class="acf" type="password" placeholder="Password *">
+        <a class="acfg">Forgot your password?</a>
+        <button class="btn bp bf" style="margin-bottom:16px" onclick="Toast.show('Signed in successfully. Welcome back!')">Sign In</button>
+        <div class="acdiv"><span class="acdivt">or continue with</span></div>
+        <div class="acsg">
+          <button class="acsb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg> Google</button>
+          <button class="acsb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</button>
+        </div>
+      </div>
+      <div class="acfm" id="acform-register">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0"><input class="acf" type="text" placeholder="First Name *" style="margin-bottom:0"><input class="acf" type="text" placeholder="Last Name *" style="margin-bottom:0"></div>
+        <input class="acf" type="email" placeholder="Email Address *" style="margin-top:12px">
+        <input class="acf" type="password" placeholder="Password *">
+        <input class="acf" type="password" placeholder="Confirm Password *">
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:11px;color:var(--mu);margin-bottom:20px;cursor:pointer;line-height:1.6;font-weight:200"><input type="checkbox" style="margin-top:2px;accent-color:var(--k)"> I agree to the <button onclick="App.go('legal')" style="color:var(--k);font-weight:300;margin-left:3px;font-size:11px;border-bottom:1px solid var(--k)">Terms &amp; Privacy Policy</button></label>
+        <button class="btn bp bf" onclick="Toast.show('Account created! Welcome to MBbrandname.')">Create Account</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ FIND A STORE ═══════ -->
+<div class="view" id="view-find-store">
+  <div style="padding-top:var(--nh)">
+    <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-store/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">Locations</p><h1 class="phh">Find a Store</h1></div></div>
+    <div class="fasl">
+      <div class="faslp">
+        <div class="fassw"><input class="fassi" type="text" placeholder="Search by city, country, or ZIP…" oninput="Stores.search(this.value)"></div>
+        <div id="storeList"></div>
+      </div>
+      <div id="storeMapArea">
+        <div class="stmp" id="storeMapDefault"><div class="stmpl"><div class="stmppin">📍</div><h3 class="stmpt">Select a Store</h3><p class="stmpd">Click any store to view details, hours &amp; directions.</p></div></div>
+        <div class="stdp" id="storeDetail" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ LEGAL ═══════ -->
+<div class="view" id="view-legal">
+  <div style="padding-top:var(--nh)">
+    <div class="ph" style="height:220px"><h1 class="pht"><p class="phl">Policies</p><span class="phh">Legal &amp; Privacy</span></h1></div>
+    <div class="legl">
+      <aside class="legtoc">
+        <p class="legtit">Contents</p>
+        <a class="leglink on" onclick="Legal.scroll('privacy',this)">Privacy Policy</a>
+        <a class="leglink" onclick="Legal.scroll('terms',this)">Terms of Service</a>
+        <a class="leglink" onclick="Legal.scroll('returns',this)">Returns Policy</a>
+        <a class="leglink" onclick="Legal.scroll('auth',this)">Authentication Policy</a>
+        <a class="leglink" onclick="Legal.scroll('cookies',this)">Cookie Policy</a>
+        <a class="leglink" onclick="Legal.scroll('shipping',this)">Shipping Policy</a>
+      </aside>
+      <div class="legb">
+        <span class="legupd">Last updated: January 15, 2025</span>
+        <h2 id="legal-privacy">Privacy Policy</h2>
+        <p>MBbrandname ("we", "our", or "us") is committed to protecting your personal information and your right to privacy. This policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase.</p>
+        <p><strong>Information We Collect:</strong> We collect information you provide directly including name, email, shipping address, and payment details. We also collect certain information automatically such as IP address, browser type, and pages visited.</p>
+        <p><strong>How We Use Your Information:</strong> We use your information to process orders, provide customer service, send promotional communications (with your consent), prevent fraud, and improve our website experience.</p>
+        <p><strong>Data Sharing:</strong> We do not sell, trade, or rent your personal information to third parties. We may share data with trusted service providers who assist in operating our website, conducting business, or servicing you, as long as they agree to keep this information confidential.</p>
+        <h2 id="legal-terms">Terms of Service</h2>
+        <p>By accessing or using the MBbrandname website, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using this site.</p>
+        <p><strong>Intellectual Property:</strong> All content on this website — including text, graphics, logos, images, and software — is the property of MBbrandname and is protected by applicable intellectual property laws.</p>
+        <p><strong>Limitation of Liability:</strong> MBbrandname shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use our products or services.</p>
+        <h2 id="legal-returns">Returns Policy</h2>
+        <p>We want you to be completely satisfied with your purchase. If for any reason you are not, you may return eligible items within <strong>30 days</strong> of delivery for a full refund to your original payment method.</p>
+        <ul><li>Items must be in original condition, unworn and unaltered</li><li>Original packaging and authenticity certificates must be included</li><li>Sale items and gift cards are non-returnable</li><li>Return shipping costs are the responsibility of the customer unless the item was damaged or incorrect</li><li>Refunds are processed within 5–10 business days of receiving the returned item</li></ul>
+        <h2 id="legal-auth">Authentication Policy</h2>
+        <p>Every item sold by MBbrandname undergoes a rigorous multi-point authentication process conducted by our team of expert authenticators with decades of combined experience.</p>
+        <p>Our process includes physical inspection, serial number verification, hardware and stitching analysis, materials testing, date code verification, and consultation with brand-specific databases. Items that do not pass authentication are never listed for sale.</p>
+        <p><strong>Authentication Certificate:</strong> Every item above ฿15,000 includes a MBbrandname Authentication Certificate with a unique QR code that can be verified at any time.</p>
+        <h2 id="legal-cookies">Cookie Policy</h2>
+        <p>Our website uses cookies to enhance your browsing experience. Cookies are small text files placed on your device that help us understand how visitors interact with our site, remember preferences, and deliver relevant content.</p>
+        <p>You can control cookies through your browser settings. Disabling certain cookies may affect the functionality of our website. We use strictly necessary, performance, and marketing cookies — you can manage your preferences at any time using our cookie consent tool.</p>
+        <h2 id="legal-shipping">Shipping Policy</h2>
+        <p>We ship worldwide from our warehouses in Bangkok and Tokyo. All items are fully insured during transit and shipped with trackable carriers.</p>
+        <ul><li><strong>Thailand:</strong> 2–3 business days (Free on orders over ฿4,500)</li><li><strong>Asia Pacific:</strong> 5–7 business days (฿490)</li><li><strong>United States &amp; Europe:</strong> 7–14 business days (฿890)</li><li><strong>Express Worldwide:</strong> 2–4 business days (฿1,490)</li></ul>
+        <p>All international shipments may be subject to import duties and taxes. These charges are the responsibility of the customer and vary by country.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ GIFT CARD ═══════ -->
+<div class="view" id="view-gift-card">
+  <div style="padding-top:var(--nh)">
+    <div class="ph"><img class="phi" src="https://picsum.photos/seed/mb-gift/1600/600" alt="" loading="lazy"><div class="pht"><p class="phl">The Perfect Gift</p><h1 class="phh">Gift Cards</h1></div></div>
+    <div class="sh"><p class="se">Give the Gift of Luxury</p><h2 class="st">An MBbrandname Gift Card</h2><p class="sb2">Instantly delivered by email. Redeemable on all products. They never expire.</p></div>
+    <div class="gcl">
+      <div class="gcps">
+        <div class="gcc" id="gcCard" style="background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 50%,#1a1a1a 100%)">
+          <div class="gccs"></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div class="gcl2">m3<span>MBbrandname</span></div>
+            <span style="font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.35;border:1px solid rgba(255,255,255,.15);padding:4px 8px">AUTHENTIC LUXURY</span>
+          </div>
+          <div class="gcamt2" id="gcAmt">฿3,500</div>
+          <div class="gcbot"><div class="gcto">To<strong id="gcTo">Recipient Name</strong></div><div class="gcnum">•••• •••• 4832</div></div>
+        </div>
+        <div style="margin-top:18px;padding:18px;background:var(--cr);border-radius:2px">
+          <p style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:12px">Card Theme</p>
+          <div class="gcthmbs">
+            <button class="gcthb on" style="background:linear-gradient(135deg,#1a1a1a,#2d2d2d)" onclick="GiftCard.theme(this,'linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 50%,#1a1a1a 100%)')"></button>
+            <button class="gcthb" style="background:linear-gradient(135deg,#7c5c3e,#a07850)" onclick="GiftCard.theme(this,'linear-gradient(135deg,#7c5c3e 0%,#a07850 50%,#7c5c3e 100%)')"></button>
+            <button class="gcthb" style="background:linear-gradient(135deg,#1e3a5f,#2b5181)" onclick="GiftCard.theme(this,'linear-gradient(135deg,#1e3a5f 0%,#2b5181 50%,#1e3a5f 100%)')"></button>
+            <button class="gcthb" style="background:linear-gradient(135deg,#2d1b3e,#4a2d6b)" onclick="GiftCard.theme(this,'linear-gradient(135deg,#2d1b3e 0%,#4a2d6b 50%,#2d1b3e 100%)')"></button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="cost" style="margin-top:0">Select Amount (THB)</h2>
+        <div class="gcag"><button class="gcab" onclick="GiftCard.amt(this,'฿1,500')">฿1,500</button><button class="gcab on" onclick="GiftCard.amt(this,'฿3,500')">฿3,500</button><button class="gcab" onclick="GiftCard.amt(this,'฿7,000')">฿7,000</button><button class="gcab" onclick="GiftCard.amt(this,'฿15,000')">฿15,000</button></div>
+        <input class="gcfi" type="number" placeholder="Or enter custom amount (฿)" oninput="if(this.value)GiftCard.custom(this.value)">
+        <h2 class="cost">Recipient Details</h2>
+        <span class="gcfil">Recipient Name *</span>
+        <input class="gcfi" type="text" placeholder="e.g. Sarah Johnson" oninput="document.getElementById('gcTo').textContent=this.value||'Recipient Name'">
+        <span class="gcfil">Recipient Email *</span>
+        <input class="gcfi" type="email" placeholder="recipient@email.com">
+        <span class="gcfil">Your Name *</span>
+        <input class="gcfi" type="text" placeholder="From…">
+        <span class="gcfil">Personal Message</span>
+        <textarea class="gcmsg" placeholder="Write a personal message to include with the gift card…"></textarea>
+        <span class="gcfil">Delivery Date</span>
+        <input class="gcfi" type="date">
+        <br><br>
+        <button class="btn bg bf" style="padding:16px;font-size:11px" onclick="Toast.show('Gift card added to cart! 🎁')">Add to Cart — <span id="gcBtnAmt">฿3,500</span></button>
+      <p style="font-size:11px;color:var(--mu);margin-top:14px;line-height:1.7;text-align:center;font-weight:200">Gift cards are delivered instantly by email or on your chosen date. They never expire and are redeemable on all products.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ftmain">
+    <div>
+      <p class="ftn">m3</p><p class="fts">MBbrandname</p>
+      <p class="fta">1418 River Drive, Suite 35<br>Cottonhall, CA 9122, United States</p>
+      <p class="fta">hello@mbbrandname.com<br>+1 246-345-0695</p>
+      <div class="ftnw"><p class="ftnwl">Subscribe to our newsletter</p><div class="ftnwr"><input class="ftnwi" type="email" placeholder="Your email address"><button class="ftnwb" onclick="Toast.show('Subscribed! Thank you.')">Join</button></div></div>
+      <div class="ftso">
+        <a class="ftsob"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a class="ftsob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+        <a class="ftsob"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+        <a class="ftsob"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h3 class="ftct">Company</h3>
+      <ul class="ftls">
+        <li><button class="ftlb" onclick="App.go('about')">About Us</button></li>
+        <li><button class="ftlb" onclick="App.go('careers')">Careers</button></li>
+        <li><button class="ftlb" onclick="App.go('affiliates')">Affiliates</button></li>
+        <li><button class="ftlb" onclick="App.go('blog')">Blog</button></li>
+        <li><button class="ftlb" onclick="App.go('contact')">Contact Us</button></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="ftct">Shop</h3>
+      <ul class="ftls">
+        <li><button class="ftlb" onclick="App.go('new-arrivals')">New Arrivals</button></li>
+        <li><button class="ftlb" onclick="App.go('accessories')">Accessories</button></li>
+        <li><button class="ftlb" onclick="App.go('bags')">Bags</button></li>
+      </ul>
+      <br>
+      <h3 class="ftct">Help</h3>
+      <ul class="ftls">
+        <li><button class="ftlb" onclick="App.go('customer-service')">Customer Service</button></li>
+        <li><button class="ftlb" onclick="App.go('account')">My Account</button></li>
+        <li><button class="ftlb" onclick="App.go('find-store')">Find a Store</button></li>
+        <li><button class="ftlb" onclick="App.go('legal')">Legal &amp; Privacy</button></li>
+        <li><button class="ftlb" onclick="App.go('contact')">Contact</button></li>
+        <li><button class="ftlb" onclick="App.go('gift-card')">Gift Card</button></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="ftct">Opening Times</h3>
+      <div class="fthr">Mon – Fri: 8AM – 9PM<br>Saturday: 9AM – 8PM<br>Sunday: Closed</div>
+      <br>
+      <h3 class="ftct">Quick Links</h3>
+      <ul class="ftls">
+        <li><button class="ftlb" onclick="App.go('wishlist')">♥ Wishlist</button></li>
+        <li><button class="ftlb" onclick="App.go('cart')">🛍 Cart</button></li>
+        <li><button class="ftlb" onclick="App.go('gift-card')">🎁 Gift Cards</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ftbot">
+    <span class="ftcp">© 2025 MBbrandname. All rights reserved.</span>
+    <div class="ftloc"><span>Thailand (TH)</span><span>English</span><span>฿ THB</span></div>
+  </div>
+</footer>
+
+<!-- POPUP -->
+<div class="popback" id="popBack">
+  <div class="pop">
+    <div class="popvis"><img src="https://picsum.photos/seed/mb-p1/400/400" alt=""><img src="https://picsum.photos/seed/mb-p2/400/400" alt=""><img src="https://picsum.photos/seed/mb-p3/400/400" alt=""><img src="https://picsum.photos/seed/mb-p4/400/400" alt=""></div>
+    <div class="popbod">
+      <button class="popx" onclick="Popup.close()">✕</button>
+      <h2 class="poptit">You deserve it</h2>
+      <p class="popsub">A special offer just for you<br>and your first order.</p>
+      <button class="popclaim" onclick="Popup.close()">Claim Offer</button>
+      <button class="popno" onclick="Popup.close()">No Thanks</button>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIE BANNER -->
+<div class="ckban" id="ckBan">
+  <div class="ckin">
+    <div><p class="cktx">We use cookies to enhance your experience while navigating our site, analyze site usage, and assist in our marketing efforts.</p><button class="ckpl" onclick="CookiePrefs.open()">Privacy Policy ›</button></div>
+    <div class="ckac"><button class="ckpe" onclick="CookiePrefs.open()">Personalize My Choices ›</button><button class="ckab" onclick="Cookie.accept()">Accept All</button></div>
+  </div>
+</div>
+<div class="ckpmod" id="ckPrefMod">
+  <div class="ckpbox">
+    <p class="ckptit">Manage Consent Preferences</p>
+    <div class="ckpi"><div class="ckprow"><span class="ckpnm">Strictly Necessary</span><span class="ckpal">Always Active</span></div><p class="ckpd">Required for core site functionality — cart, checkout, sign-in, saved preferences.</p></div>
+    <div class="ckpi"><div class="ckprow"><span class="ckpnm">Performance Cookies</span><button class="tog on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><p class="ckpd">Help us measure site traffic and improve the user experience over time.</p></div>
+    <div class="ckpi"><div class="ckprow"><span class="ckpnm">Marketing Cookies</span><button class="tog on" onclick="this.classList.toggle('on');this.classList.toggle('off')"></button></div><p class="ckpd">Used to show relevant ads on third-party platforms based on your interests.</p></div>
+    <br><button class="btn bp bf" onclick="CookiePrefs.close()">Save &amp; Accept All</button>
+  </div>
+</div>
+
+<div class="toast" id="toastEl"></div>
+
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const $$=s=>document.querySelectorAll(s);
+const img=(s,w=400,h=400)=>`https://picsum.photos/seed/${s}/${w}/${h}`;
+const fmt=n=>`฿${Number(n).toLocaleString()}`;
+const cl=(n,a,b)=>Math.min(Math.max(n,a),b);
+
+/* ── TOAST ── */
+const Toast={_t:null,show(msg,dur=2600){const el=$('toastEl');el.textContent=msg;el.classList.add('on');clearTimeout(this._t);this._t=setTimeout(()=>el.classList.remove('on'),dur)}};
+
+/* ══ DATA ══ */
+const DB={
+products:[
+  {id:1,cat:'Accessories',name:'Chanel Gold Heart Necklace',price:14900,orig:null,seed:'mb-c1',badge:'NEW'},
+  {id:2,cat:'Bags',name:'Bottega Veneta Woven Hobo',price:42000,orig:null,seed:'mb-c2',badge:'NEW'},
+  {id:3,cat:'Accessories',name:'Chanel CC Drop Earrings',price:12500,orig:18000,seed:'mb-c3',badge:''},
+  {id:4,cat:'Accessories',name:'Vintage Cable Knit Shawl',price:3200,orig:4500,seed:'mb-c4',badge:''},
+  {id:5,cat:'Accessories',name:'Gucci GG Marmont Bracelet',price:19800,orig:null,seed:'mb-c5',badge:'NEW'},
+  {id:6,cat:'Accessories',name:'Louis Vuitton Charm Necklace',price:28500,orig:null,seed:'mb-c6',badge:''},
+  {id:7,cat:'Accessories',name:'Cartier Rimless Sunglasses',price:62000,orig:78000,seed:'mb-c7',badge:''},
+  {id:8,cat:'Bags',name:'Chanel Classic Flap Bag',price:225000,orig:null,seed:'mb-c8',badge:'NEW'},
+  {id:9,cat:'Bags',name:'Premium Suede Crossbody',price:48000,orig:null,seed:'mb-c9',badge:'NEW'},
+  {id:10,cat:'Accessories',name:'Vintage Pearl Drop Ring',price:32000,orig:null,seed:'mb-c10',badge:'NEW'},
+  {id:11,cat:'Bags',name:'Textured Leather Tote',price:68000,orig:null,seed:'mb-c11',badge:'NEW'},
+  {id:12,cat:'Accessories',name:'Dior Silver Chain Necklace',price:23500,orig:null,seed:'mb-c12',badge:''},
+  {id:13,cat:'Bags',name:'Louis Vuitton Speedy 30',price:92000,orig:115000,seed:'mb-c13',badge:''},
+  {id:14,cat:'Accessories',name:'Hermès Silk Scarf',price:19000,orig:null,seed:'mb-c14',badge:''},
+  {id:15,cat:'Bags',name:'Vintage Structured Flap',price:105000,orig:null,seed:'mb-c15',badge:'NEW'},
+],
+cart:[
+  {id:3,name:'Chanel CC Drop Earrings',price:12500,qty:1,seed:'mb-c3'},
+  {id:5,name:'Gucci GG Marmont Bracelet',price:19800,qty:1,seed:'mb-c5'},
+],
+wishlist:new Set(),
+couponDiscount:0,
+stories:[
+  {img:'mb-s1',cat:'Accessories',title:'Each necklace has its own unique story to tell.',text:['In the world of fashion, true luxury is not defined by price alone, but by the story behind each piece.','This necklace was designed to embody timeless elegance. The gold-tone chain is meticulously crafted, gleaming under the light like a treasure from a classic era.','Whether worn on a special occasion or as everyday charm, it completes your style and tells a story of refined taste.']},
+  {img:'mb-s2',cat:'Bags',title:'A bag that carries more than belongings.',text:['Sourced directly from Japan, each bag represents decades of craftsmanship and iconic design heritage.','The supple leather, precision stitching, signature hardware — every detail speaks to an era when luxury was built to last a lifetime.']},
+  {img:'mb-s3',cat:'Accessories',title:'A bracelet with timeless elegance.',text:['This bracelet embodies timeless beauty through its refined yet powerful design. Gold-tone frame paired with luminous white accents.','More than just jewelry, this piece carries a story of taste, craftsmanship, and individuality — versatile enough for any occasion.']},
+  {img:'mb-s4',cat:'Investment',title:'Luxury that appreciates over time.',text:['Pre-loved luxury goods are one of the most consistent alternative investments of the past decade.','Pieces from Chanel, Hermès, and Louis Vuitton have outperformed equities in recent years — and they can be worn while they appreciate.']},
+],
+faqs:[
+  {q:'How do you authenticate your products?',a:'Every item is inspected by our team of specialist authenticators trained in Tokyo and Bangkok. We verify serial numbers, hardware, stitching, materials, date codes, and cross-reference with brand databases. Each item above ฿15,000 includes a MBbrandname Authentication Certificate.'},
+  {q:'What is your return policy?',a:'We offer 30-day hassle-free returns on all items. Products must be in their original condition with packaging and authentication certificates. Sale items are non-returnable. Contact our team to initiate — refunds are processed within 5–10 business days.'},
+  {q:'How long does delivery take in Thailand?',a:'Standard delivery within Thailand takes 2–3 business days. Express same-day delivery is available in Bangkok. Free shipping on all orders over ฿4,500. International orders take 7–14 business days.'},
+  {q:'Are your items sourced directly from Japan?',a:'Yes. Our dedicated sourcing team in Tokyo works directly with trusted dealers, private sellers, and auction houses across Japan weekly. Every item is physically inspected in Japan before being shipped to our Bangkok authentication center.'},
+  {q:'Can I request a specific item?',a:'Absolutely. Contact our team with the brand, model, color, and condition you\'re looking for. We\'ll search our network and notify you when we find a match — usually within 2–4 weeks.'},
+  {q:'Do you offer installment payment?',a:'Yes! We partner with Klarna and KBank for buy-now-pay-later options. Up to 10-month installments are available for orders over ฿10,000 with 0% interest through participating banks.'},
+  {q:'How do I track my order?',a:'Once your order ships, you\'ll receive an SMS and email with your tracking number from our carrier partner. You can also log into your account and view real-time order status from the My Account page.'},
+  {q:'What if the item is not as described?',a:'In the unlikely event that an item does not match its description, we will arrange a free return and full refund including original shipping costs. This has happened fewer than 0.1% of the time in our history.'},
+],
+stores:[
+  {id:1,name:'Bangkok Flagship',addr:'Siam Paragon, 991 Rama 1 Rd\nPathumwan, Bangkok 10330',tags:['Flagship','In-Store Auth','Personal Shopping'],hrs:{wk:'10:00 AM – 10:00 PM',sa:'10:00 AM – 10:00 PM',su:'11:00 AM – 9:00 PM'},ph:'+66 2-610-8888',em:'bangkok@mbbrandname.com'},
+  {id:2,name:'Thonglor Boutique',addr:'Gateway Ekamai, 982/22 Sukhumvit 42\nKhlong Toei, Bangkok 10110',tags:['Boutique','By Appointment'],hrs:{wk:'11:00 AM – 9:00 PM',sa:'11:00 AM – 9:00 PM',su:'Closed'},ph:'+66 2-108-2233',em:'thonglor@mbbrandname.com'},
+  {id:3,name:'Tokyo Showroom',addr:'3-14-2 Minami-Aoyama\nMinato-ku, Tokyo 107-0062',tags:['Showroom','Sourcing Hub'],hrs:{wk:'10:00 AM – 7:00 PM',sa:'10:00 AM – 6:00 PM',su:'Closed'},ph:'+81 3-5555-0312',em:'tokyo@mbbrandname.com'},
+  {id:4,name:'Los Angeles Office',addr:'1418 River Drive, Suite 35\nCottonhall, CA 90210',tags:['Office','Online Only'],hrs:{wk:'9:00 AM – 6:00 PM',sa:'Closed',su:'Closed'},ph:'+1 310-555-0192',em:'la@mbbrandname.com'},
+],
+blogPosts:[
+  {cat:'Authentication',title:'5 Ways to Spot a Fake Chanel Bag',excerpt:'Our head authenticator shares the key details to check before buying any pre-loved Chanel.',date:'Feb 28, 2025',read:'6 min',seed:'mb-bl1'},
+  {cat:'Style Guide',title:'How to Style Vintage Gold Jewellery in 2025',excerpt:'Gold jewellery is having its biggest moment in years. Here\'s how to wear heritage pieces today.',date:'Feb 14, 2025',read:'4 min',seed:'mb-bl2'},
+  {cat:'Japan',title:'A Day at the Tokyo Flea Market',excerpt:'Our sourcing team takes you behind the scenes of the weekly hunt for hidden gems in Tokyo.',date:'Feb 5, 2025',read:'7 min',seed:'mb-bl3'},
+  {cat:'Investment',title:'The Most Valuable Hermès Bags Right Now',excerpt:'Which Hermès models have appreciated most over the past decade? The data is surprising.',date:'Jan 22, 2025',read:'9 min',seed:'mb-bl4'},
+  {cat:'Brand Stories',title:'The History of the Chanel CC Logo',excerpt:'From Coco\'s Paris apartment to global icon — the story of the world\'s most recognized monogram.',date:'Jan 15, 2025',read:'5 min',seed:'mb-bl5'},
+  {cat:'Style Guide',title:'Building a Capsule Wardrobe with Luxury Accessories',excerpt:'How a handful of key pieces can elevate every outfit you own — without breaking the bank.',date:'Jan 8, 2025',read:'6 min',seed:'mb-bl6'},
+],
+};
+
+/* ══ CARD FACTORY ══ */
+function card(p){
+  const pr=p.orig?`<span class="por">${fmt(p.orig)}</span><span class="psl">${fmt(p.price)}</span>`:`<span>${fmt(p.price)}</span>`;
+  return`<article class="pc" tabindex="0" onclick="Detail.open(${p.id})" onkeydown="if(event.key==='Enter')Detail.open(${p.id})">
+    <div class="piw">
+      ${p.badge?`<span class="pbg pbn">${p.badge}</span>`:''}
+      ${p.orig?`<span class="pbg pbs" style="top:10px;left:${p.badge?'60px':'10px'}">SALE</span>`:''}
+      <img class="pim" src="${img(p.seed)}" alt="${p.name}" loading="lazy">
+      <div class="pacs">
+        <button class="pac" onclick="event.stopPropagation();Detail.open(${p.id})" title="Quick view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        <button class="pac${DB.wishlist.has(p.id)?' wl':''}" onclick="event.stopPropagation();WL.toggle(this,${p.id})" title="Wishlist"><svg viewBox="0 0 24 24" fill="${DB.wishlist.has(p.id)?'var(--re)':'none'}" stroke="${DB.wishlist.has(p.id)?'var(--re)':'currentColor'}"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="patc" onclick="event.stopPropagation();Cart.add(${p.id})">Add to Cart</div>
+    </div>
+    <p class="pcat">${p.cat}</p>
+    <p class="pnm">${p.name}</p>
+    <p class="ppr">${pr}</p>
+  </article>`;
+}
+
+/* ══ APP ROUTER ══ */
+const App={
+  _drawerOpen:false,
+  go(page){
+    $$('.view').forEach(v=>v.classList.remove('on'));
+    const v=$(`view-${page}`);if(!v)return;
+    v.classList.add('on');
+    $$('.nl').forEach(l=>l.classList.remove('on'));
+    const nl=document.querySelector(`[data-p="${page}"]`);if(nl)nl.classList.add('on');
+    const nav=$('Nav');
+    nav.classList.remove('gl');
+    if(page==='home')nav.classList.add('gl');
+    window.scrollTo({top:0,behavior:'instant'});
+    if(this._drawerOpen)this.toggleDrawer();
+    const inits={cart:()=>Cart.render(),checkout:()=>Checkout.init(),detail:()=>Gallery.init(),wishlist:()=>WL.renderPage(),'new-arrivals':()=>Listing.render('new-arrivals'),bags:()=>Listing.render('bags'),accessories:()=>Listing.render('accessories'),blog:()=>Blog.init(),'find-store':()=>Stores.init(),'customer-service':()=>FAQ.init()};
+    if(inits[page])inits[page]();
+  },
+  toggleDrawer(){
+    this._drawerOpen=!this._drawerOpen;
+    $('drawer').classList.toggle('on',this._drawerOpen);
+    $('burgBtn').classList.toggle('on',this._drawerOpen);
+  }
+};
+
+/* ══ SCROLL ══ */
+window.addEventListener('scroll',()=>{
+  const nav=$('Nav');
+  const onHome=$('view-home').classList.contains('on');
+  nav.classList.toggle('fl',window.scrollY>60);
+  if(onHome&&window.scrollY<=60)nav.classList.add('gl');
+  else if(onHome)nav.classList.remove('gl');
+},{passive:true});
+
+/* ══ HERO ══ */
+const Hero={i:0,n:3,t:null,
+  init(){
+    const d=$('heroDots');
+    d.innerHTML=Array.from({length:this.n},(_,i)=>`<button class="hdot${i===0?' on':''}" onclick="Hero.go(${i})"></button>`).join('');
+    this.startTick();
+  },
+  go(n){
+    const sl=$$('.hs'),dt=$$('.hdot');
+    sl[this.i].classList.remove('on');dt[this.i].classList.remove('on');
+    this.i=(n+this.n)%this.n;
+    sl[this.i].classList.add('on');dt[this.i].classList.add('on');
+    $('heroTrack').style.transform=`translateX(-${this.i*100}%)`;
+    this.startTick();
+  },
+  prev(){this.go(this.i-1)},
+  next(){this.go(this.i+1)},
+  startTick(){clearInterval(this.t);this.t=setInterval(()=>this.go(this.i+1),5500)}
+};
+
+/* ══ STORY ══ */
+const Story={i:0,
+  init(){
+    const c=$('storyContainer'),d=$('storyDots');
+  c.innerHTML=DB.stories.map((s,i)=>`<div class="sls${i===0?' on':''}"><div class="slw"><img src="${img(s.img,500,625)}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="slb"><p class="slcat">${s.cat}</p><h3 class="slt">${s.title}</h3>${s.text.map(t=>`<p class="slp">${t}</p>`).join('')}<div style="margin-top:30px"><button class="btn bp bpill" onclick="App.go('new-arrivals')">Find Your Style</button></div></div></div>`).join('');
+    d.innerHTML=DB.stories.map((_,i)=>`<button class="sdt${i===0?' on':''}" onclick="Story.go(${i})"></button>`).join('');
+  },
+  go(n){
+    const sl=$$('.sls'),dt=$$('.sdt');
+    sl[this.i]?.classList.remove('on');dt[this.i]?.classList.remove('on');
+    this.i=(n+DB.stories.length)%DB.stories.length;
+    sl[this.i]?.classList.add('on');dt[this.i]?.classList.add('on');
+  },
+  prev(){this.go(this.i-1)},
+  next(){this.go(this.i+1)}
+};
+
+/* ══ LISTING ══ */
+const Listing={
+  _filtered:{},
+  render(page,items){
+    const all=items||(page==='bags'?DB.products.filter(p=>p.cat==='Bags'):page==='accessories'?DB.products.filter(p=>p.cat==='Accessories'):DB.products);
+    const g=$(`grid-${page}`);if(!g)return;
+    g.innerHTML=all.map(p=>card(p)).join('');
+    const c=$(`cnt-${page}`);if(c)c.textContent=`${all.length} items`;
+  },
+  cols(page,n){
+    const g=$(`grid-${page}`);if(!g)return;
+    g.className=`grid c${n}`;
+    g.closest('.w')?.querySelectorAll('.tvb').forEach(b=>b.classList.toggle('on',b.textContent.trim()==n));
+  },
+  filter(page){$(`fp-${page}`)?.classList.toggle('on')},
+  sort(page,v){
+    let items=[...DB.products];
+    if(page==='bags')items=items.filter(p=>p.cat==='Bags');
+    if(page==='accessories')items=items.filter(p=>p.cat==='Accessories');
+    if(v==='pa')items.sort((a,b)=>a.price-b.price);
+    else if(v==='pd')items.sort((a,b)=>b.price-a.price);
+    else if(v==='na')items.sort((a,b)=>a.name.localeCompare(b.name));
+    this.render(page,items);
+  },
+  filter2(page,el,key,val){}
+};
+
+/* ══ GALLERY ══ */
+const Gallery={seeds:[],i:0,
+  init(seeds){
+    this.seeds=seeds||DB.products.slice(0,4).map(p=>p.seed);this.i=0;
+    const t=$('galThumbs');if(!t)return;
+    t.innerHTML=this.seeds.map((s,i)=>`<button class="gth${i===0?' on':''}" onclick="Gallery.go(${i})"><img src="${img(s,160,160)}" alt="" loading="lazy"></button>`).join('');
+    $('galMain').src=img(this.seeds[0],600,600);
+  },
+  go(n){
+    this.i=(n+this.seeds.length)%this.seeds.length;
+    $('galMain').src=img(this.seeds[this.i],600,600);
+    $$('.gth').forEach((t,i)=>t.classList.toggle('on',i===this.i));
+  },
+  prev(){this.go(this.i-1)},next(){this.go(this.i+1)}
+};
+
+/* ══ DETAIL ══ */
+const Detail={cur:null,
+  open(id){
+    const p=DB.products.find(x=>x.id===id);if(!p)return;
+    this.cur=id;
+    $('det-title').textContent=p.name;
+    $('det-bnm').textContent=p.name;
+    $('det-bcat').textContent=p.cat;
+    $('det-price').innerHTML=p.orig?`<span style="text-decoration:line-through;color:var(--mu);font-size:18px;margin-right:8px">${fmt(p.orig)}</span><span style="color:var(--re)">${fmt(p.price)}</span>`:fmt(p.price);
+    $('detQty').value=1;
+  $('detMeta').innerHTML=`<p><span class="pml">SKU:</span> MB-${String(id).padStart(5,'0')}</p><p><span class="pml">Category:</span> ${p.cat}</p><p><span class="pml">Condition:</span> Excellent — Grade A</p><p><span class="pml">Origin:</span> Japan</p>`;
+    const wb=$('detWishBtn');wb.dataset.id=id;
+    const svg=wb.querySelector('svg');
+    const inW=DB.wishlist.has(id);
+    svg.setAttribute('fill',inW?'var(--re)':'none');
+    svg.setAttribute('stroke',inW?'var(--re)':'currentColor');
+    wb.classList.toggle('wld',inW);
+    Gallery.init([p.seed,p.seed+'-b',p.seed+'-c',p.seed+'-d']);
+    $('relGrid').innerHTML=DB.products.filter(x=>x.id!==id).slice(0,4).map(p=>card(p)).join('');
+    App.go('detail');
+    Tabs.set('rev');
+  },
+  qty(d){const i=$('detQty');i.value=cl(parseInt(i.value)+d,1,99)},
+  atc(){if(!this.cur)return;Cart.add(this.cur,parseInt($('detQty').value)||1)},
+  wish(btn){WL.toggleBtn(btn,parseInt(btn.dataset.id)||this.cur)}
+};
+
+/* ══ TABS ══ */
+const Tabs={
+  set(n){['desc','info','rev'].forEach(k=>{$(`tab-${k}`)?.classList.toggle('on',k===n);$(`pane-${k}`)?.classList.toggle('on',k===n)})}
+};
+
+/* ══ WISHLIST ══ */
+const WL={
+  toggle(btn,id){
+    DB.wishlist.has(id)?DB.wishlist.delete(id):DB.wishlist.add(id);
+    const svg=btn.querySelector('svg');
+    const inW=DB.wishlist.has(id);
+    svg.setAttribute('fill',inW?'var(--re)':'none');
+    svg.setAttribute('stroke',inW?'var(--re)':'currentColor');
+    btn.classList.toggle('wl',inW);
+    Toast.show(inW?'Added to wishlist ♥':'Removed from wishlist');
+  },
+  toggleBtn(btn,id){
+    DB.wishlist.has(id)?DB.wishlist.delete(id):DB.wishlist.add(id);
+    const svg=btn.querySelector('svg');
+    const inW=DB.wishlist.has(id);
+    svg.setAttribute('fill',inW?'var(--re)':'none');
+    svg.setAttribute('stroke',inW?'var(--re)':'currentColor');
+    btn.classList.toggle('wld',inW);
+    Toast.show(inW?'Added to wishlist ♥':'Removed from wishlist');
+  },
+  renderPage(){
+    const g=$('wlGrid'),c=$('wlCount');
+    const items=DB.products.filter(p=>DB.wishlist.has(p.id));
+    if(c)c.textContent=items.length;
+    if(!g)return;
+    g.innerHTML=items.length===0?`<div style="grid-column:1/-1;text-align:center;padding:80px 24px"><div style="font-size:56px;opacity:.12;margin-bottom:20px">♥</div><p style="font-size:14px;font-weight:200;margin-bottom:28px">Your wishlist is empty.</p><button class="btn bp" onclick="App.go('new-arrivals')">Start Browsing</button></div>`:items.map(p=>card(p)).join('');
+  }
+};
+
+/* ══ CART ══ */
+const Cart={
+  add(id,qty=1){
+    const p=DB.products.find(x=>x.id===id);if(!p)return;
+    const ex=DB.cart.find(i=>i.id===id);
+    if(ex){ex.qty+=qty;}else{DB.cart.push({id:p.id,name:p.name,price:p.price,qty,seed:p.seed});}
+    this.badge(true);
+    Toast.show(`${p.name} added to cart`);
+  },
+  remove(i){DB.cart.splice(i,1);this.render();this.badge()},
+  chqty(i,d){DB.cart[i].qty=cl(DB.cart[i].qty+d,1,99);this.render()},
+  applyCoupon(){const code=document.querySelector('.coui').value.trim().toUpperCase();if(code==='WELCOME10'){DB.couponDiscount=0.1;Toast.show('Coupon applied: 10% off ✓');}else if(code==='MB20'){DB.couponDiscount=0.2;Toast.show('Coupon applied: 20% off ✓');}else{DB.couponDiscount=0;Toast.show('Invalid coupon code');}this.render();},
+  get sub(){return DB.cart.reduce((a,i)=>a+i.price*i.qty,0)},
+  get discount(){return Math.round(this.sub*DB.couponDiscount)},
+  get total(){return this.sub-this.discount},
+  badge(pop=false){
+    const b=$('cartBadge');
+    const n=DB.cart.reduce((a,i)=>a+i.qty,0);
+    b.textContent=n;
+    if(pop){b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');}
+  },
+  render(){
+    const tb=$('cartBody');if(!tb)return;
+    if(DB.cart.length===0){
+    tb.innerHTML=`<tr><td colspan="4" style="text-align:center;padding:56px;color:var(--mu)"><div style="font-size:48px;opacity:.12;margin-bottom:16px">🛍</div><p style="font-size:14px;font-weight:200;margin-bottom:24px">Your cart is empty.</p><button class="btn bp" onclick="App.go('new-arrivals')">Start Shopping</button></td></tr>`;
+    }else{
+      tb.innerHTML=DB.cart.map((it,i)=>`<tr><td><div class="cprod"><img class="cth" src="${img(it.seed,80,80)}" alt="${it.name}" loading="lazy"><div><p class="cnm">${it.name}</p><p class="cmt">${fmt(it.price)} each</p></div></div></td><td style="text-align:center"><div class="cqty" style="display:inline-flex"><button class="cqb" onclick="Cart.chqty(${i},-1)">−</button><div class="cqv">${it.qty}</div><button class="cqb" onclick="Cart.chqty(${i},1)">+</button></div></td><td style="text-align:right;font-size:13px;font-weight:200">${fmt(it.price*it.qty)}</td><td style="text-align:right"><button class="crm" onclick="Cart.remove(${i})" title="Remove">×</button></td></tr>`).join('');
+    }
+    $('cSub').textContent=fmt(this.sub);
+    $('cShip').textContent=this.sub>=4500?'Free':'฿290';
+    $('cDisc').textContent=this.discount>0?`-${fmt(this.discount)}`:'-';
+    $('cTot').textContent=fmt(this.total+(this.sub<4500?290:0));
+    this.badge();
+  }
+};
+
+/* ══ CHECKOUT ══ */
+const Checkout={
+  _pay:'card',
+  init(){
+    $('cfView').classList.remove('on');
+    $('coFormWrap').style.display='';
+    $('cardFields').classList.remove('hide');
+    const oi=$('orderItems'),os=$('oSub'),ot=$('oTot');
+    if(oi)oi.innerHTML=DB.cart.map(i=>`<div class="oitem"><img class="oith" src="${img(i.seed,60,60)}" alt="" loading="lazy"><div style="flex:1;min-width:0"><p class="oinm">${i.name}</p><p class="oiqt">Qty: ${i.qty}</p></div><span class="oipr" style="font-weight:200">${fmt(i.price*i.qty)}</span></div>`).join('');
+    if(os)os.textContent=fmt(Cart.sub);
+    if(ot)ot.textContent=fmt(Cart.total+(Cart.sub<4500?290:0));
+  },
+  pay(m){
+    this._pay=m;
+    ['card','pp','pm'].forEach(k=>{$(`popt-${k}`)?.classList.toggle('on',k===m)});
+    $('cardFields').classList.toggle('hide',m!=='card');
+  },
+  place(){
+    if(!DB.cart.length){Toast.show('Your cart is empty');return;}
+    const email=$('coEmail')?.value?.trim();
+    if(!email){Toast.show('Please enter your email address');return;}
+    const snap=DB.cart.map(i=>({...i}));
+    const tot=Cart.total+(Cart.sub<4500?290:0);
+    const num='MB-'+Math.floor(10000+Math.random()*90000);
+    $('cfNum').innerHTML=`Order <strong style="font-weight:300">${num}</strong> has been placed successfully.<br><span style="color:var(--mu);font-size:12px;font-weight:200">Confirmation sent to ${email}</span>`;
+    $('cfItems').innerHTML=snap.map(i=>`<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:300;padding:10px 0;border-bottom:1px solid var(--bo)"><span>${i.qty} × ${i.name}</span><span style="font-weight:400">${fmt(i.price*i.qty)}</span></div>`).join('')+`          <div style="display:flex;justify-content:space-between;font-size:14px;font-weight:300;padding-top:14px;border-top:2px solid var(--k)"><span>Total</span><span>${fmt(tot)}</span></div>`;
+    $('coFormWrap').style.display='none';
+    $('cfView').classList.add('on');
+    DB.cart.length=0;DB.couponDiscount=0;
+    Cart.badge();
+  }
+};
+
+/* ══ REVIEW FORM ══ */
+const Rvw={r:0,h:0,
+  upd(){$$('#starPick > span').forEach(s=>{const v=parseInt(s.dataset.v);s.classList.toggle('on',v<=(this.h||this.r)&&!this.h);s.classList.toggle('hov',v<=this.h&&this.h>0)})},
+  set(n){this.r=n;this.h=0;this.upd()},
+  hov(n){this.h=n;this.upd()},
+  unhov(){this.h=0;this.upd()},
+  submit(){if(!this.r){Toast.show('Please select a star rating');return;}Toast.show('Review submitted! Thank you.');this.r=0;this.upd();}
+};
+
+/* ══ BLOG ══ */
+const Blog={
+  _cat:'',
+  init(){this.renderGrid()},
+  renderGrid(){
+    const g=$('blogGrid');if(!g)return;
+    const items=this._cat?DB.blogPosts.filter(p=>p.cat===this._cat):DB.blogPosts;
+    g.innerHTML=items.map(p=>`<div class="bcard" onclick="Toast.show('Full article: ${p.title.replace(/'/g,'').substring(0,30)}…')"><div class="bcardi"><img src="${img(p.seed,600,400)}" alt="" loading="lazy"></div><p class="btag">${p.cat}</p><h3 class="bcardtit">${p.title}</h3><p class="bcardex">${p.excerpt}</p><p class="bcardm">${p.date} · ${p.read} read</p><p class="bmore">Read More →</p></div>`).join('');
+  },
+  cat(btn,cat){$$('.bcbtn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');this._cat=cat;this.renderGrid();}
+};
+
+const FAQ={
+  init(){
+    const l=$('faqList');if(!l)return;
+    l.innerHTML=DB.faqs.map((f,i)=>`<div class="faqi"><button class="faqq" onclick="FAQ.toggle(${i})"><span>${f.q}</span><span class="faqic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faqa"><p class="faqai">${f.a}</p></div></div>`).join('');
+  },
+  toggle(i){$('.faqi')[i]?.classList.toggle('on')}
+};
+
+const Stores={
+  init(){this.render(DB.stores)},
+  render(list){
+    const l=$('storeList');if(!l)return;
+    l.innerHTML=list.map(s=>`<div class="stcard" id="sc-${s.id}" onclick="Stores.select(${s.id})"><p class="stn2">${s.name}</p><p class="sta">${s.addr.replace(/\n/g,'<br>')}</p><div class="sttg">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`).join('');
+  },
+  select(id){
+    const s=DB.stores.find(x=>x.id===id);if(!s)return;
+    $('.stcard').forEach(c=>c.classList.remove('on'));$(`sc-${id}`)?.classList.add('on');
+    $('storeMapDefault').style.display='none';
+    const d=$('storeDetail');d.style.display='block';
+    d.innerHTML=`<h2 class="stdpt">${s.name}</h2><dl class="stddl"><dt class="stddt">Address</dt><dd class="stddd">${s.addr.replace(/\n/g,'<br>')}</dd><dt class="stddt">Weekdays</dt><dd class="stddd">${s.hrs.wk}</dd><dt class="stddt">Saturday</dt><dd class="stddd">${s.hrs.sa}</dd><dt class="stddt">Sunday</dt><dd class="stddd">${s.hrs.su}</dd><dt class="stddt">Phone</dt><dd class="stddd">${s.ph}</dd><dt class="stddt">Email</dt><dd class="stddd">${s.em}</dd></dl><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn bp" onclick="Toast.show('Opening Google Maps…')">Get Directions</button><button class="btn bo" onclick="App.go('contact')">Contact Store</button></div>`;
+  },
+  search(q){
+    const f=q?DB.stores.filter(s=>s.name.toLowerCase().includes(q.toLowerCase())||s.addr.toLowerCase().includes(q.toLowerCase())):DB.stores;
+    this.render(f);
+    if(!q){$('storeMapDefault').style.display='';$('storeDetail').style.display='none';}
+  }
+};
+
+/* ══ LEGAL ══ */
+const Legal={
+  scroll(id,btn){
+    const el=$(`legal-${id}`);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+    $$('.leglink').forEach(l=>l.classList.remove('on'));
+    btn.classList.add('on');
+  }
+};
+
+/* ══ ACCOUNT ══ */
+const Account={
+  tab(t){
+    ['login','register'].forEach(k=>{$(`acform-${k}`)?.classList.toggle('on',k===t);$(`act-${k}`)?.classList.toggle('on',k===t)});
+  }
+};
+
+/* ══ GIFT CARD ══ */
+const GiftCard={
+  amt(btn,v){$$('.gcab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');$('gcAmt').textContent=v;$('gcBtnAmt').textContent=v;},
+  custom(v){$$('.gcab').forEach(b=>b.classList.remove('on'));const f=`฿${parseInt(v).toLocaleString()}`;$('gcAmt').textContent=f;$('gcBtnAmt').textContent=f;},
+  theme(btn,g){$('gcCard').style.background=g;$$('.gcthb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+};
+
+/* ══ SEARCH ══ */
+const Search={
+  open(){const o=$('searchOv');o.classList.add('on');setTimeout(()=>$('searchIn')?.focus(),80)},
+  close(){$('searchOv').classList.remove('on');$('searchIn').value='';$('searchRes').innerHTML=''},
+  run(){
+    const q=($('searchIn')?.value||'').trim().toLowerCase();
+    if(!q){Toast.show('Enter a search term');return;}
+    const res=DB.products.filter(p=>p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q));
+  el.innerHTML=res.length===0?`<p style="color:var(--mu);font-size:13px;font-weight:200">No results for "${q}".</p>`:res.slice(0,6).map(p=>`<div style="cursor:pointer;text-align:center;width:130px" onclick="Search.close();Detail.open(${p.id})"><img src="${img(p.seed,130,130)}" style="width:130px;height:130px;object-fit:cover;background:var(--cr)" alt="" loading="lazy"><p style="font-size:11px;font-weight:200;margin-top:6px;line-height:1.4">${p.name}</p><p style="font-size:12px;color:var(--re);margin-top:2px;font-weight:300">${fmt(p.price)}</p></div>`).join('');
+  }
+};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')Search.close()});
+
+/* ══ POPUP / COOKIE ══ */
+const Popup={close(){$('popBack').classList.remove('on')}};
+const Cookie={accept(){$('ckBan').classList.remove('on')}};
+const CookiePrefs={open(){$('ckPrefMod').classList.add('on')},close(){$('ckPrefMod').classList.remove('on');Cookie.accept()}};
+$('popBack').addEventListener('click',e=>{if(e.target===$('popBack'))Popup.close()});
+$('ckPrefMod').addEventListener('click',e=>{if(e.target===$('ckPrefMod'))CookiePrefs.close()});
+
+/* ══ INIT ══ */
+document.addEventListener('DOMContentLoaded',()=>{
+  $('Nav').classList.add('gl');
+  Hero.init();
+  Story.init();
+  Blog.init();
+  FAQ.init();
+  // Home grid
+  $('homeGrid').innerHTML=DB.products.slice(0,8).map(p=>card(p)).join('');
+  // Listing grids
+  Listing.render('new-arrivals');
+  Listing.render('bags');
+  Listing.render('accessories');
+  // Gallery default
+  Gallery.init();
+  // Cart badge
+  Cart.badge();
+  // Nav active
+  document.querySelector('[data-p="home"]')?.classList.add('on');
+  // Delayed popup
+  setTimeout(()=>$('popBack').classList.add('on'),3800);
+  // Cookie
+  setTimeout(()=>$('ckBan').classList.add('on'),1200);
+});
+</script>
+</body>
+</html>
