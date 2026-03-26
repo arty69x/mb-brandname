@@ -19,7 +19,6 @@ export default function WishlistPage() {
         setLoading(false);
       }
     };
-
     run().catch(() => {
       setError('Wishlist error');
       setLoading(false);
@@ -31,18 +30,18 @@ export default function WishlistPage() {
 
   return (
     <main>
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[52px] tracking-[0.06em] font-light">Wishlist</h1>
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <h1 className="text-4xl">Wishlist</h1>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           {loading ? <LoadingUI label="wishlist" /> : null}
           {error ? <ErrorUI message={error} /> : null}
           {!loading && !error && list.length === 0 ? <EmptyUI label="wishlist products" /> : null}
-          {!loading && !error && list.length > 0 ? <ProductGrid products={list} desktopCols={5} /> : null}
+          {!loading && !error && list.length > 0 ? <ProductGrid products={list} /> : null}
         </div>
       </section>
     </main>

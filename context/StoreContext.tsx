@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import { useSafeLocalStorage } from '@/hooks/useSafeLocalStorage';
 
@@ -31,7 +31,6 @@ const StoreContext = createContext<StoreContextValue | undefined>(undefined);
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const { getItem, setItem } = useSafeLocalStorage();
-  const toastCounter = useRef(0);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -66,8 +65,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, [searchTerm, setItem]);
 
   const pushToast = useCallback((message: string) => {
-    toastCounter.current += 1;
-    const id = `toast-${toastCounter.current}`;
+    const id = `${Date.now()}-${Math.random()}`;
     setToasts((prev) => [...prev, { id, message }]);
     setTimeout(() => {
       setToasts((prev) => prev.filter((toast) => toast.id !== id));
@@ -101,9 +99,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const updateQuantity = useCallback(
     (productId: string, quantity: number) => {
       setCart((prev) =>
-        prev.map((item) =>
-          item.productId === productId ? { ...item, quantity: Math.max(1, quantity) } : item
-        )
+        prev
+          .map((item) =>
+            item.productId === productId ? { ...item, quantity: Math.max(1, quantity) } : item
+          )
+          .filter((item) => item.quantity > 0)
       );
       pushToast('Cart updated');
     },

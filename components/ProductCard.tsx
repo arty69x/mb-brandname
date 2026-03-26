@@ -20,32 +20,31 @@ export function ProductCard({ product }: ProductCardProps) {
             src={product.image}
             alt={product.title}
             fill
-            className="object-cover transition-all duration-300 ease-in-out group-hover:scale-[1.08] group-hover:opacity-90"
+            className="object-cover transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:opacity-90"
             sizes="(max-width: 1024px) 50vw, 20vw"
           />
         </Link>
-        {product.badge ? <span className="absolute left-4 top-4 bg-[#C8A96A] px-4 py-1 text-[11px] uppercase tracking-[0.1em] text-[#111111]">{product.badge}</span> : null}
+        {product.badge ? <span className="absolute left-3 top-3 bg-black px-3 py-1 text-xs text-white">{product.badge}</span> : null}
         <button
           type="button"
           aria-label="Wishlist"
           onClick={() => toggleWishlist(product.id)}
-          className="absolute right-4 top-4 rounded-full bg-[#FFFFFF] p-2 transition-all duration-300 ease-in-out hover:opacity-80"
+          className="absolute right-3 top-3 rounded-full bg-white p-2 transition-all duration-300 ease-in-out hover:opacity-80"
         >
-          <Heart size={14} className={inWishlist ? 'fill-[#111111]' : ''} />
+          <Heart size={14} className={inWishlist ? 'fill-black' : ''} />
         </button>
       </div>
-
       <div className="bg-[#F5F5F5] p-4">
-        <p className="text-[11px] uppercase tracking-[0.1em] text-[#6D6D6D]">{product.category}</p>
-        <Link href={`/product/${product.slug}`} className="mt-2 block text-[13px] md:text-[14px] font-light">
+        <p className="text-xs uppercase tracking-[0.24em] text-black/40">{product.category}</p>
+        <Link href={`/product/${product.slug}`} className="mt-2 block text-[20px] leading-tight">
           {product.title}
         </Link>
-        <div className="mt-4 flex items-center justify-between gap-4">
-          <p className="text-[13px] md:text-[14px]">฿{product.price.toLocaleString()}</p>
+        <div className="mt-3 flex items-center justify-between gap-2">
+          <p className="text-[36px] leading-none">฿{product.price.toLocaleString()}</p>
           <button
             type="button"
             onClick={() => addToCart(product.id)}
-            className="bg-[#111111] px-4 py-2 text-[13px] uppercase tracking-[0.08em] text-[#FFFFFF] transition-all duration-300 ease-in-out hover:opacity-90"
+            className="bg-black px-4 py-2 text-xs uppercase text-white transition-all duration-300 ease-in-out hover:opacity-80"
           >
             Add to cart
           </button>
