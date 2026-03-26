@@ -52,9 +52,23 @@ export default function ProductDetailPage() {
                 <p className="text-[14px]">${product.price.toLocaleString()}</p>
                 <p className="text-[14px] text-[#6D6D6D]">{product.description}</p>
                 <div className="flex items-center gap-3">
-                  <button type="button" onClick={() => setQty((prev) => Math.max(1, prev - 1))} className="h-10 w-10 border border-[#E6E6E6]" aria-label="Decrease quantity">-</button>
+                  <button
+                    type="button"
+                    onClick={() => setQty((prev) => Math.max(1, prev - 1))}
+                    className="h-10 w-10 border border-[#E6E6E6] transition-colors duration-300 ease-in-out hover:bg-[#111111] hover:text-[#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
+                    aria-label="Decrease quantity"
+                  >
+                    -
+                  </button>
                   <span className="min-w-8 text-center">{qty}</span>
-                  <button type="button" onClick={() => setQty((prev) => prev + 1)} className="h-10 w-10 border border-[#E6E6E6]" aria-label="Increase quantity">+</button>
+                  <button
+                    type="button"
+                    onClick={() => setQty((prev) => prev + 1)}
+                    className="h-10 w-10 border border-[#E6E6E6] transition-colors duration-300 ease-in-out hover:bg-[#111111] hover:text-[#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <button
@@ -62,11 +76,17 @@ export default function ProductDetailPage() {
                     onClick={() => {
                       Array.from({ length: qty }).forEach(() => addToCart(product.id));
                     }}
-                    className="bg-[#111111] px-8 py-3 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF]"
+                    className="bg-[#111111] px-8 py-3 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF] transition-all duration-300 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-2 active:scale-[0.98]"
                   >
                     Add to cart
                   </button>
-                  <button type="button" onClick={() => toggleWishlist(product.id)} className="border border-[#E6E6E6] px-8 py-3 text-[11px] uppercase tracking-[0.1em]">Wishlist</button>
+                  <button
+                    type="button"
+                    onClick={() => toggleWishlist(product.id)}
+                    className="border border-[#E6E6E6] px-8 py-3 text-[11px] uppercase tracking-[0.1em] transition-colors duration-300 ease-in-out hover:bg-[#111111] hover:text-[#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
+                  >
+                    Wishlist
+                  </button>
                 </div>
               </div>
             </div>

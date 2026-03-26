@@ -20,7 +20,7 @@ export default function HomePage() {
         <div className="w-full lg:container lg:mx-auto lg:px-4">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-[20px] md:text-[24px] lg:text-[28px]">New Arrivals</h2>
-            <Link href="/new-arrivals" className="text-[13px] uppercase tracking-[0.08em] underline">
+            <Link href="/new-arrivals" className="text-[13px] uppercase tracking-[0.08em] underline transition-opacity duration-300 ease-in-out hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]">
               View more
             </Link>
           </div>
@@ -46,7 +46,12 @@ export default function HomePage() {
               <h2 className="text-[20px] md:text-[24px] lg:text-[28px]">A story of timeless elegance</h2>
               <p className="text-[14px] text-[#6D6D6D]">Curated collections sourced from Japan and restored with premium care.</p>
               <p className="text-[14px] text-[#6D6D6D]">Every product is checked for authenticity, detail, and long-term wearability.</p>
-              <button type="button" className="bg-[#111111] px-6 py-3 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF] transition-all duration-300 ease-in-out hover:opacity-90">Find your style</button>
+              <button
+                type="button"
+                className="bg-[#111111] px-6 py-3 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF] transition-all duration-300 ease-in-out hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-2 active:scale-[0.98]"
+              >
+                Find your style
+              </button>
             </div>
           </div>
         </div>

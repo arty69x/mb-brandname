@@ -13,7 +13,9 @@ type ShopPageProps = {
 export function ShopPage({ title, filter }: ShopPageProps) {
   const { searchTerm } = useStore();
   const { loading, error, data } = useProductsLoader(filter);
-  const filtered = data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
+  const safeData = Array.isArray(data) ? data : [];
+  const safeSearchTerm = typeof searchTerm === 'string' ? searchTerm.toLowerCase() : '';
+  const filtered = safeData.filter((item) => item.title.toLowerCase().includes(safeSearchTerm));
 
   return (
     <main>
@@ -37,8 +39,18 @@ export function ShopPage({ title, filter }: ShopPageProps) {
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
         <div className="w-full lg:container lg:mx-auto lg:px-4">
           <div className="mb-6 grid gap-4 border-b border-[#E6E6E6] pb-4 text-[13px] uppercase tracking-[0.08em] sm:grid-cols-3">
-            <button type="button" className="text-left">Sort: Latest</button>
-            <button type="button" className="text-left sm:text-center">Filter: Category + Price</button>
+            <button
+              type="button"
+              className="text-left transition-opacity duration-300 ease-in-out hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
+            >
+              Sort: Latest
+            </button>
+            <button
+              type="button"
+              className="text-left transition-opacity duration-300 ease-in-out hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] sm:text-center"
+            >
+              Filter: Category + Price
+            </button>
             <p className="text-left sm:text-right">{filtered.length} items</p>
           </div>
           {loading ? <LoadingUI label="products" /> : null}
@@ -46,9 +58,9 @@ export function ShopPage({ title, filter }: ShopPageProps) {
           {!loading && !error && filtered.length === 0 ? <EmptyUI label="products" /> : null}
           {!loading && !error && filtered.length > 0 ? <ProductGrid products={filtered} desktopColumns={5} /> : null}
           <div className="mt-8 flex items-center justify-center gap-2 text-[13px] uppercase tracking-[0.08em]">
-            <button type="button" className="border border-[#E6E6E6] px-3 py-2">1</button>
-            <button type="button" className="border border-[#E6E6E6] px-3 py-2">2</button>
-            <button type="button" className="border border-[#E6E6E6] px-3 py-2">Next</button>
+            <button type="button" className="border border-[#E6E6E6] px-3 py-2 transition-all duration-300 ease-in-out hover:bg-[#111111] hover:text-[#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]">1</button>
+            <button type="button" className="border border-[#E6E6E6] px-3 py-2 transition-all duration-300 ease-in-out hover:bg-[#111111] hover:text-[#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]">2</button>
+            <button type="button" className="border border-[#E6E6E6] px-3 py-2 transition-all duration-300 ease-in-out hover:bg-[#111111] hover:text-[#FFFFFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]">Next</button>
           </div>
         </div>
       </section>
