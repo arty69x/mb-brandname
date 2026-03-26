@@ -17,47 +17,56 @@ export function ProductCard({ product }: ProductCardProps) {
   const [imageSrc, setImageSrc] = useState(safeInitialSrc);
 
   return (
-    <div className="group relative font-['Inter'] tracking-wide">
+    <article className="group relative font-['Inter'] tracking-wide">
       <div className="relative aspect-[3/4] overflow-hidden bg-[#EEEEEE]">
         <Link href={`/product/${product.slug}`}>
           <Image
             src={imageSrc}
             alt={product.title}
             fill
-            className="object-cover transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]"
-            sizes="(max-width: 1023px) 50vw, 20vw"
+            className="object-cover transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 20vw, 20vw"
             onError={() => setImageSrc(fallbackSrc)}
           />
         </Link>
-        {product.badge ? <span className="absolute left-3 top-3 bg-[#111111] px-3 py-1 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF]">{product.badge}</span> : null}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-black/0 opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100" />
+        {product.badge ? (
+          <span className="absolute left-3 top-3 z-10 bg-[#111111] px-3 py-1 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF]">
+            {product.badge}
+          </span>
+        ) : null}
+        <button
+          type="button"
+          aria-label="Wishlist"
+          onClick={() => toggleWishlist(product.id)}
+          className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 text-[#111111] shadow-[0_6px_14px_rgba(0,0,0,0.12)] transition-all duration-300 ease-in-out hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] active:scale-95"
+        >
+          <Heart size={16} className={inWishlist ? 'fill-[#111111]' : ''} />
+        </button>
+        <button
+          type="button"
+          aria-label="Add to cart"
+          onClick={() => addToCart(product.id)}
+          className="absolute bottom-3 right-3 z-10 rounded-full bg-[#111111] p-2 text-[#FFFFFF] shadow-[0_8px_20px_rgba(0,0,0,0.24)] transition-all duration-300 ease-in-out hover:scale-105 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111] focus-visible:ring-offset-2 active:scale-95"
+        >
+          <ShoppingBag size={16} />
+        </button>
       </div>
-      <div className="p-4">
+      <div className="space-y-2 p-4">
         <p className="text-[11px] uppercase tracking-wide text-[#6D6D6D]">{product.category}</p>
-        <div className="mt-2 flex items-start justify-between gap-2">
-          <Link href={`/product/${product.slug}`} className="line-clamp-1 block font-['Playfair_Display'] text-[14px] tracking-wide">
+        <div className="flex items-start justify-between gap-2">
+          <Link
+            href={`/product/${product.slug}`}
+            className="line-clamp-1 block font-['Playfair_Display'] text-[14px] tracking-wide transition-opacity duration-300 ease-in-out hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]"
+          >
             {product.title}
           </Link>
-          <button
-            type="button"
-            aria-label="Add to cart"
-            onClick={() => addToCart(product.id)}
-            className="shrink-0 rounded-full p-1 transition-all duration-300 ease-in-out hover:opacity-80 focus-visible:ring-2 focus-visible:ring-[#111111]"
-          >
-            <ShoppingBag size={20} />
-          </button>
         </div>
-        <div className="mt-3 flex items-center justify-between gap-2">
+        <div className="flex items-center justify-between gap-2">
           <p className="text-[14px]">${product.price.toLocaleString()}</p>
-          <button
-            type="button"
-            aria-label="Wishlist"
-            onClick={() => toggleWishlist(product.id)}
-            className="shrink-0 rounded-full p-1 transition-all duration-300 ease-in-out hover:opacity-80 focus-visible:ring-2 focus-visible:ring-[#111111]"
-          >
-            <Heart size={20} className={inWishlist ? 'fill-[#111111]' : ''} />
-          </button>
+          <span className="text-[11px] uppercase tracking-[0.08em] text-[#6D6D6D]">Ready to ship</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
