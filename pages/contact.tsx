@@ -9,13 +9,13 @@ export default function ContactPage() {
   return (
     <main>
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <h1 className="text-[28px] font-light tracking-[0.06em] sm:text-[32px] md:text-[40px] lg:text-[52px]">Contact</h1>
         </div>
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           {loading ? <LoadingUI label="contact" /> : null}
           {error ? <ErrorUI message={error} /> : null}
           {empty ? <EmptyUI label="contact" /> : null}

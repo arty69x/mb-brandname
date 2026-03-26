@@ -11,13 +11,13 @@ export default function HomePage() {
   return (
     <main>
       <section className="py-0 md:py-16">
-        <div className="w-full md:container md:mx-auto md:px-4">
+        <div className="container mx-auto px-4">
           <HeroCarousel />
         </div>
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="w-full lg:container lg:mx-auto lg:px-4">
+        <div className="container mx-auto px-4">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-[20px] md:text-[24px] lg:text-[28px]">New Arrivals</h2>
             <Link href="/new-arrivals" className="text-[13px] uppercase tracking-[0.08em] underline transition-opacity duration-300 ease-in-out hover:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111111]">
@@ -32,7 +32,7 @@ export default function HomePage() {
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="relative aspect-square overflow-hidden">
               <Image
@@ -58,7 +58,7 @@ export default function HomePage() {
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="bg-[#F5F5F5] px-4 py-10 text-center sm:px-8">
             <h2 className="text-[20px] md:text-[24px] lg:text-[28px]">Our Services</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-3">

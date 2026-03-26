@@ -34,7 +34,7 @@ export default function CheckoutPage() {
   return (
     <main>
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="space-y-4">
               <h1 className="text-[28px] font-light tracking-[0.06em] sm:text-[32px] md:text-[40px] lg:text-[52px]">Checkout</h1>

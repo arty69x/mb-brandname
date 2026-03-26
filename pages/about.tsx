@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <main>
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="bg-[#F5F5F5] px-4 py-10 text-center sm:px-8">
             {loading ? <LoadingUI label="about" /> : null}
             {empty ? <EmptyUI label="about" /> : null}

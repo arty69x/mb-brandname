@@ -28,7 +28,7 @@ export default function ProductDetailPage() {
   return (
     <main>
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           {loading ? <LoadingUI label="product" /> : null}
           {error ? <ErrorUI message={error} /> : null}
           {!loading && !error && !product ? <EmptyUI label="product" /> : null}
@@ -95,14 +95,14 @@ export default function ProductDetailPage() {
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <h2 className="text-[20px] md:text-[24px] lg:text-[28px]">Description</h2>
           <p className="mt-4 max-w-4xl text-[14px] text-[#6D6D6D]">This piece is selected by our buyers for quality, balance, and iconic style. Authenticity and finishing are verified before listing.</p>
         </div>
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <h2 className="mb-6 text-[20px] md:text-[24px] lg:text-[28px]">Related products</h2>
           {related.length > 0 ? <ProductGrid products={related} /> : <EmptyUI label="related products" />}
         </div>
