@@ -31,26 +31,20 @@ const StoreContext = createContext<StoreContextValue | undefined>(undefined);
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const { getItem, setItem } = useSafeLocalStorage();
-  const [cart, setCart] = useState<CartItem[]>([]);
-  const [wishlist, setWishlist] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    const persistedCart = getItem<CartItem[]>('mb-cart', []);
+    return Array.isArray(persistedCart) ? persistedCart : [];
+  });
+  const [wishlist, setWishlist] = useState<string[]>(() => {
+    const persistedWishlist = getItem<string[]>('mb-wishlist', []);
+    return Array.isArray(persistedWishlist) ? persistedWishlist : [];
+  });
+  const [searchTerm, setSearchTerm] = useState<string>(() => {
+    const persistedSearch = getItem<string>('mb-search', '');
+    return typeof persistedSearch === 'string' ? persistedSearch : '';
+  });
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
   const [toasts, setToasts] = useState<Toast[]>([]);
-
-  useEffect(() => {
-    const persistedCart = getItem<CartItem[]>('mb-cart', []);
-    const persistedWishlist = getItem<string[]>('mb-wishlist', []);
-    const persistedSearch = getItem<string>('mb-search', '');
-    if (Array.isArray(persistedCart)) {
-      setCart(persistedCart);
-    }
-    if (Array.isArray(persistedWishlist)) {
-      setWishlist(persistedWishlist);
-    }
-    if (typeof persistedSearch === 'string') {
-      setSearchTerm(persistedSearch);
-    }
-  }, [getItem]);
 
   useEffect(() => {
     setItem('mb-cart', cart);

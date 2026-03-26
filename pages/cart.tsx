@@ -22,13 +22,13 @@ export default function CartPage() {
   return (
     <main>
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <h1 className="text-[28px] font-light tracking-[0.06em] sm:text-[32px] md:text-[40px] lg:text-[52px]">Cart</h1>
         </div>
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           {loading ? <LoadingUI label="cart" /> : null}
           {error ? <ErrorUI message={error} /> : null}
           {!loading && !error && items.length === 0 ? <EmptyUI label="cart items" /> : null}
@@ -54,7 +54,7 @@ export default function CartPage() {
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           {items.length > 0 ? (
             <div className="ml-auto max-w-md space-y-4 border border-[#E6E6E6] bg-[#FFFFFF] p-6">
               <h2 className="text-[20px] md:text-[24px] lg:text-[28px]">Summary</h2>

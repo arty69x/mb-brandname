@@ -15,7 +15,7 @@ export function Footer() {
   return (
     <footer className="bg-[#111111] text-[#FFFFFF]">
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="grid gap-8 lg:grid-cols-5">
             <div className="space-y-4">
               <p className="text-[32px] leading-none">MB</p>
