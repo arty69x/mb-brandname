@@ -17,7 +17,7 @@ export default function HomePage() {
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="w-full lg:container lg:mx-auto lg:px-4">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-[20px] md:text-[24px] lg:text-[28px]">New Arrivals</h2>
             <Link href="/new-arrivals" className="text-[13px] uppercase tracking-[0.08em] underline">
@@ -27,7 +27,7 @@ export default function HomePage() {
           {loading ? <LoadingUI label="products" /> : null}
           {error ? <ErrorUI message={error} /> : null}
           {!loading && !error && data.length === 0 ? <EmptyUI label="products" /> : null}
-          {!loading && !error && data.length > 0 ? <ProductGrid products={data.slice(0, 10)} /> : null}
+          {!loading && !error && data.length > 0 ? <ProductGrid products={data.slice(0, 10)} desktopColumns={4} /> : null}
         </div>
       </section>
 
