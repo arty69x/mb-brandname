@@ -9,25 +9,9 @@ export function ProductGrid({ products }: ProductGridProps) {
   const safeProducts = Array.isArray(products) ? products : [];
 
   return (
-    <div
-      className="
-  grid
-  grid-cols-2
-  lg:grid-cols-5
-  border-t border-l border-black/10
-  lg:border-none
-  gap-0
-  lg:gap-6
-"
-    >
+    <div className="-mx-4 grid grid-cols-2 gap-0 border-l border-t border-black/10 lg:mx-0 lg:grid-cols-5 lg:gap-8 lg:border-0">
       {safeProducts.map((product) => (
-        <div
-          key={product.id}
-          className="
-  border-r border-b border-black/10
-  lg:border-none
-"
-        >
+        <div key={product.id} className="border-b border-r border-black/10 lg:border-0">
           <ProductCard product={product} />
         </div>
       ))}
