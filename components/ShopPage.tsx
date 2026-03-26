@@ -35,7 +35,7 @@ export function ShopPage({ title, filter }: ShopPageProps) {
       </section>
 
       <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="w-full lg:container lg:mx-auto lg:px-4">
           <div className="mb-6 grid gap-4 border-b border-[#E6E6E6] pb-4 text-[13px] uppercase tracking-[0.08em] sm:grid-cols-3">
             <button type="button" className="text-left">Sort: Latest</button>
             <button type="button" className="text-left sm:text-center">Filter: Category + Price</button>
@@ -44,7 +44,7 @@ export function ShopPage({ title, filter }: ShopPageProps) {
           {loading ? <LoadingUI label="products" /> : null}
           {error ? <ErrorUI message={error} /> : null}
           {!loading && !error && filtered.length === 0 ? <EmptyUI label="products" /> : null}
-          {!loading && !error && filtered.length > 0 ? <ProductGrid products={filtered} /> : null}
+          {!loading && !error && filtered.length > 0 ? <ProductGrid products={filtered} desktopColumns={5} /> : null}
           <div className="mt-8 flex items-center justify-center gap-2 text-[13px] uppercase tracking-[0.08em]">
             <button type="button" className="border border-[#E6E6E6] px-3 py-2">1</button>
             <button type="button" className="border border-[#E6E6E6] px-3 py-2">2</button>
