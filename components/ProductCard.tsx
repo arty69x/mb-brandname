@@ -18,14 +18,14 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="group relative font-['Inter'] tracking-wide">
-      <div className="relative aspect-square overflow-hidden bg-[#EEEEEE]">
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#EEEEEE]">
         <Link href={`/product/${product.slug}`}>
           <Image
             src={imageSrc}
             alt={product.title}
             fill
             className="object-cover transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
-            sizes="(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 25vw"
+            sizes="(max-width: 639px) 50vw, (max-width: 1023px) 20vw, 20vw"
             onError={() => setImageSrc(fallbackSrc)}
           />
         </Link>
