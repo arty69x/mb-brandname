@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart } from 'lucide-react';
+import { Heart, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
 import type { Product } from '@/data/products';
 import { useStore } from '@/context/StoreContext';
@@ -30,28 +30,31 @@ export function ProductCard({ product }: ProductCardProps) {
           />
         </Link>
         {product.badge ? <span className="absolute left-3 top-3 bg-[#111111] px-3 py-1 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF]">{product.badge}</span> : null}
-        <button
-          type="button"
-          aria-label="Wishlist"
-          onClick={() => toggleWishlist(product.id)}
-          className="absolute right-3 top-3 rounded-full bg-[#FFFFFF] p-2 transition-all duration-300 ease-in-out hover:opacity-80 focus-visible:ring-2 focus-visible:ring-[#111111]"
-        >
-          <Heart size={14} className={inWishlist ? 'fill-[#111111]' : ''} />
-        </button>
       </div>
       <div className="p-4">
         <p className="text-[11px] uppercase tracking-wide text-[#6D6D6D]">{product.category}</p>
-        <Link href={`/product/${product.slug}`} className="mt-2 block font-['Playfair_Display'] text-[14px] tracking-wide">
-          {product.title}
-        </Link>
+        <div className="mt-2 flex items-start justify-between gap-2">
+          <Link href={`/product/${product.slug}`} className="line-clamp-1 block font-['Playfair_Display'] text-[14px] tracking-wide">
+            {product.title}
+          </Link>
+          <button
+            type="button"
+            aria-label="Add to cart"
+            onClick={() => addToCart(product.id)}
+            className="shrink-0 rounded-full p-1 transition-all duration-300 ease-in-out hover:opacity-80 focus-visible:ring-2 focus-visible:ring-[#111111]"
+          >
+            <ShoppingBag size={20} />
+          </button>
+        </div>
         <div className="mt-3 flex items-center justify-between gap-2">
           <p className="text-[14px]">${product.price.toLocaleString()}</p>
           <button
             type="button"
-            onClick={() => addToCart(product.id)}
-            className="bg-[#111111] px-4 py-2 text-[11px] uppercase tracking-[0.1em] text-[#FFFFFF] transition-all duration-300 ease-in-out hover:opacity-80 focus-visible:ring-2 focus-visible:ring-[#111111]"
+            aria-label="Wishlist"
+            onClick={() => toggleWishlist(product.id)}
+            className="shrink-0 rounded-full p-1 transition-all duration-300 ease-in-out hover:opacity-80 focus-visible:ring-2 focus-visible:ring-[#111111]"
           >
-            Add
+            <Heart size={20} className={inWishlist ? 'fill-[#111111]' : ''} />
           </button>
         </div>
       </div>
