@@ -7,6 +7,7 @@ Date: 2026-03-26
 - Layout consistency with `main > section > div.container.mx-auto.px-4`.
 - Grid responsiveness, spacing rhythm, image ratio, and interaction states.
 - Build/lint readiness for production workflow.
+- Documentation alignment in `README.md` and UX/UI docs.
 
 ## Current status summary
 
@@ -20,47 +21,45 @@ Date: 2026-03-26
    - `next lint` is not usable in this Next.js version setup.
    - Impact: no reliable quality gate in CI/local checks.
 
-2. **Product grid breakpoint policy mismatch**
-   - Previous grid used `lg:grid-cols-5`, which conflicts with requested UX rules (mobile 2 / tablet 3 / desktop 4).
+2. **Layout hierarchy drift on some sections**
+   - Some page sections still diverge from strict `main > section > div.container.mx-auto.px-4` policy.
 
-3. **Product image ratio mismatch**
-   - Product card image used a non-square ratio (`3/4`) instead of required `1:1`.
+3. **Spacing normalization is incomplete**
+   - Mixed spacing values exist and still need a full base-8 cleanup pass.
 
 4. **Interaction state consistency**
-   - Interactive controls needed consistent focus-visible states for accessibility and design QA.
+   - Interactive controls need complete and consistent `hover/focus-visible/active/disabled` states.
 
-## Remediations applied in this change
-- Confirmed lint command currently fails in this environment (`next lint` resolves `lint` as a directory), so lint migration is still required as a follow-up task.
-- Updated product grid to `grid-cols-2 md:grid-cols-3 lg:grid-cols-4` with base-8 spacing.
-- Updated product card media to `aspect-square` (1:1) and responsive image sizing.
-- Added `focus-visible:ring-2` interaction states to icon and action buttons.
+## Remediations already applied
+- Product grids were aligned to policy: `grid-cols-2 md:grid-cols-3 lg:grid-cols-4`.
+- Product card media was aligned to `aspect-square` (1:1) and responsive image sizing.
+- Focus-visible ring states were added to key interactive controls.
 
-## What I can do next to fully close UX/UI
+## Documentation updates applied in this pass
+- Rewrote `README.md` to reflect current stack, route map, UI standards, and engineering safety requirements.
+- Linked active UX/UI docs from the README for a clearer contributor workflow.
+- Standardized the project-level guidance so implementation aligns with blueprint-based delivery.
 
-### 1) Pixel-accurate blueprint pass (high priority)
-- Compare each page with `/public/blueprint` source files section-by-section.
-- Reconstruct any mismatched block using exact spacing, dimensions, typography, and shadows.
-- Deliver per-page completion checklist and before/after screenshots.
+## Remaining close-out tasks
+1. **Blueprint parity pass (P0)**
+   - Compare each supported route to `/public/blueprint` references.
+   - Fix any mismatch in spacing, type scale, border/radius, shadows, and block hierarchy.
 
-### 2) Global layout conformance pass
-- Enforce `main > section > div.container.mx-auto.px-4` hierarchy on every page.
-- Normalize breakpoint strategy (`sm`, `md`, `lg`, `xl`) and base-8 spacing tokens.
+2. **Global layout conformance (P0)**
+   - Enforce `main > section > div.container.mx-auto.px-4` consistently across all pages.
 
-### 3) Componentization pass
-- Extract repeated structures into reusable UI blocks (e.g. `ProductGallery`, section headers, CTA bands).
-- Ensure repeated patterns are consistent and easy to maintain.
+3. **Spacing normalization (P1)**
+   - Complete base-8 spacing cleanup in pages and reusable components.
 
-### 4) Accessibility + interaction QA
-- Verify keyboard navigation, focus order, and visible focus states.
-- Validate hover/focus/active/disabled states for all interactive controls.
+4. **A11y and interaction QA (P1)**
+   - Verify keyboard flow, focus visibility, and state completeness for all controls.
 
-### 5) Final production QA gate
-- Run `npm run lint` + `npm run build` and produce zero-error report.
-- Optional: add visual regression snapshots for key pages.
+5. **Final quality gate (P0)**
+   - Ensure lint/build/typecheck are green in the intended CI/runtime setup.
 
 ## Suggested execution sequence
-1. Blueprint parity pass for homepage and listing pages.
-2. Product detail + cart + checkout parity pass.
-3. Global typography/spacing normalization.
-4. Accessibility audit and polish.
-5. Final QA sign-off report.
+1. Homepage + listing page blueprint parity.
+2. Product detail + cart + checkout parity.
+3. Global spacing/token normalization.
+4. Accessibility and interaction polish.
+5. Final QA sign-off with screenshots and checklist.
